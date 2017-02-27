@@ -38,7 +38,7 @@ Supervisor:	Dipl.-Ing. Zied
 Start:		24/02/2017
 
 # Setup of working environment
-Useful ressource:
+Useful ressources:
 * [OpenVibe Setup](http://openvibe.inria.fr/how-to-connect-emotiv-epoc-with-openvibe/)
 
 

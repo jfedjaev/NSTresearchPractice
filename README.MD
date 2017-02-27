@@ -38,7 +38,17 @@ Supervisor:	Dipl.-Ing. Zied
 Start:		24/02/2017
 
 # Setup of working environment
+## Hardware 
+The hardware that is used for the project will be discussed in this section. 
+
+* Brain Computer Interface (BCI): EMOTIV EPOC+
+* Robotic arm: Neuronics Katana
+
+## Software 
 Useful ressources:
 * [OpenVibe Setup](http://openvibe.inria.fr/how-to-connect-emotiv-epoc-with-openvibe/)
+	* For visualizing the raw EMG signals. Emotiv Premium SDK needed for access to raw hardware signals. 
+* EMOTIV Control Panel
+	* Free at http://www.emotiv.com
 
 

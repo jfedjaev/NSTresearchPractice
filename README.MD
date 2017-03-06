@@ -31,6 +31,7 @@ movements
 [1] Jianjun Meng, Shuying Zhang, Angeliki Bekyo, Jaro Olsoe, Bryan Baxter, Bin He,” Noninvasive
 Electroencephalogram Based Control of a Robotic Arm for Reach and Grasp Tasks”, vol 6, Scientific
 Reports, 2016
+
 [2] Yong X, Menon C. “EEG Classification of Different Imaginary Movements within the Same
 Limb”. PLoS ONE, 2015
 

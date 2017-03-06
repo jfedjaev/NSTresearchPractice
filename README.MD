@@ -44,6 +44,10 @@ The hardware that is used for the project will be discussed in this section.
 * Brain Computer Interface (BCI): EMOTIV EPOC+
 * Robotic arm: Neuronics Katana
 
+### EMOTIV EPOC+
+The EMOTIV EPOC+ headset consists of 16 electrodes in the standard 10-20 system (see figure below). It is capable of recording 128 samples/second, i.e. a sampling frequency of 128 Hz. 
+![The 10-20 system on the EMOTIV EPOC+ headset](/Documents/BCI-project/10-20-emotiv.gif)
+
 ## Software 
 Useful ressources:
 * [OpenVibe Setup](http://openvibe.inria.fr/how-to-connect-emotiv-epoc-with-openvibe/)

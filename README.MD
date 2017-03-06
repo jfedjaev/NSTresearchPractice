@@ -47,8 +47,8 @@ The hardware that is used for the project will be discussed in this section.
 ### EMOTIV EPOC+
 The EMOTIV EPOC+ headset consists of 16 electrodes in the standard 10-20 system (see figure below). It is capable of recording 128 samples/second, i.e. a sampling frequency of 128 Hz. 
 
-<img src="/Documents/BCI-project/10-20-emotiv.gif" width="256">
-<img src="/Documents/BCI-project/10-20.jpg" width="384">
+<img src="/Documents/BCI-project/10-20-emotiv.gif" height="256">
+<img src="/Documents/BCI-project/10-20.jpg" height="256">
 
 __Fig. 1: Left: EMOTIV EPOC+ headset electrode placement. Right: Standard 10-20 electrode placement system__
 

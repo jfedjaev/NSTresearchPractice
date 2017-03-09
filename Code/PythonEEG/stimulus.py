@@ -8,8 +8,8 @@ from pygame.locals import *
 pygame.init()
 
 # setup the visualization parameters
-WIDTH = 1920
-HEIGHT = 1080
+WIDTH = 1680
+HEIGHT = 1050
 win = pygame.display.set_mode((WIDTH, HEIGHT), 0, 32)
 Black = (0, 0, 0)
 White= (255,255,255)

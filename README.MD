@@ -53,6 +53,26 @@ The EMOTIV EPOC+ headset consists of 16 electrodes in the standard 10-20 system 
 
 __Fig. 1: Left: EMOTIV EPOC+ headset electrode placement. Right: Standard 10-20 electrode placement system__
 
+The EMOTIV EPOC+ headset has the following specificiations:
+
+| Number of channels                   | 14 (plus CMS/DRL references)                               |
+|--------------------------------------|------------------------------------------------------------|
+| Channel names (Int. 10-20 locations) | AF3, AF4, F3, F4, F7, F8, FC5, FC6, P7, P8, T7, T8, O1, O2 |
+| Sampling method                      | Sequential sampling, single ADC                            |
+| Sampling rate                        | ~128 Hz (2048 Hz internally)                               |
+| Resolution                           | 16 bits (14 bits effective), 1 LSB = 1.95 µV               |
+| Bandwidth                            | 0.2 - 45 Hz, digital notch filters at 40 and 60 Hz         |
+| Dynamic range (input referred)       | 256 mVpp                                                   |
+| Coupling method                      | AC coupled                                                 |
+| Connectivity                         | Proprietary wireless, 2.4 GHz                              |
+| Battery type                         | 12 Li-Poly                                                 |
+| Battery life                         | 12 hrs                                                     |
+| Impedance measurement                | Contact quality using patented system                      |
+
+Tab. 1 - EMOTIV EPOC+ headset specifications
+
+
+
 
 
 ## Software 

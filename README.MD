@@ -81,5 +81,11 @@ Useful ressources:
 	* For visualizing the raw EMG signals. Emotiv Premium SDK needed for access to raw hardware signals. 
 * EMOTIV Control Panel
 	* Free at http://www.emotiv.com
+	
+	
+## Motor Imagery with built-in modules in OpenVibe
+A more or less detailed explanation is given on the following website: [Motor Imagery](http://blog.jfrey.info/2015/03/03/openbci-motor-imagery/)
+
+
 
 

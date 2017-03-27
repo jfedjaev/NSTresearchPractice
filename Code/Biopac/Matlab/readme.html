@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<title>MATLAB: mpdevdemo - BIOPAC HARDWARE API</title>
+	<style type="text/css">
+				@import "../../samplereadme.css";
+	</style>
+</head>
+<body id="sampleReadMe">
+	<div id="sampleName">
+		<h1>mpdevdemo</h1>
+	</div>
+	<div id="sampleInfo">
+		<div id="screenShot">
+			<img src="mpdevdemo1.jpg" alt="mpdevdemo.m" />
+			<h3><a href="./" onclick="window.open('./'); return false;">View Project</a></h3>
+		</div>
+		<h2>Project Info</h2>
+		<ul>
+		<li><b>Language:</b> MATLAB</li>
+		<li><b>Development Environment:</b> MATLAB 7 [7.0.1 (R14) Service Pack 1]</li>
+		<li><b>Version:</b> 1.1.0</li>
+		</ul>
+		<h2>BIOPAC Products Used</h2>
+		<ul>
+		<li><b>MP Device:</b> MP150 UDP or MP35 USB or MP36 USB</li>
+		</ul>
+	</div>
+	<div id="sampleBrief">
+		<h2>Summary</h2>
+		<p>
+		This sample project demonstrates basic usage patterns of the BIOPAC Hardware API in MATLAB.
+		</p>
+	</div>
+	<div id="sampleDetail">
+		<div id="sampleFigure">
+			<div class="figure">
+				<img src="mpdevdemo2.jpg" alt="getBufferDemo() output" />
+				<p>Figure 1: getBufferDemo() Output </p>
+			</div>
+			<div class="figure">
+				<img src="mpdevdemo3.jpg" alt="startAcquisitionDemo() output" />
+				<p>Figure 2: startAcquisitionDemo() Output.</p>
+			</div>
+		</div>
+		<h2>Introduction</h2>
+		<p>
+		There are two functions implemented in this sample program.  Each one is designed to show how to use
+		Hardware API methods to acquire data.  The functions are
+		<span class="fn">getBufferDemo()</span> and <span class="fn">startAcqDaemonDemo()</span>.
+		</p>
+		<h2>getBufferDemo()</h2>
+		<p>
+			This function acquires 1,000 samples on analog channels 1, 2, and 3 at 200 Hz.  It plots the data and plots the FFT
+			of channel 2. It uses the API's data download method <span class="fn">getMPBuffer()</span>.  Although <span class="fn">getMPBuffer()</span>
+			is a blocking function, the acquisition length is short enough for the data processing to
+			be done after the function returns.  When the function returns, the data must be de-interleaved to separate
+			data from channels 1, 2, and 3 (see <span class="fn">Figure 1</span>).
+		</p>
+		<h2>startAcqDaemonDemo()</h2>
+		<p>
+			This function acquires 5,000 samples on analog channels 1, 2, and 3 at 200 Hz and plots the data.
+			This function differs from <span class="fn">getBufferDemo()</span> because uses the API two special Hardware API functions that allows
+			for real time data acquisition and processing: <span class="fn">startAcquisition()</span> and <span class="fn">receiveMPData()</span> (see <span class="fn">Figure 2</span>).
+		</p>
+		<h2>Sample Usage</h2>
+		<p>
+		MP150 UDP: mpdevdemo('C:\WINDOWS\SYSTEM32\mpdev.dll','C:\Program Files\BIOPAC Systems Inc\BIOPAC Hardware API 1.1\',101,11,'auto')
+		</p>
+		<p>
+		MP35 USB: mpdevdemo('C:\WINDOWS\SYSTEM32\mpdev.dll','C:\Program Files\BIOPAC Systems Inc\BIOPAC Hardware API 1.1\',102,10,'auto')
+		</p>
+		<p>
+		MP36 USB: mpdevdemo('C:\WINDOWS\SYSTEM32\mpdev.dll','C:\Program Files\BIOPAC Systems Inc\BIOPAC Hardware API 1.1\',103,10,'auto')
+		</p>
+	</div>
+	<div id="sampleNotes">
+		<h2>Notes</h2>
+		<ul>
+			<li>
+			There are several ways of calling Shared Libraries (DLLs) from MATLAB.
+			This project uses the CALLLIB function to call functions from the BIOPAC Hardware API in MATLAB.
+			Please consult MATLAB's documentation regarding usage of the CALLLIB function.
+			</li>
+		</ul>
+	</div>
+	<div id="sampleIssue">
+		<h2>Known Issues</h2>
+		<p>NONE</p>
+	</div>
+	<div id="footer">
+	All trademarks and copyrights used are properties of their respective owners.
+	<br />
+	Copyright &copy; 2005-2008 <a href="http://www.biopac.com/" onclick="bwin = window.open('http://www.biopac.com/','bwin'); bwin.focus(); return false;">BIOPAC Systems, Inc.</a> All Rights Reserved.
+	</div>
+</body>
+</html>

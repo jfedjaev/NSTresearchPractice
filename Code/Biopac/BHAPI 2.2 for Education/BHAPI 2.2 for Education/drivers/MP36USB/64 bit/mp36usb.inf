@@ -1,0 +1,71 @@
+;/*++
+;
+;Copyright (c) BIOPAC Systems, Inc.  All rights reserved.
+;
+;Module Name:
+;
+;    MP35USB.INF
+;
+;--*/
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=USB
+ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
+Provider=%BIOPAC_PROVIDER%
+DriverVer=09/20/2013,8.64.0.26
+CatalogFile=MP36USB.CAT
+
+[SourceDisksNames]
+1=%Disk_Name%,,,""
+
+[SourceDisksFiles]
+mp36usb.sys=1,,
+mp36.bix=1,,
+Mp36dsp.bix=1,,
+
+[Manufacturer]
+%BIOPAC_MFG%=BIOPAC,NTamd64
+
+[BIOPAC.NTamd64]
+%USB\VID_097E&PID_0036.DeviceDesc%=MP36USB.Dev, USB\VID_097E&PID_0036
+
+[DestinationDirs]
+MP36USB_CopyFile_Drv = 10, System32\Drivers
+MP36USB_CopyFiles_Dwnl = 11
+
+[MP36USB.Dev.NTamd64]
+CopyFiles=MP36USB_CopyFile_Drv, MP36USB_CopyFiles_Dwnl
+AddReg=MP36USB.AddReg
+[MP36USB.Dev.NTamd64.Services]
+Addservice = MP36USB, 0x00000002, MP36USB.AddService
+
+[MP36USB.AddService]
+DisplayName    = %MP36USB.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\mp36usb.sys
+LoadOrderGroup = Extended Base
+
+[MP36USB.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,mp36usb.sys
+
+[MP36USB_CopyFile_Drv]
+mp36usb.sys
+
+[MP36USB_CopyFiles_Dwnl]
+mp36.bix
+mp36dsp.bix
+
+
+;---------------------------------------------------------------;
+
+[Strings]
+BIOPAC_PROVIDER="BIOPAC Systems, Inc."
+BIOPAC_MFG="BIOPAC Systems, Inc."
+USB\VID_097E&PID_0036.DeviceDesc="BIOPAC MP36 USB Data Acquisition Unit"
+MP36USB.SvcDesc="BIOPAC 64-bit USB driver for MP36"
+Disk_Name="BIOPAC MP36 USB Data Acquisition Unit Disk 1"
+

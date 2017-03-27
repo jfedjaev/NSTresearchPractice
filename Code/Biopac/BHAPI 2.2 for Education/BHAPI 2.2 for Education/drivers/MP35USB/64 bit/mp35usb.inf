@@ -1,0 +1,73 @@
+;/*++
+;
+;Copyright (c) BIOPAC Systems, Inc.  All rights reserved.
+;
+;Module Name:
+;
+;    MP35USB.INF
+;
+;--*/
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=USB
+ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
+Provider=%BIOPAC_PROVIDER%
+DriverVer=03/15/2007,6.64.0000.07
+CatalogFile=MP35USB.CAT
+
+[SourceDisksNames]
+1=%Disk_Name%,,,""
+
+[SourceDisksFiles]
+mp35usb.sys=1,,
+mp35.bix=1,,
+Mp35dsp.bix=1,,
+Mp35adsp.bix=1,,
+
+[Manufacturer]
+%BIOPAC_MFG%=BIOPAC,NTamd64
+
+[BIOPAC.NTamd64]
+%USB\VID_097E&PID_0035.DeviceDesc%=MP35USB.Dev, USB\VID_097E&PID_0035
+
+[DestinationDirs]
+MP35USB_CopyFile_Drv = 10, System32\Drivers
+MP35USB_CopyFiles_Dwnl = 11
+
+[MP35USB.Dev.NT]
+CopyFiles=MP35USB_CopyFile_Drv, MP35USB_CopyFiles_Dwnl
+AddReg=MP35USB.AddReg
+ [MP35USB.Dev.NT.Services]
+Addservice = MP35USB, 0x00000002, MP35USB.AddService
+
+[MP35USB.AddService]
+DisplayName    = %MP35USB.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\mp35usb.sys
+LoadOrderGroup = Extended Base
+
+[MP35USB.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,mp35usb.sys
+
+[MP35USB_CopyFile_Drv]
+mp35usb.sys
+
+[MP35USB_CopyFiles_Dwnl]
+mp35.bix
+mp35dsp.bix
+mp35adsp.bix
+
+
+;---------------------------------------------------------------;
+
+[Strings]
+BIOPAC_PROVIDER="BIOPAC Systems, Inc."
+BIOPAC_MFG="BIOPAC Systems, Inc."
+USB\VID_097E&PID_0035.DeviceDesc="BIOPAC MP35 USB Data Acquisition Unit"
+MP35USB.SvcDesc="BIOPAC 64-bit USB driver for MP35"
+Disk_Name="BIOPAC MP35 USB Data Acquisition Unit Disk 1"
+

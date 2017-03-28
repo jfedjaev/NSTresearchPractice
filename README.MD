@@ -87,6 +87,7 @@ Useful ressources:
 
 * [BCILAB Online scripting](https://sccn.ucsd.edu/wiki/BCILAB#Online_scripting)
 	* For online processing of EEG signals in EEGLAB with Matlab
+* [EEG Data Processing and Classification with g.BSanalyze Under Matlab](https://de.mathworks.com/company/newsletters/articles/eeg-data-processing-and-classification-with-gbsanalyze-under-matlab.html)
 	
 ## Motor Imagery with built-in modules in OpenVibe
 A more or less detailed explanation is given on the following website: [Motor Imagery](http://blog.jfrey.info/2015/03/03/openbci-motor-imagery/)

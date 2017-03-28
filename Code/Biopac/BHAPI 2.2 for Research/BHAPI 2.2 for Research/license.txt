@@ -1,0 +1,172 @@
+BIOPAC Systems, Inc. (hereinafter referred to as BIOPAC) thanks you for 
+selecting one of our products for your computer.  This End-user License 
+Agreement describes BIOPAC's license terms.
+
+END-USER LICENSE AGREEMENT FOR BIOPAC SOFTWARE
+
+
+                      IMPORTANT - READ CAREFULLY
+
+This BIOPAC End-user License Agreement ("EULA") is a legal agreement 
+between you (either an individual or a single entity) and 
+BIOPAC Systems, Inc. (BIOPAC) for one (1) license to use AcqKnowledge File Format API.  
+AcqKnowledge File Format API includes computer software and associated media and printed 
+materials, and may include "online" or electronic documentation 
+("SOFTWARE PRODUCT" or "SOFTWARE"). By installing, copying, or otherwise 
+using the SOFTWARE PRODUCT, you agree to be bound by the terms of 
+this EULA. If you do not agree to the terms of this EULA, promptly return 
+the unused SOFTWARE PRODUCT to the place from which you obtained it for 
+a full refund.
+
+
+SOFTWARE PRODUCT LICENSE
+
+The SOFTWARE PRODUCT is protected by copyright laws and international 
+copyright treaties, as well as other intellectual property laws and treaties. 
+The SOFTWARE PRODUCT is licensed, not sold.
+
+1.	GRANT OF LICENSE. 
+	This EULA grants you the following rights:
+
+	SOFTWARE. You may install and use one copy of the SOFTWARE PRODUCT, 
+	or in its place, any prior version for the same operating system, on 
+	a single computer. The primary user of the computer on which the 
+	SOFTWARE PRODUCT is installed may make a second copy for his or her 
+	exclusive use on either a home or portable computer.
+
+	STORAGE/NETWORK USE. You may also store or install a copy of the 
+	SOFTWARE PRODUCT on a storage device, such as a network server, used 
+	only to install or run the SOFTWARE PRODUCT on your other computers over 
+	an internal network.  However, you must acquire and dedicate a license 
+	for each separate computer on which the SOFTWARE PRODUCT is installed 
+	or run from the storage device. A license for the SOFTWARE PRODUCT may 
+	not be shared or used concurrently on different computers.
+
+	MULTI-USER AND SITE LICENSE. If you have acquired a multi-user or site 
+	license for the SOFTWARE, you may make the number of additional copies 
+	of the computer software portion of the SOFTWARE PRODUCT authorized in 
+	your license agreement with BIOPAC, and you may use each copy in the 
+	manner specified above. You are also entitled to make a corresponding 
+	number of secondary copies for home or portable computer use as specified 
+	above.
+
+
+2.	DESCRIPTION OF OTHER RIGHTS AND LIMITATIONS.
+
+	LIMITATIONS ON REVERSE ENGINEERING, DECOMPILATION, AND DISASSEMBLY. You 
+	may not reverse engineer, decompile, or disassemble the SOFTWARE PRODUCT, 
+	except and only to the extent that such activity is expressly permitted 
+	by applicable law notwithstanding this limitation.
+
+	SEPARATION OF COMPONENTS. The SOFTWARE PRODUCT is licensed as a single 
+	product. Its component parts may not be separated for use on more than 
+	one computer.
+
+	RENTAL. You may not rent or lease the SOFTWARE PRODUCT.
+
+	SOFTWARE TRANSFER. You may permanently transfer all of your rights under 
+	this EULA, provided you retain no copies, you transfer all of the SOFTWARE 
+	PRODUCT (including all component parts, the media and printed materials, 
+	any upgrades, this EULA and, if applicable, the Certificate of Authenticity),
+	and the recipient agrees to the terms of this EULA. If the SOFTWARE PRODUCT 
+	is an upgrade, any transfer must include all prior versions of the 
+	SOFTWARE PRODUCT.
+
+	TERMINATION. Without prejudice to any other rights, BIOPAC may terminate 
+	this EULA if you fail to comply with the terms and conditions of this EULA. 
+	In such event, you must destroy all copies of the SOFTWARE PRODUCT and all 
+	of its component parts.
+
+3. 	UPGRADES.  
+	If the SOFTWARE PRODUCT is an upgrade from another product, whether from 
+	BIOPAC or another supplier, you may use or transfer the SOFTWARE PRODUCT 
+	only in conjunction with that upgraded product, unless you destroy the 
+	upgraded product. If the SOFTWARE PRODUCT is an upgrade of a BIOPAC product, 
+	you now may use that upgraded product only in accordance with this EULA. 
+	If the SOFTWARE PRODUCT is an upgrade of a component of a package of 
+	software programs that you licensed as a single product, the SOFTWARE 
+	PRODUCT may be used and transferred only as part of that single product 
+	package and may not be separated for use on more than one computer.
+
+4.	COPYRIGHT. 
+	All title and copyrights in and to the SOFTWARE PRODUCT (including but 
+	not limited to any images, photographs, animations, video, audio, music, 
+	text, and "applets" incorporated into the SOFTWARE PRODUCT), the accompanying 
+	printed materials, and any copies of the SOFTWARE PRODUCT are owned by BIOPAC 
+	or its suppliers. The SOFTWARE PRODUCT is protected by copyright laws and 
+	international treaty provisions. Therefore, you must treat the SOFTWARE 
+	PRODUCT like any other copyrighted material except that you may either 
+	(a) make one copy of the SOFTWARE PRODUCT solely for backup or archival 
+	purposes or (b) install the SOFTWARE PRODUCT on a single computer provided 
+	you keep the original solely for backup or archival purposes. You may not 
+	copy the printed materials accompanying the SOFTWARE PRODUCT. 
+
+5.	DUAL-MEDIA SOFTWARE. 
+	You may receive the SOFTWARE PRODUCT in more than one medium. Regardless 
+	of the type or size of medium you receive, you may use only one medium 
+	that is appropriate for your single computer. You may not use or install 
+	the other medium on another computer. You may not loan, rent, lease, or 
+	otherwise transfer the other medium to another user, except as part of 
+	the permanent transfer (as provided above) of the SOFTWARE PRODUCT. 
+
+6.	US GOVERNMENT RESTRICTED RIGHTS. 
+	The SOFTWARE PRODUCT and documentation are provided with RESTRICTED 
+	RIGHTS. Use, duplication, or disclosure by the Government is subject 
+	to restrictions as set forth in subparagraph (e)( I )(ii) of the Rights 
+	in Technical Data and Computer Software clause at DFARS 252.227-7013 or 
+	subparagraphs (c)(1) and (2) of the Commercial Computer Software—Restricted 
+	Rights at 48 CFR 52.227-19, as applicable. Manufacturer is BIOPAC Systems, 
+	Inc., 42 Aero Camino, Goleta, CA 93117.
+
+
+MISCELLANEOUS
+
+This EULA is governed by the laws of the State of California.  If this product was 
+acquired outside the United States, then local law may apply.
+
+Should you have any questions concerning this EULA, or if you desire to contact 
+BIOPAC for any reason, please contact the BIOPAC subsidiary serving your country 
+or write: BIOPAC Systems, Inc., 42 Aero Camino, Goleta, CA 93117.
+
+
+LIMITED WARRANTY
+
+LIMITED WARRANTY. BIOPAC warrants that (1) the SOFTWARE PRODUCT will perform 
+substantially in accordance with the accompanying written materials for a 
+period of ninety (90) days from the date of receipt, and (2) any hardware 
+accompanying the SOFTWARE PRODUCT will be free from defects in materials under 
+normal use and service for a period of one (1) year from the date of receipt.  
+Some states and jurisdictions do not allow limitations on duration of an 
+implied warranty, so the above limitation may not apply to you.  To the extent 
+allowed by applicable law, implied warranties on the SOFTWARE PRODUCT and 
+hardware, if any, are limited to ninety (90) days and one year, respectively.
+
+CUSTOMER REMEDIES.  BIOPAC's and its suppliers' entire liability and your 
+exclusive remedy shall be, at BIOPAC's option, either (a) return of the price 
+paid, or (b) repair or replacement of the SOFTWARE PRODUCT or hardware that 
+does not meet BIOPAC's Limited Warranty, and which is returned to BIOPAC with 
+a copy of your receipt.  This Limited Warranty is void if failure of the SOFTWARE 
+PRODUCT or hardware has resulted from accident, abuse, or misapplication.  
+Any replacement SOFTWARE PRODUCT or hardware will be warranted for the 
+remainder of the original warranty period or thirty (30) days, whichever is 
+longer.  Outside the United States, neither these remedies nor any product 
+support services offered by BIOPAC are available without proof of purchase 
+from an authorized international source.
+
+NO OTHER WARRANTIES. To the maximum extent permitted by applicable law, 
+BIOPAC and its suppliers disclaim all other warranties, either express or 
+implied, including, but not limited to, implied warranties of merchantability 
+and fitness for a particular purpose, with regard to the SOFTWARE PRODUCT, 
+and any accompanying hardware. this limited warranty gives you specific legal 
+rights. You may have others, which vary from state/jurisdiction to state/jurisdiction.
+
+NO LIABILITY FOR CONSEQUENTIAL DAMAGES. To the maximum extent permitted by 
+applicable law, in no event shall BIOPAC or its suppliers be liable for any 
+special, incidental, indirect, or consequential damages whatsoever (including, 
+without limitation, damages for loss of business profits, business interruption, 
+loss of business information, or any other pecuniary loss) arising out of the 
+use of or inability to use the software product, even if BIOPAC has been advised 
+of the possibility of such damages. Because some states and jurisdictions do 
+not allow the exclusion or limitation of liability for consequential or incidental 
+damages, the above limitation may not apply to you.
+

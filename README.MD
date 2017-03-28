@@ -35,7 +35,7 @@ Reports, 2016
 [2] Yong X, Menon C. “EEG Classification of Different Imaginary Movements within the Same
 Limb”. PLoS ONE, 2015
 
-Supervisor:	Dipl.-Ing. Zied
+Supervisor:	Dipl.-Ing. Zied Tayeb
 Start:		24/02/2017
 
 # Setup of working environment
@@ -84,7 +84,9 @@ Useful ressources:
 	* For visualizing the raw EMG signals. Emotiv Premium SDK needed for access to raw hardware signals. 
 * EMOTIV Control Panel
 	* Free at http://www.emotiv.com
-	
+
+* [BCILAB Online scripting](https://sccn.ucsd.edu/wiki/BCILAB#Online_scripting)
+	* For online processing of EEG signals in EEGLAB with Matlab
 	
 ## Motor Imagery with built-in modules in OpenVibe
 A more or less detailed explanation is given on the following website: [Motor Imagery](http://blog.jfrey.info/2015/03/03/openbci-motor-imagery/)

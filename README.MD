@@ -58,8 +58,9 @@ __Fig. 1: Left: EMOTIV EPOC+ headset electrode placement. Right: Standard 10-20 
 
 The EMOTIV EPOC+ headset has the following specificiations:
 
-| Number of channels                   | 14 (plus CMS/DRL references)                               |
+| Feature	                       | Details		                                    |
 |--------------------------------------|------------------------------------------------------------|
+| Number of channels 		       | 14 (plus CMS/DRL references) 				    |
 | Channel names (Int. 10-20 locations) | AF3, AF4, F3, F4, F7, F8, FC5, FC6, P7, P8, T7, T8, O1, O2 |
 | Sampling method                      | Sequential sampling, single ADC                            |
 | Sampling rate                        | ~128 Hz (2048 Hz internally)                               |
@@ -92,7 +93,8 @@ Useful ressources:
 ## Motor Imagery with built-in modules in OpenVibe
 A more or less detailed explanation is given on the following website: [Motor Imagery](http://blog.jfrey.info/2015/03/03/openbci-motor-imagery/)
 
-# 
+# Theoretical background
+* [Mu vaves](https://en.wikipedia.org/wiki/Mu_wave)
 
 
 

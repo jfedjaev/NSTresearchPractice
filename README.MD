@@ -42,8 +42,11 @@ Start:		24/02/2017
 ## Hardware 
 The hardware that is used for the project will be discussed in this section. 
 
-* Brain Computer Interface (BCI): EMOTIV EPOC+
+* Brain Computer Interface (BCI): EMOTIV EPOC+ (used until March 22)
+	* The EMOTIV EPOC+ did not work with the OpenVibe acquisition server using the official premium SDK for accessing raw signals. We tested two similar headsets with the official premium SDK without success. Emokit reverse-engineering drivers written in Python were able to access some of the data, however, the electrode and quality indicator signals were disturbed by a strong jitter. An EMOTIV EPOC+ headset with an older version number was working without any problems. We therefore assume that there were some changes done on firmware level. 
 * Robotic arm: Neuronics Katana
+* BIOPAC systems MP36 (from march 22)
+	* After failure with EMOTIV EPOC+ headset, I decided to change the EEG signal acquisition system and went with BIOPAC MP36. It comes with a biosignal amplifier (4 channels), each with its one ground and reference electrodes for bipolar derivation recordings. 
 
 ### EMOTIV EPOC+
 The EMOTIV EPOC+ headset consists of 16 electrodes in the standard 10-20 system (see figure below). It is capable of recording 128 samples/second, i.e. a sampling frequency of 128 Hz. 
@@ -86,6 +89,7 @@ Useful ressources:
 ## Motor Imagery with built-in modules in OpenVibe
 A more or less detailed explanation is given on the following website: [Motor Imagery](http://blog.jfrey.info/2015/03/03/openbci-motor-imagery/)
 
+# 
 
 
 

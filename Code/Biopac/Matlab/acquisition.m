@@ -46,9 +46,6 @@ catch
     rethrow(lasterror);
 end
 
-%%
-
-
 %% unload library
 unloadlibrary(libname);
 

@@ -1,5 +1,5 @@
 function retval = startAcquisition(dothdir, libname,mptype, mpmethod, sn)
-    %Connect
+    %% Connect
     fprintf(1,'Connecting...\n');
 
     [retval, sn] = calllib(libname,'connectMPDev',mptype,mpmethod,sn);
@@ -12,9 +12,8 @@ function retval = startAcquisition(dothdir, libname,mptype, mpmethod, sn)
 
     fprintf(1,'Connected\n');
 
-    %Configure
+    %% Configure
     fprintf(1,'Setting Sample Rate to 200 Hz\n');
-
     retval = calllib(libname, 'setSampleRate', 5.0);
 
     if ~strcmp(retval,'MPSUCCESS')
@@ -25,14 +24,16 @@ function retval = startAcquisition(dothdir, libname,mptype, mpmethod, sn)
 
     fprintf(1,'Sample Rate Set\n');
     
-    fprintf(1,'Setting to Acquire on Channels 1, 2 and 3\n');
-
-    aCH = [int32(1),int32(1),int32(1),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0)];
     
-    %if mptype is not MP150
+    %% set acquisition channels
+    fprintf(1,'Setting to Acquire on Channels 1 and 2');
+
+    aCH = [int32(1),int32(1),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0)];
+    
+    % if mptype is not MP150
     if mptype ~= 101
         %then it must be the mp35 (102) or mp36 (103)
-        aCH = [int32(1),int32(1),int32(1),int32(0)];
+        aCH = [int32(1),int32(1),int32(0),int32(0)];
     end
     
     [retval, aCH] = calllib(libname, 'setAcqChannels',aCH);
@@ -45,7 +46,7 @@ function retval = startAcquisition(dothdir, libname,mptype, mpmethod, sn)
     
     fprintf(1,'Channels Set\n');
 
-    %Acquire
+    %% start to acquire
     fprintf(1,'Start Acquisition Daemon\n');
     
     retval = calllib(libname, 'startMPAcqDaemon');
@@ -66,11 +67,11 @@ function retval = startAcquisition(dothdir, libname,mptype, mpmethod, sn)
         return
     end
     
-    %Download and Plot 5000 samples in realtime
+    %% Download and Plot 5000 samples in realtime
     fprintf(1,'Download and Plot 5000 samples in Real-Time\n');
     numRead = 0;
-    numValuesToRead = 200*3; %collect 1 second worth of data points per iteration
-    remaining = 5000*3; %collect 5000 samples per channel
+    numValuesToRead = 200*2; %collect 1 second worth of data points per iteration
+    remaining = 5000*2; %collect 5000 samples per channel
     tbuff(1:numValuesToRead) = double(0); %initialize the correct amount of data
     bval = 0;
     offset = 1;
@@ -94,28 +95,28 @@ function retval = startAcquisition(dothdir, libname,mptype, mpmethod, sn)
        else
             buff(offset:offset+double(numRead(1))-1) = tbuff(1:double(numRead(1))); 
             
-            %Process
+            %% Process
             len = length(buff);
             ch1data = buff(1:3:len);
             ch2data = buff(2:3:len);
-            ch3data = buff(3:3:len);
+            %ch3data = buff(3:3:len);
             X(1:len) = (1:len);
-            %plot graph
+            %% plot graph
             pause(1/100);
-            subplot(3,1,1);
+            subplot(2,1,1);
             plot(X(1:length(ch1data)),ch1data,'g-');
-            title('Data Plot of for Channel 1, 2 and 3');
-            subplot(3,1,2);
+            title('Data Plot of for Channel 1 and 2');
+            subplot(2,1,2);
             plot(X(1:length(ch2data)),ch2data,'b-');
-            subplot(3,1,3);
-            plot(X(1:length(ch3data)),ch3data,'r-');
+            %subplot(3,1,3);
+            %plot(X(1:length(ch3data)),ch3data,'r-');
             xlabel('Nth Sample');
        end
        offset = offset + double(numValuesToRead);
        remaining = remaining-double(numValuesToRead);
    end
    
-   %stop acquisition
+   %% stop acquisition
    fprintf(1,'Stop Acquisition\n');
 
    retval = calllib(libname, 'stopAcquisition');
@@ -125,6 +126,7 @@ function retval = startAcquisition(dothdir, libname,mptype, mpmethod, sn)
        return
    end
     
-   %disconnect
+   %% disconnect
    fprintf(1,'Disconnecting...\n')
    retval = calllib(libname, 'disconnectMPDev');
+end

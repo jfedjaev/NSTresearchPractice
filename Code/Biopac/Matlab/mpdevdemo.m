@@ -103,7 +103,6 @@ catch
     rethrow(lasterror);
 end
 
-unloadlibrary(libname);
 
 %-----------------------------------------------------------------
 

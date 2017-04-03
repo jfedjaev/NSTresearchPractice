@@ -1,0 +1,58 @@
+Our single seat license:
+Checksum (SHA1): 03bc9c8eabd5af1de8de8426248489ca75db92c8
+
+
+8-seat student license:
+Checksum (SHA1): 5565950a66037e2dfc1f4fa5e1052bc292fea569
+
+
+Use "BHAPI 2.2 for Education" - research does NOT work!
+
+
+
+
+
+From: MickeyRowe <mickeyr@biopac.com>
+Sent: Monday, August 8, 2016 7:46 PM
+To: Ehrlich, Stefan
+Subject: RE: BHAPI 
+ 
+Hello Stefan,
+ 
+1.       For a second and third, etc. installation do we need to request subsequent validation keys and download the files each time manually?
+ 
+No.  You have everything you need.
+ 
+2.       Can we just download 9 times and then handle the files + license keys internally without the need to get in touch with you again?
+ 
+No, you cannot keep downloading, but you don't need to.  Again, you have everything you need.  The installer that you downloaded doesn't have any restrictions on it.  You may install that software on any computers you like.  With the site license, you should not run the software on more than ten computers at any given time.  However, we are not using any technical means to enforce that restriction.
+ 
+I hope this is clear...
+ 
+Mickey
+
+
+
+
+
+From: Mickey Rowe [mailto:mickeyr@biopac.com] 
+Sent: Samstag, 23. Juli 2016 01:04
+To: Ehrlich, Stefan <stefan.ehrlich@tum.de>
+Subject: AcqKnowledge with NDT
+
+Hello Stefan,
+
+Alice asked me to send you instructions that would allow you to obtain the installer for BHAPI.  As the e-mail mentioned to you, an install pack is on its way to you, but all you really need is the installer.
+
+Below you should find a link.  Clicking that link opens a web page that will ask for your e-mail address.  Type your address there and click the "Authorize" button.  That will cause the site to send you another message containing another link.  Clicking that link completes the authorization process and will grant you access to the installer.  Download, uncompress, and run the installer.  Let us know if you have any trouble.  You should probably write to support@biopac.com as someone will see mail sent to that address even if I'm not here.
+
+Mickey 
+Files attached to this message
+Filename	Size	Checksum (SHA1)
+BHAPI 2.2 for Research.zip	7.68 MB	03bc9c8eabd5af1de8de8426248489ca75db92c8
+Please click on the following link to download the attachments: https://files.biopac.com/message/f5YbgPFtcdqjnqNI1a2EjN
+This email or download link can not be forwarded to anyone else.
+The attachments are available until: Friday, 5 August.
+Message ID: f5YbgPFt
+
+

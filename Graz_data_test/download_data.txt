@@ -1,6 +1,0 @@
-_Website_
-http://bbci.de/competition/ii/download/
-
-_Login_
-user: j.fedjaev@tum.de
-password: iePhoh2quo

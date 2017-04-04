@@ -1,0 +1,1 @@
+The data for this exercise  is found in the folder ex2 instead of in your BCILAB's userdata folder (we decided not to bundle these data with the toolbox download).

@@ -97,8 +97,8 @@ function retval = startAcquisition(dothdir, libname,mptype, mpmethod, sn)
             
             %% Process
             len = length(buff);
-            ch1data = buff(1:3:len);
-            ch2data = buff(2:3:len);
+            ch1data = buff(1:2:len);
+            ch2data = buff(2:2:len);
             %ch3data = buff(3:3:len);
             X(1:len) = (1:len);
             %% plot graph

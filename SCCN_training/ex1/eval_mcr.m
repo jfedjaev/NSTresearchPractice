@@ -11,4 +11,4 @@ function loss = eval_mcr(predictions,targets)
 %   Loss : mis-classification rate
 
 % calculate mis-classification rate (TODO: fill in)
-loss = ...
+loss = mean(predictions(:) ~= targets(:));

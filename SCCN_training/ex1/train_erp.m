@@ -47,8 +47,9 @@ nbranges = size(time_ranges,1);
 % features is a [#trials x #dims] matrix of feature vectors per trial
 features = zeros(trials, nbranges * nbchan);
 for e=1:length(ev_lats)
-    % get epoch X and subtract per-trial mean
+    % get epoch X and subtract per-trial mean (substract baseline trial) 
     X = EPO(:,:,e) - repmat(mean(EPO(:,:,e),2),1,size(EPO,2));
+    %mean(EPO(:,:,e) : mean of samples in each trial 
     
     % extract per-trial features
     trialfeatures = zeros(nbranges,nbchan);
@@ -62,7 +63,27 @@ for e=1:length(ev_lats)
     features(e,:) = trialfeatures(:);
 end
 
+% add labels to the features matrix 
+features1 = [features(:,1:end) ev_labels(:)];
+% find indices for class1 and class2 
+ind2= find (features1(:,end)== -1);
+ind1= find (features1(:,end)==1);
+% find class 1 and class 2 
+class1 = features1 (ind2,1:end-1);
+class2 = features1 (ind1, 1:end-1);
+% compute the mean vectors
+u1=mean(class1);
+u1=u1(:)
+u2=mean(class2);
+u2= u2(:);
+ % compute covariance matrices 
+covar1= cov(class1); 
+[a b]= size(covar1);
+covar1= (1-lambda)* covar1 + lambda* eye(a,b);
+covar2 = cov(class2); 
+covar2= (1-lambda)* covar2 + lambda* eye(a,b);
+
 % train shrinkage LDA classifier (TODO: fill in)
 
-model.w = ...
-model.b = ...
+model.w = inv (covar1+covar2)* (u2-u1);
+model.b = dot(-model.w', (u1+u2)/2);

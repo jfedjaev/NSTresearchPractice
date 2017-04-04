@@ -23,4 +23,4 @@ for r=1:length(model.ranges)
 end
 
 % apply LDA classifier (TODO: fill in)
-y = ...
+y = sign (dot (model.w, trialfeatures(:))+ model.b);

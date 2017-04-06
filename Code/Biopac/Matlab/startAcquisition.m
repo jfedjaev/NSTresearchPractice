@@ -1,4 +1,4 @@
-function retval = startAcquisition(dothdir, libname,mptype, mpmethod, sn)
+function [retval, ch1, ch2] = startAcquisition(dothdir, libname,mptype, mpmethod, sn, duration)
     %% Connect
     fprintf(1,'Connecting...\n');
 
@@ -57,7 +57,7 @@ function retval = startAcquisition(dothdir, libname,mptype, mpmethod, sn)
         return
     end
     
-    fprintf(1,'Start Acquisition\n');
+    fprintf(1,'Start Acquisition for %f seconds. \n', duration);
 
     retval = calllib(libname, 'startAcquisition');
 
@@ -68,15 +68,16 @@ function retval = startAcquisition(dothdir, libname,mptype, mpmethod, sn)
     end
     
     %% Download and Plot 5000 samples in realtime
-    fprintf(1,'Download and Plot 5000 samples in Real-Time\n');
+    fprintf(1,'Download and Plot samples for %f seconds in Real-Time\n', duration);
     numRead = 0;
     numValuesToRead = 200*2; %collect 1 second worth of data points per iteration
-    remaining = 5000*2; %collect 5000 samples per channel
+    remaining = duration*200*2; % collect samples with 200 Hz per Channel for #duration 
     tbuff(1:numValuesToRead) = double(0); %initialize the correct amount of data
     bval = 0;
     offset = 1;
     
     % create new figure
+    tic
     figure;
     
     %loop until there still some data to acquire
@@ -115,6 +116,12 @@ function retval = startAcquisition(dothdir, libname,mptype, mpmethod, sn)
        offset = offset + double(numValuesToRead);
        remaining = remaining-double(numValuesToRead);
    end
+   t_dur = toc;
+   fprintf(1, 'Acquired data for %f seconds.\n', t_dur);
+    
+   %% save data 
+   ch1 = ch1data;
+   ch2 = ch2data;
    
    %% stop acquisition
    fprintf(1,'Stop Acquisition\n');

@@ -1,12 +1,14 @@
 %% This function start the acquisition using the MP36 device
 % optional arguments: plot signal in  real time
+function [reval, recording] = acquisition(duration)
+recording.ch1 = double(0); % data set that will be recorded 
+recording.ch2 = double(0);
 
-
-function retval = acquisition
 %% initialize & set path and load library // WINDOWS ONLY for now
 mptype = 103;   % 103 for MP36 device (see mpdev.h)
 mpmethod = 10;  % communication type 10 for USB
 sn = 'auto';    % with 'auto' the first responding MP36 device will be used
+%duration = 3;  % recording duration in seconds
 
 libname = 'mpdev';
 doth = 'mpdev.h';
@@ -30,7 +32,7 @@ libfunctions(libname, '-full');
 %% start Acquisition Daemon Demo
 try
     fprintf(1,'Acquisition Daemon Demo...\n');
-    retval = startAcquisition(dothdir,libname,mptype, mpmethod, sn);
+    [retval, recording.ch1, recording.ch2] = startAcquisition(dothdir,libname,mptype, mpmethod, sn, duration);
    
     if ~strcmp(retval,'MPSUCCESS')
         fprintf(1,'Acquisition Daemon Demo Failed.\n');
@@ -50,5 +52,4 @@ end
 unloadlibrary(libname);
 
 end
-
 

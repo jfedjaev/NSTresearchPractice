@@ -41,8 +41,7 @@ libfunctions(libname, '-full');
 %% start Acquisition Daemon Demo
 try
     fprintf(1,'Acquisition Daemon Demo...\n');
-    [retval, recording.ch1, recording.ch2] = startAcquisition(dothdir,libname,mptype, mpmethod, sn, duration);
-    launchCueExp(DURATION, T_BLANK, T_CUE_ON, T_CUE, T_PERIOD);
+    [retval, recording.ch1, recording.ch2] = startAcquisitionWithCue(dothdir,libname,mptype, mpmethod, sn, DURATION, T_BLANK, T_CUE_ON, T_CUE, T_PERIOD);
 
     if ~strcmp(retval,'MPSUCCESS')
         delete(timerfind);

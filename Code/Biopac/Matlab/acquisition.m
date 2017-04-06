@@ -1,6 +1,6 @@
 %% This function start the acquisition using the MP36 device
 % optional arguments: plot signal in  real time
-function [reval, recording] = acquisition(duration)
+function [retval, recording] = acquisition(duration)
 recording.ch1 = double(0); % data set that will be recorded 
 recording.ch2 = double(0);
 

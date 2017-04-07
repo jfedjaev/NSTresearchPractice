@@ -1,4 +1,4 @@
-function [retval, ch1, ch2] = startAcquisitionWithCue(dothdir,libname,mptype, mpmethod, sn, DURATION, T_BLANK, T_CUE_ON, T_CUE, T_PERIOD);
+function [retval, X] = startAcquisitionWithCue(dothdir,libname,mptype, mpmethod, sn, DURATION, T_BLANK, T_CUE_ON, T_CUE, T_PERIOD);
 
 
 %% Connect
@@ -132,11 +132,11 @@ tmr_left = timer('ExecutionMode', 'FixedRate', ...
     'TimerFcn', {@draw_leftarrow});
 start(tmr_left);
 
-%% create timer object for up cue
+%% create timer object for up cue // or nothing cue
 tmr_up = timer('ExecutionMode', 'FixedRate', ...
     'StartDelay', T_CUE_ON + 2*T_PERIOD, ...
     'Period', 3*T_PERIOD, ...
-    'TimerFcn', {@draw_uparrow});
+    'TimerFcn', {@draw_cross});
 start(tmr_up);
 
 
@@ -182,6 +182,7 @@ fprintf(1, 'Acquired data for %f seconds.\n', t_dur);
 %% save data
 ch1 = ch1data;
 ch2 = ch2data;
+X = [ch1', ch2'];   % merge data in Matrix X for return value
 
 %% stop acquisition
 fprintf(1,'Stop Acquisition\n');

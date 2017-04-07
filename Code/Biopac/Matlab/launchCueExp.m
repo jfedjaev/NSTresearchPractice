@@ -1,10 +1,12 @@
 %% testing cue script for BCI experiment
 % set path 
 function launchCueExp(DURATION, T_BLANK, T_CUE_ON, T_CUE, T_PERIOD)
+
+%% initialize figure
 addpath('disp_cue'); 
 FigHandle = figure;
 set(FigHandle, 'OuterPosition', [1680, 0, 1680, 1050]);
-
+    
 fprintf(1,'Starting cue experiment...\n');
 fprintf(1,'Total duration: %d \n', DURATION);
 fprintf(1,'Period length: %d \n', T_PERIOD);

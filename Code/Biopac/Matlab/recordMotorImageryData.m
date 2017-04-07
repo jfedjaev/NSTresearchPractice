@@ -10,7 +10,14 @@ T_CUE    = 2;
 T_PERIOD = 8;
 DURATION = numTrials * T_PERIOD;
 
-recording.ch1 = double(0); % data set that will be recorded 
+
+%% initialize figure
+% addpath('disp_cue'); 
+% FigHandle = figure;
+% set(FigHandle, 'OuterPosition', [1680, 0, 1680, 1050]);
+    
+%% data set that will be recorded
+recording.ch1 = double(0); 
 recording.ch2 = double(0);
 
 %% initialize & set path and load library // WINDOWS ONLY for now

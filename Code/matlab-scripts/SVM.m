@@ -1,10 +1,11 @@
+%% init
 close all
 clear
 clc
 
 load B01T.mat
 
-% Chop the data into pieces:
+%% Chop the data into pieces:
 pos     = data{1,1}.trial;
 dataset = data{1,1}.X;
 
@@ -39,7 +40,7 @@ end
 
 nClassSamples = 9;
 f = Fs * (0:(n/2))/n;
-
+%% plot freq domain 
 figure
 for i=1:1:nClassSamples
     subplot(2,nClassSamples,i)
@@ -51,8 +52,7 @@ for i=1:1:nClassSamples
     plot(f, frequencyDomain(:,:,clean_class2_idx(i))');
 end
 
-
-% Extract Alpha Channel:
+%% Extract Alpha Channel:
 lowerAlpha = 7;
 upperAlpha = 13;
 
@@ -62,6 +62,7 @@ upperBeta = 26;
 alpha   = intersect(find(f >= lowerAlpha), find(f <= upperAlpha));
 beta    = intersect(find(f >= lowerBeta), find(f <= upperBeta));
 
+%%
 figure
 for i=1:1:nClassSamples
     subplot(2,nClassSamples,i)
@@ -78,7 +79,7 @@ for i=1:1:nClassSamples
 end
 
 
-% Extract the features: 
+%% Extract the features: 
 cleanSamples    = union(clean_class1_idx, clean_class2_idx);
 cleanFreq       = frequencyDomain(:,:,cleanSamples);
 cleanLabels     = label(cleanSamples);
@@ -113,14 +114,14 @@ for trial = 1:size(cleanFreq,3)
     end
 end
 
-% Dimensionality Reduction:
-coeff = pca(features', 'NumComponents', 10);
+%% Dimensionality Reduction:
+[coeff,~,~] = pca(features', 'NumComponents', 10);
 redFeatures = coeff' * features;
 
 figure
 gscatter(redFeatures(1,:), redFeatures(2,:), cleanLabels,'rb', '.');
 
-% Classify the samples: 
+%% Classify the samples: 
 SVMModel = fitcsvm(redFeatures',cleanLabels, ...
     'Standardize',true,             ...
     'KernelFunction','RBF',         ...

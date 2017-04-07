@@ -128,6 +128,7 @@ SVMModel = fitcsvm(redFeatures',cleanLabels, ...
     'KernelScale','auto',           ...
     'OptimizeHyperparameters', 'all');
 
+%%
 CVSVMModel = crossval(SVMModel);
 classLoss = kfoldLoss(CVSVMModel);
 

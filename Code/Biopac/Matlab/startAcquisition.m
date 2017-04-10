@@ -26,14 +26,14 @@ function [retval, ch1, ch2] = startAcquisition(dothdir, libname,mptype, mpmethod
     
     
     %% set acquisition channels
-    fprintf(1,'Setting to Acquire on Channels 1 and 2');
+    fprintf(1,'Setting to Acquire on Channels 1,2 and 3');
 
-    aCH = [int32(1),int32(1),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0)];
+    aCH = [int32(1),int32(1),int32(1),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0),int32(0)];
     
     % if mptype is not MP150
     if mptype ~= 101
         %then it must be the mp35 (102) or mp36 (103)
-        aCH = [int32(1),int32(1),int32(0),int32(0)];
+        aCH = [int32(1),int32(1),int32(1),int32(0)];
     end
     
     [retval, aCH] = calllib(libname, 'setAcqChannels',aCH);

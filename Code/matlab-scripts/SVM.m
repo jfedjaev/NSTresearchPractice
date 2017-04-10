@@ -5,6 +5,7 @@ clc
 
 load B01T.mat
 
+
 %% Chop the data into pieces:
 pos     = data{1,1}.trial;
 dataset = data{1,1}.X;

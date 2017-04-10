@@ -1,8 +1,12 @@
 %%  Record data from BIOPAC MP36 using a cue experiment for motor imagery movements
 %   Author:         Juri Fedjaev
-%   Last modified:  06/04/17
+%   Last modified:  10/04/17
+%   Parameters:
+%       numTrials : number of trials to record
+%       nCh : number of channels to record (2 or 3)
+%       cueOn : turn on cues for motor imagery (1 or 0)
 
-function [retval, recording] = recordMotorImageryData(numTrials)
+function [retval, recording] = recordMotorImageryData(numTrials, nCh, cueOn)
 %%  Parameters for cue experiment
 T_BLANK  = 2;
 T_CUE_ON = 3;
@@ -36,7 +40,7 @@ recording.id = input('Enter an ID for the subject/session: ', 's');
 recording.impedance = input('Enter the channel impedances as a vector (in kOhm): ');
 
 %% set labels
-recording = getClassLabels(recording);
+recording = getClassLabels(recording, nCh);
 
 %% initialize & set path and load library // WINDOWS ONLY for now
 mptype = 103;   % 103 for MP36 device (see mpdev.h)
@@ -66,7 +70,8 @@ libfunctions(libname, '-full');
 %% start Acquisition Daemon 
 try
     fprintf(1,'Acquisition Daemon Demo...\n');
-    [retval, recording.X] = startAcquisitionWithCue(dothdir,libname,mptype, mpmethod, sn, DURATION, T_BLANK, T_CUE_ON, T_CUE, T_PERIOD);
+    [retval, recording.X] = startAcquisitionWithCue(dothdir,libname,mptype, mpmethod, sn, DURATION, T_BLANK, T_CUE_ON, T_CUE, T_PERIOD, nCh, cueOn);
+    %[retval, ch1, ch2] = startAcquisition(dothdir, libname,mptype, mpmethod, sn, duration);
 
     if ~strcmp(retval,'MPSUCCESS')
         delete(timerfind);

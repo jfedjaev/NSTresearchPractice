@@ -2,7 +2,7 @@
 %  Author:  Juri Fedjaev
 %  Last modified: 10//04/17
 
-function [data] = getClassLabels(data)
+function [data] = getClassLabels(data, nCh)
 %% define constants
 TRIAL_LENGTH = 8; % in seconds
 trial_lgth_smpls = TRIAL_LENGTH * data.numTrials * data.fs;

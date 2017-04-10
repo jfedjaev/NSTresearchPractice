@@ -29,14 +29,14 @@ recording.impedance = [];       % channel impedances in matrix form and kOhm
 todaysdate = datetime('today');
 recording.date = datestr(todaysdate);   % todays date and time
 
-
 %% query age, gender, id
 recording.gender = input('Enter the gender of the subject (male/female): ', 's');
 recording.age = input('Enter the age of the suject: ');
 recording.id = input('Enter an ID for the subject/session: ', 's');
 recording.impedance = input('Enter the channel impedances as a vector (in kOhm): ');
 
-
+%% set labels
+recording = getClassLabels(recording);
 
 %% initialize & set path and load library // WINDOWS ONLY for now
 mptype = 103;   % 103 for MP36 device (see mpdev.h)

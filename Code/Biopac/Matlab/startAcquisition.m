@@ -82,7 +82,6 @@ function [retval, ch1, ch2] = startAcquisition(dothdir, libname,mptype, mpmethod
     
     %loop until there still some data to acquire
     while(remaining > 0)
-       
        if numValuesToRead > remaining
                numValuesToRead = remaining;
        end

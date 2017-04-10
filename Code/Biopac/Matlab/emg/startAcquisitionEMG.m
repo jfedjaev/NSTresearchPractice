@@ -1,4 +1,4 @@
-function [retval, X] = startAcquisitionWithCue(dothdir,libname,mptype, mpmethod, sn, DURATION, T_BLANK, T_CUE_ON, T_CUE, T_PERIOD, nCh, cueOn);
+function [retval, X] = startAcquisitionEMG(dothdir,libname,mptype, mpmethod, sn, DURATION, T_BLANK, T_CUE_ON, T_CUE, T_PERIOD, nCh, cueOn);
 
 
 %% Connect
@@ -15,8 +15,8 @@ end
 fprintf(1,'Connected\n');
 
 %% Configure
-fprintf(1,'Setting Sample Rate to 200 Hz\n');
-retval = calllib(libname, 'setSampleRate', 5.0);
+fprintf(1,'Setting Sample Rate to 500 Hz\n');
+retval = calllib(libname, 'setSampleRate', 2.0);
 
 if ~strcmp(retval,'MPSUCCESS')
     fprintf(1,'Failed to Set Sample Rate.\n');
@@ -44,7 +44,7 @@ if mptype ~= 101
     if nCh == 3
         aCH = [int32(1),int32(1),int32(1),int32(0)];
     elseif nCh == 2
-        aCH = [int32(1),int32(1),int32(2),int32(0)];
+        aCH = [int32(1),int32(1),int32(0),int32(0)];
     end
 end
 
@@ -82,8 +82,8 @@ end
 %% Download and Plot 5000 samples in realtime
 fprintf(1,'Download and Plot samples for %f seconds in Real-Time\n', DURATION);
 numRead = 0;
-numValuesToRead = 200*nCh; %collect 1 second worth of data points per iteration
-remaining = DURATION*200*nCh; % collect samples with 200 Hz per Channel for #duration
+numValuesToRead = 500*nCh; %collect 1 second worth of data points per iteration
+remaining = DURATION*500*nCh; % collect samples with 200 Hz per Channel for #duration
 tbuff(1:numValuesToRead) = double(0); %initialize the correct amount of data
 bval = 0;
 offset = 1;
@@ -115,6 +115,13 @@ if cueOn == 1
         'TimerFcn', {@draw_blank});
     start(tmr_blank);
     
+     %% create timer object for blank 2
+    tmr_blank_2 = timer('ExecutionMode', 'FixedRate', ...
+        'StartDelay', T_CUE_ON + T_CUE, ...
+        'Period', T_PERIOD, ...
+        'TimerFcn', {@draw_blank});
+    start(tmr_blank_2);
+    
     %% create timer object for cross
     tmr_cross = timer('ExecutionMode', 'FixedRate', ...
         'StartDelay', T_BLANK, ...
@@ -123,30 +130,30 @@ if cueOn == 1
     start(tmr_cross);
     
     %% create timer object for right cue
-    tmr_right = timer('ExecutionMode', 'FixedRate', ...
-        'StartDelay', T_CUE_ON, ...
-        'Period', 3*T_PERIOD, ...
-        'TimerFcn', {@draw_rightarrow});
-    start(tmr_right);
+%     tmr_right = timer('ExecutionMode', 'FixedRate', ...
+%         'StartDelay', T_CUE_ON, ...
+%         'Period', 3*T_PERIOD, ...
+%         'TimerFcn', {@draw_rightarrow});
+%     start(tmr_right);
     
     %% create timer object for cross after cue
-    tmr_cross_after_cue = timer('ExecutionMode', 'FixedRate', ...
-        'StartDelay', T_CUE_ON + T_CUE, ...
-        'Period', T_PERIOD, ...
-        'TimerFcn', {@draw_cross});
-    start(tmr_cross_after_cue);
+%     tmr_cross_after_cue = timer('ExecutionMode', 'FixedRate', ...
+%         'StartDelay', T_CUE_ON + T_CUE, ...
+%         'Period', T_PERIOD, ...
+%         'TimerFcn', {@draw_cross});
+%     start(tmr_cross_after_cue);
     
     %% create timer object for left cue
-    tmr_left = timer('ExecutionMode', 'FixedRate', ...
-        'StartDelay', T_CUE_ON + T_PERIOD, ...
-        'Period', 3*T_PERIOD, ...
-        'TimerFcn', {@draw_leftarrow});
-    start(tmr_left);
+%     tmr_left = timer('ExecutionMode', 'FixedRate', ...
+%         'StartDelay', T_CUE_ON + T_PERIOD, ...
+%         'Period', 3*T_PERIOD, ...
+%         'TimerFcn', {@draw_leftarrow});
+%     start(tmr_left);
     
     %% create timer object for up cue // or nothing cue
     tmr_up = timer('ExecutionMode', 'FixedRate', ...
-        'StartDelay', T_CUE_ON + 2*T_PERIOD, ...
-        'Period', 3*T_PERIOD, ...
+        'StartDelay', T_CUE_ON, ...
+        'Period', T_PERIOD, ...
         'TimerFcn', {@draw_uparrow});
     start(tmr_up);
 end
@@ -188,6 +195,7 @@ while(remaining > 0)
             xlabel('Nth Sample');
         else
             drawnow
+        end
     end
     offset = offset + double(numValuesToRead);
     remaining = remaining-double(numValuesToRead);

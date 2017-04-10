@@ -176,7 +176,6 @@ while(remaining > 0)
         end
         X(1:len) = (1:len);
         %% plot graph
-        %drawnow
         if cueOn == 0   %´plot graph if cue is not on
             pause(1/100);
             subplot(3,1,1);
@@ -187,6 +186,8 @@ while(remaining > 0)
             subplot(3,1,3);
             plot(X(1:length(ch3data)),ch3data,'r-');
             xlabel('Nth Sample');
+        else
+            drawnow
         end
     end
     offset = offset + double(numValuesToRead);

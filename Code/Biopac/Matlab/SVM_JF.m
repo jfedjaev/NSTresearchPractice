@@ -3,7 +3,7 @@ close all
 clear
 clc
 
-load JF01_07-Apr-2017.mat
+load JF03_10-Apr-2017.mat
 data = recording;
 
 %% Chop the data into pieces:
@@ -13,25 +13,27 @@ dataset = data.X;
 
 nTrials = data.numTrials;
 nPre    = 0;
-Fs = data.fs; % Sampling Frequency.
+Fs = data.fs;        % Sampling Frequency.
 nPost   = 8 * Fs-1;
 n       = nPre + nPost + 1;
 nChannels = 3;
 
 
-timeSeries          = zeros(2, n, nTrials);
-frequencyDomain     = zeros(2, n/2+1, nTrials);
+timeSeries          = zeros(3, n, nTrials);
+frequencyDomain     = zeros(3, n/2+1, nTrials);
 label               = data.y;
 
 class1_idx          = find(label == 1);
 class2_idx          = find(label == 2);
-%samplesWArtifacts   = find(data{1,1}.artifacts);
 
+%% artifact occurences have not been noted 
+%samplesWArtifacts   = find(data{1,1}.artifacts); 
 clean_class1_idx    = class1_idx;
 clean_class2_idx    = class2_idx;
 
+%% 
 for i=1:nTrials
-    timeSeries(:,:,i)       = dataset(pos(i)-nPre:pos(i)+nPost,1:2)';
+    timeSeries(:,:,i)       = dataset(pos(i)-nPre:pos(i)+nPost,1:3)';
     P2 = abs(fft(timeSeries(:,:,i), n, 2)/n);
     frequencyDomain(:,:,i) = P2(:,1:n/2+1);
     frequencyDomain(:,2:end-1,i) = 2*frequencyDomain(:,2:end-1,i);
@@ -125,7 +127,7 @@ gscatter(redFeatures(1,:), redFeatures(2,:), cleanLabels,'rb', '.');
 %% Classify the samples: 
 SVMModel = fitcsvm(redFeatures',cleanLabels, ...
     'Standardize',true,             ...
-    'KernelFunction','RBF',         ...
+    'KernelFunction','RBF',         ...(from the 
     'KernelScale','auto',           ...
     'OptimizeHyperparameters', 'all');
 

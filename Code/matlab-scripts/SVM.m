@@ -30,6 +30,7 @@ samplesWArtifacts   = find(data{1,1}.artifacts);
 clean_class1_idx    = setdiff(class1_idx, samplesWArtifacts);
 clean_class2_idx    = setdiff(class2_idx, samplesWArtifacts);
 
+%% Find out what exaclty is done here (besides computing FFT)
 for i=1:120
     timeSeries(:,:,i)       = dataset(pos(i)-nPre:pos(i)+nPost,1:3)';
     P2 = abs(fft(timeSeries(:,:,i), n, 2)/n);

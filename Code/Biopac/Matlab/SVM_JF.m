@@ -2,8 +2,10 @@
 close all
 clear
 clc
+    
+filename = uigetfile;
 
-load JF03_10-Apr-2017.mat
+load(filename);
 data = recording;
 
 %% Chop the data into pieces:

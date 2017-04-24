@@ -2,7 +2,9 @@
 close all
 clear
 clc
-    
+
+addpath('data'); % set path to data
+
 filename = uigetfile;
 
 load(filename);
@@ -10,9 +12,13 @@ data = recording;
 
 %% Chop the data into pieces:
 pos     = data.trial;
-dataset = data.X;
+%dataset = data.X;
+
+%% detrend data
+dataset = detrendData(data.X, pos);
 
 
+%%
 nTrials = data.numTrials;
 nPre    = 0;
 Fs = data.fs;        % Sampling Frequency.
@@ -28,12 +34,12 @@ label               = data.y;
 class1_idx          = find(label == 1);
 class2_idx          = find(label == 2);
 
-%% artifact occurences have not been noted 
-%samplesWArtifacts   = find(data{1,1}.artifacts); 
+%% artifact occurences have not been noted
+%samplesWArtifacts   = find(data{1,1}.artifacts);
 clean_class1_idx    = class1_idx;
 clean_class2_idx    = class2_idx;
 
-%% 
+%%
 for i=1:nTrials
     timeSeries(:,:,i)       = dataset(pos(i)-nPre:pos(i)+nPost,1:3)';
     P2 = abs(fft(timeSeries(:,:,i), n, 2)/n);
@@ -45,7 +51,7 @@ end
 
 nClassSamples = 9;
 f = Fs * (0:(n/2))/n;
-%% plot freq domain 
+%% plot freq domain
 figure
 for i=1:1:nClassSamples
     subplot(2,nClassSamples,i)
@@ -84,7 +90,7 @@ for i=1:1:nClassSamples
 end
 
 
-%% Extract the features: 
+%% Extract the features:
 cleanSamples    = union(clean_class1_idx, clean_class2_idx);
 cleanFreq       = frequencyDomain(:,:,cleanSamples);
 cleanLabels     = label(cleanSamples);
@@ -106,7 +112,7 @@ for trial = 1:size(cleanFreq,3)
             
             mask = [ones(1,wBand(i)*samplesPerHerz), zeros(1,maskLength-wBand(i)*samplesPerHerz)];
             
-            for band = 1:nBand(i)    
+            for band = 1:nBand(i)
                 
                 try
                     features((channel-1)*nFeaturesPerChannel + bandOffset(i) + band, trial) = sum(cleanFreq(channel, logical(mask), trial));
@@ -126,10 +132,10 @@ redFeatures = coeff' * features;
 figure
 gscatter(redFeatures(1,:), redFeatures(2,:), cleanLabels,'rb', '.');
 
-%% Classify the samples: 
+%% Classify the samples:
 SVMModel = fitcsvm(redFeatures',cleanLabels, ...
     'Standardize',true,             ...
-    'KernelFunction','RBF',         ...(from the 
+    'KernelFunction','RBF',         ...(from the
     'KernelScale','auto',           ...
     'OptimizeHyperparameters', 'all');
 

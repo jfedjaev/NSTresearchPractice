@@ -12,10 +12,11 @@ data = recording;
 
 %% Chop the data into pieces:
 pos     = data.trial;
-%dataset = data.X;
+dataset = data.X;
 
 %% detrend data
-dataset = detrendData(data.X, pos);
+detrended_dataset = detrendData(data.X, pos);
+filtered_dataset = filterData(detrended_dataset, pos);
 
 
 %%

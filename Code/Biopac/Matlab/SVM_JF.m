@@ -10,20 +10,27 @@ filename = uigetfile;
 load(filename);
 data = recording;
 
+% values for cue duration 
+T_CUE_ON = 3;  
+T_CUE    = 2;
+
+
 %% Chop the data into pieces:
 pos     = data.trial;
 dataset = data.X;
 
 %% detrend data
 detrended_dataset = detrendData(data.X, pos);
-filtered_dataset = filterData(detrended_dataset, pos);
+%filtered_dataset = filterData(detrended_dataset, pos);
 
+%% move labels to cue location
+pos = shiftLabels(pos, T_CUE_ON);
 
 %%
 nTrials = data.numTrials;
-nPre    = 0;
 Fs = data.fs;        % Sampling Frequency.
-nPost   = 8 * Fs-1;
+nPre    = 2*Fs;
+nPost   = (T_CUE+1)*Fs-1;
 n       = nPre + nPost + 1;
 nChannels = 3;
 
@@ -69,7 +76,7 @@ lowerAlpha = 7;
 upperAlpha = 13;
 
 lowerBeta = 15;
-upperBeta = 26;
+upperBeta = 30; % was : upperBeta = 26
 
 alpha   = intersect(find(f >= lowerAlpha), find(f <= upperAlpha));
 beta    = intersect(find(f >= lowerBeta), find(f <= upperBeta));

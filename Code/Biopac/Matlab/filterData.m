@@ -11,11 +11,15 @@ function [filtered_data] = filterData(input, pos)
 fs = 200;   % 200 Hz standard sample rate for Biopac EEG recordings
 t_trial = 8;    % trials length of 8 seconds
 n_smpls = fs * t_trial;
+fc_low = 2; % low cut-off frequency of 8 Hz
+fc_high = 100; % high cut-off frequency of 30 Hz
 
-%% filter trial wise with a bandpass filter 
-for i=1:n_smpls:length(input)
-   
-end
+
+%% filter signal with 8th order butterworth filter
+[b,a] = butter(8, [fc_low/(fs/2), fc_high/(fs/2)]);
+filtered_data = filtfilt(b,a,input);
+
+
 
 end
 

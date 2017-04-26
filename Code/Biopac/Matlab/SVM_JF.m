@@ -21,9 +21,9 @@ dataset = data.X;
 
 %% detrend data
 detrended_dataset = detrendData(data.X, pos);
-%filtered_dataset = filterData(detrended_dataset, pos);
+filtered_dataset = filterData(detrended_dataset, pos);
 
-dataset = detrended_dataset;
+dataset = filtered_dataset;
 
 %% move labels to cue location
 pos = shiftLabels(pos, T_CUE_ON);

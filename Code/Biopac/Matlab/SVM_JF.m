@@ -23,13 +23,15 @@ dataset = data.X;
 detrended_dataset = detrendData(data.X, pos);
 %filtered_dataset = filterData(detrended_dataset, pos);
 
+dataset = detrended_dataset;
+
 %% move labels to cue location
 pos = shiftLabels(pos, T_CUE_ON);
 
 %%
 nTrials = data.numTrials;
 Fs = data.fs;        % Sampling Frequency.
-nPre    = 2*Fs;
+nPre    = 1*Fs;
 nPost   = (T_CUE+1)*Fs-1;
 n       = nPre + nPost + 1;
 nChannels = 3;
@@ -106,7 +108,7 @@ cleanLabels     = label(cleanSamples);
 samplesPerHerz  = 6;
 maskLength      = n/2+1;
 wBand           = [2, 4, 6, 8];
-nBand           = [21, 19, 17,15];
+nBand           = [21, 19, 17, 15];
 
 nFeaturesPerChannel = sum(nBand);
 channelOffsett      = (0:nChannels-1) * nFeaturesPerChannel;
@@ -155,7 +157,7 @@ classLoss = kfoldLoss(CVSVMModel);
 %     min1(i)         = min(D3C4(:,i));
 %     mean1(i)        = mean(D3C4(:,i));
 %     max1(i)         = max(D3C4(:,i));
-%     stdr1(i)        = std(D3C4(:,i));
+%     stdr1(i)        = std(D3C4(:s,i));
 %     madian1(i)      = median(D3C4(:,i));
 %     bandpower4(i)   = bandpower(D3C4(:,i),250, [18,22]);
 %

@@ -136,7 +136,7 @@ for trial = 1:size(cleanFreq,3)
 end
 
 %% Dimensionality Reduction:
-[coeff,~,~] = pca(features', 'NumComponents', 10);
+[coeff,~,~] = pca(features', 'NumComponents', 12);
 redFeatures = coeff' * features;
 
 figure

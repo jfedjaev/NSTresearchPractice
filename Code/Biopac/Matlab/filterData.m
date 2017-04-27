@@ -12,7 +12,7 @@ fs = 200;   % 200 Hz standard sample rate for Biopac EEG recordings
 t_trial = 8;    % trials length of 8 seconds
 n_smpls = fs * t_trial;
 fc_low = 2; % low cut-off frequency of 8 Hz
-fc_high = 100; % high cut-off frequency of 30 Hz
+fc_high = 50; % high cut-off frequency of 30 Hz
 
 
 %% filter signal with 8th order butterworth filter

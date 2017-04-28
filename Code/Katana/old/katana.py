@@ -1,25 +1,18 @@
 import sys
 import json
-import urllib.request
+import urllib
 
-ip = sys.argv[1] if len(sys.argv) > 1 else "192.168.168.232"
+# ip = sys.argv[1] if len(sys.argv) > 1 else "172.26.5.101"
 # ip = sys.argv[1] if len(sys.argv) > 1 else "192.168.168.232"
+ip = sys.argv[1] if len(sys.argv) > 1 else "10.162.242.242"
+
 base_url = "http://" + ip + "/cgi-bin/"
 
 verbose = True
 
-initial_position = {
-    1: 30500,
-    2: -30500,
-    3: -30500,
-    4: 30500,
-    5: 0,
-    6: 0
- }
-
 
 def _request(request_path):
-    answer = urllib.request.urlopen(base_url + request_path).read()
+    answer = urllib.urlopen(base_url + request_path).read()
     if verbose:
         print(base_url + request_path)
         print(answer)
@@ -46,16 +39,13 @@ def calibrate():
     _request("writeVal.exe?CALIBRATE+1")
 
 
-def set_pos(positions):
-    for axis, position in positions.items():
-        if not 1 <= axis <= 6:
-            print("axis must be between 1 and 6")
-            raise
-        _request("writeVal.exe?M{0}_DESTINATION+{1}".format(
-            str(axis), str(position)))
-
-
-def move():
+def move(axis, position):
+    if not 1 <= axis <= 6:
+        print("axis must be between 1 and 6")
+        raise
+        # could change destination for multiple axes 
+    _request("writeVal.exe?M{0}_DESTINATION+{1}".format(
+        str(axis), str(position)))
     _request("writeVal.exe?MOVE_ALL_TO_ENC+1")
 
 
@@ -94,21 +84,15 @@ def control():
     print(_buf_to_json(_request("ReadFile.exe?Steuerung")))
 
 
-def get_srv_info():
-    print(_buf_to_json(_request("GetSrvInfo.exe")))
+# def get_srv_info():
+#     print(_buf_to_json(_request("GetSrvInfo.exe")))
 
 
-def start_info_server():
-    _request("OrderValues.exe?Start+dummy+100+SENSOR_CONFIG+DATASERVER_ENABLED")
-    _request("ReadFile.exe?Start")
+# def start_info_server():
+#     _request("OrderValues.exe?Start+dummy+100+SENSOR_CONFIG+DATASERVER_ENABLED")
+#     _request("ReadFile.exe?Start")
 
 
 def init():
-    get_srv_info()
-    start_info_server()
     disconnect()
     connect()
-    get_srv_info()
-    start_info_server()
-    set_pos(initial_position)
-    move()

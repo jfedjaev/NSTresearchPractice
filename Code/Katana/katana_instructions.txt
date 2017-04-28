@@ -1,0 +1,234 @@
+1 connection data
+=================
+
+1.1 katana 1:
+~~~~~~~~~~~~~
+
+   ip : 172.26.5.102 user : root password : root
+
+
+1.2 katana 2:
+~~~~~~~~~~~~~
+
+   ip : 192.168.168.232 user : root password : root
+
+
+2 start python rpc server interface
+===================================
+
+2.1 assign ethernet ip
+~~~~~~~~~~~~~~~~~~~~~~
+
+   ,----
+   | # <interface> = enp0s31f6
+   | sudo ifconfig <interface> <ip> up
+   `----
+
+
+2.2 disable dhcp
+~~~~~~~~~~~~~~~~
+
+   ,----
+   | # disable dhcp
+   | sudo nm-connection-editor
+   `----
+
+
+2.3 open telnet connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   ,----
+   | telnet -l <user> <ip>
+   `----
+
+
+2.4 python script on server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   ,----
+   | cd home/programs/rpc
+   | python start.py
+   `----
+
+
+3 communicate
+=============
+
+   ,----
+   | python test.py
+   `----
+
+   ,----
+   | katana.system.listMethods()
+   | katana.init()
+   | katana.calibrate()
+   | katana.move(1, 31000)
+   `----
+
+
+4 commands
+==========
+
+   ,----
+   | #include "katana.h"
+   |
+   | int main(int argc, char **argv){
+   |     Katana k;
+   |     k.calibrate();
+   |     for (int i=0; i<3; i++) {
+   |         k.moveMotAndWait(1, 10000, 100);
+   |         k.moveMotAndWait(1, 11000, 100);
+   |     }
+   |     return 0;
+   | }
+   | //!@returns the data (0-255) and 0 on error
+   | int getProcImageDataItem(int axis, int index);
+   | //!gets the axis firmware version
+   | char* getAxisFirmwareVersion();
+   | //!gets the controlboard firmware version
+   | char* getVersion();
+   | 
+//////////////////////////////////////////////////////////////////////////////// 
+
+   | //Additional setters.
+   | //!puts the axis into the specified state
+   | //!@param axis The axis to send the command to
+   | //!@state currently only 4 (released) and 8 (holding) are allowed
+   | //!@return returns ERR_FAILURE on failure,
+   | //!ERR_STATE_MISMATCH if the command was given to a wrong state,
+   | //!1 if successful
+   | int setState(int axis, int state);
+   | //!sets the collision detection on the axes.
+   | //!@param state true = on
+   | //!@param axis 0 = set all axes
+   | //!@return returns ERR_FAILURE on failure,
+   | //!ERR_INVALID_ARGUMENT if an argument is out of range,
+   | //!ERR_STATE_MISMATCH if the command was given to a wrong state,
+   | //!1 if successful
+   | int setCollisionDetection(int axis, bool state);
+   | //!set the position collision limit
+   | //!@parm axis 0 = all axes
+   | int setPositionCollisionLimit(int axis, int limit);
+   | //!set the velocity collision limit
+   | //!@parm axis 0 = all axes
+   | int setVelocityCollisionLimit(int axis, int threshold, int 
+treshold_lin);
+   | //!sets the collision parameters
+   | //!this function internally calls setPositionCollisionLimit and 
+setVelocityCollisionLimit
+   | //!@param axis 0 = set all axes
+   | //!@param position range 1-10
+   | //!@param velocity range 1-10
+   | int setCollisionParameters(int axis, int position, int velocity);
+   | //!unblocks the robot after collision/instantstop
+   | void unblock();
+   | //! sets the controller parameters
+   | //!@param axis 0 = set all axes
+   | //!@return returns ERR_FAILURE on failure,
+   | //!ERR_INVALID_ARGUMENT if an argument is out of range,
+   | //!ERR_STATE_MISMATCH if the command was given to a wrong state,
+   | //!1 if successful
+   | int setControllerParameters(int axis, int ki, int kspeed, int kpos);
+   | //!sets the maximum velocity
+   | //!@param axis 0 = set all axes
+   | //!@param vel 1-180 are valid
+   | //!@return returns ERR_FAILURE on failure,
+   | //!ERR_INVALID_ARGUMENT if an argument is out of range,
+   | //!ERR_STATE_MISMATCH if the command was given to a wrong state,
+   | //!1 if successful
+   | int setMaxVelocity(int axis, int vel);
+   | //!sets the maximum acceleration (allowed values are only 1 and 2)
+   | //!@param axis 0 = set all axes
+   | //!@return returns ERR_FAILURE on failure,
+   | //!ERR_INVALID_ARGUMENT if an argument is out of range,
+   | //!ERR_STATE_MISMATCH if the command was given to a wrong state,
+   | //!1 if successful
+   | int setMaxAccel(int axis, int value);
+   | //! sets the PWM
+   | //!@param axis 0 = set all axes
+   | //!@param value 1-4 are valid
+   | //!@return returns ERR_FAILURE on failure,
+   | //!ERR_INVALID_ARGUMENT if an argument is out of range,
+   | //!ERR_STATE_MISMATCH if the command was given to a wrong state,
+   | //!1 if successful
+   | int setMaxDrive(int axis, int value);
+   | //!Puts the axis into operational state
+   | //!@param axis 0 = set all axes
+   | //!@return returns ERR_FAILURE on failure,
+   | //!ERR_INVALID_ARGUMENT if an argument is out of range,
+   | //!ERR_STATE_MISMATCH if the command was given to a wrong state,
+   | //!1 if successful
+   | int setOperational(int axis);
+   | //!Sets the state of a node
+   | int nmtSetState(unsigned char axis, unsigned char state);
+   | //!sets the target encoder
+   | //!@param axis The axis to send the command to
+   | //!@return returns ERR_FAILURE on failure,
+   | //!ERR_INVALID_ARGUMENT if an argument is out of range,
+   | //!ERR_STATE_MISMATCH if the command was given to a wrong state,
+   | //!1 if successful
+   | int setTargetPosition(int axis, int encoder);
+   | //!starts a PTP movement
+   | //!@param axis The axis to send the command to
+   | //!@return returns ERR_FAILURE on failure,
+   | //!ERR_INVALID_ARGUMENT if an argument is out of range,
+   | //!ERR_STATE_MISMATCH if the command was given to a wrong state,
+   | //!ERR_RANGE_MISMATCH if the target position is out of range
+   | //!1 if successful
+   | int startPtpMovement(int axis);
+   | //!This sends a PDO
+   | //!@param axis The axis to send the command to
+   | //!@return returns -1 on failure, 1 if successful
+   | int sendPDO(int pdoNo, int axis, int length, char* data);
+   | //!This sends a raw CAN message
+   | //!@return returns -1 on failure, 1 if successful
+   | int sendCanMessage(int canId, int length, char* data);
+   | //!Sets encoder offsets without actually calibrating. For axes 
+without HW stop
+   | //!@param offset -1 means use the offset from the config file
+   | int fakeCalibration(int axis, int offset = -1);
+   | 
+//////////////////////////////////////////////////////////////////////////////// 
+
+   | //!NOT part of the K4D interface. This sends a PDO
+   | //!@return returns -1 on failure, 1 if successful
+   | int sendPDO(struct Pdo &pdo);
+   | //!NOT part of the K4D interface. Receives a PDO
+   | //!@return returns -1 on failure, 1 if successful
+   | int receivePDO(struct Pdo &pdo);
+   | //!NOT part of the K4D interface. Sends a raw CAN message
+   | //!@return returns -1 on failure, 1 if successful
+   | int sendCanMessage(struct can_frame &frame);
+   | //!NOT part of the K4D interface. receive a raw CAN message
+   | //!@return returns -1 on failure, 1 if successful
+   | int receiveCanMessage(struct can_frame &frame, int timeout = 20000);
+   | //!This unlocks critical functions.
+   | //!@return returns -1 on failure, 1 if successful
+   | int setAdmin(int passCode);
+   | //!checks the alive state of an axis
+   | //!@param axis 0 = get all axes
+   | //!@return If axis 0: 1 if all axes are present, negative value is 
+the inverted number of the first axis
+   | //!0 if no data is available. If axis != 0: 1 if heartbeat found, 
+-1 if failed, 0 if no data is availabl
+   | int ping(int axis);
+   | //!resets the axis
+   | int resetAxis(int axis);
+   | //!sets verbose output
+   | void setVerbose(bool verbose);
+   | 
+//////////////////////////////////////////////////////////////////////////////// 
+
+   | };
+   |
+   | #endif //_KATANA_H_
+   `----
+
+
+5 web interface
+===============
+
+   ,----
+   | appletviewer <ip>
+   `----
+

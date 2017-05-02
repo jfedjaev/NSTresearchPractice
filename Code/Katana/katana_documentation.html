@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-05-02 Tue 09:53 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Bernhard Specht" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+<style type="text/css">
+ pre.src {background-color: #1d1f21; color: #c5c8c6;}</style>
+<style type="text/css">
+ pre.src {background-color: #1d1f21; color: #c5c8c6;}</style>
+<style type="text/css">
+ pre.src {background-color: #1d1f21; color: #c5c8c6;}</style>
+<style type="text/css">
+ pre.src {background-color: #1d1f21; color: #c5c8c6;}</style>
+<style type="text/css">
+ pre.src {background-color: #1d1f21; color: #c5c8c6;}</style>
+<style type="text/css">
+ pre.src {background-color: #1d1f21; color: #c5c8c6;}</style>
+<style type="text/css">
+ pre.src {background-color: #1d1f21; color: #c5c8c6;}</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org22956ed">1. Connection Data</a>
+<ul>
+<li><a href="#org64eb276">1.1. Katana 1 (Garching):</a></li>
+<li><a href="#orgeaa0684">1.2. Katana 2 (Zürich):</a></li>
+</ul>
+</li>
+<li><a href="#org5238a22">2. Connecting</a></li>
+<li><a href="#org593b25e">3. Web Interface</a></li>
+<li><a href="#org9d4b2bf">4. Katana 1 (Garching)</a>
+<ul>
+<li><a href="#org5d7b84e">4.1. Problems</a></li>
+</ul>
+</li>
+<li><a href="#org86fd8be">5. Katana 2 (Zürich)</a>
+<ul>
+<li><a href="#org7c98d74">5.1. Problems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org22956ed" class="outline-2">
+<h2 id="org22956ed"><span class="section-number-2">1</span> Connection Data</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-org64eb276" class="outline-3">
+<h3 id="org64eb276"><span class="section-number-3">1.1</span> Katana 1 (Garching):</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>ip       : 10.162.242.242</li>
+<li>user     : root</li>
+<li>password : root</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgeaa0684" class="outline-3">
+<h3 id="orgeaa0684"><span class="section-number-3">1.2</span> Katana 2 (Zürich):</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>ip       : 10.162.242.242</li>
+<li>user     : root</li>
+<li>password : root</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5238a22" class="outline-2">
+<h2 id="org5238a22"><span class="section-number-2">2</span> Connecting</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li>connect ethernet cable</li>
+<li>assign ip address in the network (not needed needed if connected to network inside room 3019)
+<ul class="org-ul">
+<li>interface name should often be eth0, but differs often</li>
+<li>ip should be in the same network, ip of robot + 1 works fine (e.g. 10.168.242.242)</li>
+</ul></li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-shell-script">ifconfig &lt;interface&gt; &lt;ip&gt;
+
+<span style="color: #7C7C7C;"># </span><span style="color: #7C7C7C;">now ping should work </span>
+ping &lt;ip&gt;
+</pre>
+</div>
+<ol class="org-ol">
+<li>now you should be able to connect via telnet</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-shell-script">telnet -l &lt;user&gt; &lt;ip&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org593b25e" class="outline-2">
+<h2 id="org593b25e"><span class="section-number-2">3</span> Web Interface</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+The webinterface is a simple java applet that allows some configuration.
+I couldn't get it running inside of a browser, however on linux there
+is <code>appletviewer</code>, which should come together with the java jdk.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell-script">appletviewer &lt;ip&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9d4b2bf" class="outline-2">
+<h2 id="org9d4b2bf"><span class="section-number-2">4</span> Katana 1 (Garching)</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+The robot can be controlled with the web interface. The http requests
+used by the applet can also be put into a script:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #96CBFE;">import</span> sys
+<span style="color: #96CBFE;">import</span> json
+<span style="color: #96CBFE;">import</span> urllib.request
+
+<span style="color: #c5c8c6; background-color: #1d1f21;">ip</span> = sys.argv[<span style="color: #c5c8c6; background-color: #1d1f21;">1</span>] <span style="color: #96CBFE;">if</span> <span style="color: #DAD085;">len</span>(sys.argv) &gt; <span style="color: #c5c8c6; background-color: #1d1f21;">1</span> <span style="color: #96CBFE;">else</span> <span style="color: #8AE234;">"10.168.242.242"</span>
+<span style="color: #c5c8c6; background-color: #1d1f21;">base_url</span> = <span style="color: #8AE234;">"http://"</span> + ip + <span style="color: #8AE234;">"/cgi-bin/"</span>
+
+<span style="color: #c5c8c6; background-color: #1d1f21;">verbose</span> = <span style="color: #96CBFE;">True</span>
+
+<span style="color: #c5c8c6; background-color: #1d1f21;">initial_position</span> = {
+    <span style="color: #c5c8c6; background-color: #1d1f21;">1</span>: <span style="color: #c5c8c6; background-color: #1d1f21;">30500</span>,
+    <span style="color: #c5c8c6; background-color: #1d1f21;">2</span>: -<span style="color: #c5c8c6; background-color: #1d1f21;">30500</span>,
+    <span style="color: #c5c8c6; background-color: #1d1f21;">3</span>: -<span style="color: #c5c8c6; background-color: #1d1f21;">30500</span>,
+    <span style="color: #c5c8c6; background-color: #1d1f21;">4</span>: <span style="color: #c5c8c6; background-color: #1d1f21;">30500</span>,
+    <span style="color: #c5c8c6; background-color: #1d1f21;">5</span>: <span style="color: #c5c8c6; background-color: #1d1f21;">0</span>,
+    <span style="color: #c5c8c6; background-color: #1d1f21;">6</span>: <span style="color: #c5c8c6; background-color: #1d1f21;">0</span>
+ }
+
+
+<span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">_request</span>(request_path):
+    <span style="color: #c5c8c6; background-color: #1d1f21;">answer</span> = urllib.request.urlopen(base_url + request_path).read()
+    <span style="color: #96CBFE;">if</span> verbose:
+        <span style="color: #96CBFE;">print</span>(base_url + request_path)
+        <span style="color: #96CBFE;">print</span>(answer)
+    <span style="color: #96CBFE;">return</span> answer
+
+
+<span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">_buf_to_json</span>(buf):
+    <span style="color: #c5c8c6; background-color: #1d1f21;">key_to_val</span> = {}
+    <span style="color: #96CBFE;">for</span> line <span style="color: #96CBFE;">in</span> buf.decode(<span style="color: #8AE234;">"ascii"</span>).split(<span style="color: #8AE234;">"\n"</span>):
+        <span style="color: #96CBFE;">try</span>:
+            <span style="color: #c5c8c6; background-color: #1d1f21;">key</span>, <span style="color: #c5c8c6; background-color: #1d1f21;">val</span> = line.split(<span style="color: #8AE234;">"="</span>)
+        <span style="color: #96CBFE;">except</span>:
+            <span style="color: #96CBFE;">continue</span>
+        <span style="color: #c5c8c6; background-color: #1d1f21;">key_to_val</span>[key] = val
+
+    <span style="color: #96CBFE;">return</span> json.dumps(key_to_val, <span style="color: #c5c8c6; background-color: #1d1f21;">indent</span>=<span style="color: #c5c8c6; background-color: #1d1f21;">4</span>, <span style="color: #c5c8c6; background-color: #1d1f21;">sort_keys</span>=<span style="color: #96CBFE;">True</span>)
+
+
+<span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">diagnose</span>():
+    <span style="color: #96CBFE;">print</span>(_buf_to_json(_request(<span style="color: #8AE234;">"ReadFile.exe?Diagnose_Logfiles"</span>)))
+
+
+<span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">calibrate</span>():
+    _request(<span style="color: #8AE234;">"writeVal.exe?CALIBRATE+1"</span>)
+
+
+<span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">set_pos</span>(positions):
+    <span style="color: #96CBFE;">for</span> axis, position <span style="color: #96CBFE;">in</span> positions.items():
+        <span style="color: #96CBFE;">if</span> <span style="color: #96CBFE;">not</span> <span style="color: #c5c8c6; background-color: #1d1f21;">1</span> &lt;= axis &lt;= <span style="color: #c5c8c6; background-color: #1d1f21;">6</span>:
+            <span style="color: #96CBFE;">print</span>(<span style="color: #8AE234;">"axis must be between 1 and 6"</span>)
+            <span style="color: #96CBFE;">raise</span>
+        _request(<span style="color: #8AE234;">"writeVal.exe?M{0}_DESTINATION+{1}"</span>.format(
+            <span style="color: #DAD085;">str</span>(axis), <span style="color: #DAD085;">str</span>(position)))
+
+
+<span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">move</span>():
+    _request(<span style="color: #8AE234;">"writeVal.exe?MOVE_ALL_TO_ENC+1"</span>)
+
+
+<span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">disconnect</span>():
+    _request(<span style="color: #8AE234;">"writeVal.exe?DISCONNECT+1"</span>)
+
+
+<span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">connect</span>():
+    _request(<span style="color: #8AE234;">"writeVal.exe?CONNECT+1"</span>)
+
+
+<span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">get_pos_err</span>(axis):
+    <span style="color: #96CBFE;">if</span> <span style="color: #96CBFE;">not</span> <span style="color: #c5c8c6; background-color: #1d1f21;">1</span> &lt;= axis &lt;= <span style="color: #c5c8c6; background-color: #1d1f21;">6</span>:
+        <span style="color: #96CBFE;">print</span>(<span style="color: #8AE234;">"axis must be between 1 and 6"</span>)
+        <span style="color: #96CBFE;">raise</span>
+    _request(<span style="color: #8AE234;">"writeVal.exe?GET_POS_ERR_{0}+1"</span>.format(axis))
+
+
+<span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">set_pos_err</span>(axis, pos_err):
+    <span style="color: #96CBFE;">if</span> <span style="color: #96CBFE;">not</span> <span style="color: #c5c8c6; background-color: #1d1f21;">1</span> &lt;= axis &lt;= <span style="color: #c5c8c6; background-color: #1d1f21;">6</span>:
+        <span style="color: #96CBFE;">print</span>(<span style="color: #8AE234;">"axis must be between 1 and 6"</span>)
+        <span style="color: #96CBFE;">raise</span>
+    _request(<span style="color: #8AE234;">"writeVal.exe?POS_ERR_{0}+{1}"</span>.format(axis, pos_err))
+    _request(<span style="color: #8AE234;">"writeVal.exe?SET_POS_ERR_{0}+1"</span>.format(axis))
+
+
+<span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">set_vel</span>(axis, vel):
+    <span style="color: #96CBFE;">if</span> <span style="color: #96CBFE;">not</span> <span style="color: #c5c8c6; background-color: #1d1f21;">1</span> &lt;= axis &lt;= <span style="color: #c5c8c6; background-color: #1d1f21;">6</span>:
+        <span style="color: #96CBFE;">print</span>(<span style="color: #8AE234;">"axis must be between 1 and 6"</span>)
+        <span style="color: #96CBFE;">raise</span>
+    _request(<span style="color: #8AE234;">"writeVal.exe?VEL_ERR_{0}+{1}"</span>.format(axis, vel))
+    _request(<span style="color: #8AE234;">"writeVal.exe?SET_VEL_ERR_{0}+1"</span>.format(axis))
+
+
+<span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">control</span>():
+    <span style="color: #96CBFE;">print</span>(_buf_to_json(_request(<span style="color: #8AE234;">"ReadFile.exe?Steuerung"</span>)))
+
+
+<span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">get_srv_info</span>():
+    <span style="color: #96CBFE;">print</span>(_buf_to_json(_request(<span style="color: #8AE234;">"GetSrvInfo.exe"</span>)))
+
+
+<span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">start_info_server</span>():
+    _request(<span style="color: #8AE234;">"OrderValues.exe?Start+dummy+100+SENSOR_CONFIG+DATASERVER_ENABLED"</span>)
+    _request(<span style="color: #8AE234;">"ReadFile.exe?Start"</span>)
+
+
+<span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">init</span>():
+    get_srv_info()
+    start_info_server()
+    disconnect()
+    connect()
+    get_srv_info()
+    start_info_server()
+    set_pos(initial_position)
+    move()
+</pre>
+</div>
+
+<p>
+The robot can then be calibrated and used:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #96CBFE;">import</span> katana
+
+katana.init()
+katana.calibrate()
+
+<span style="color: #7C7C7C;">#</span><span style="color: #7C7C7C;">should close the gripper</span>
+katana.set_pos({<span style="color: #c5c8c6; background-color: #1d1f21;">6</span>: <span style="color: #c5c8c6; background-color: #1d1f21;">0</span>})
+katana.move()
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org5d7b84e" class="outline-3">
+<h3 id="org5d7b84e"><span class="section-number-3">4.1</span> Problems</h3>
+<div class="outline-text-3" id="text-4-1">
+<ol class="org-ol">
+<li><p>
+Response, but no movement when using the script
+</p>
+
+<p>
+It seems like the first command has to be sent the the webinterface.
+As soon as there has been one sent command the script should work fine
+</p></li>
+
+<li><p>
+collision
+</p>
+
+<p>
+The robot won't work after it had a collision with any other object. 
+After the collision the <code>Status</code> led is red. The only way of fixing that
+seems to be rebooting the robot.
+</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org86fd8be" class="outline-2">
+<h2 id="org86fd8be"><span class="section-number-2">5</span> Katana 2 (Zürich)</h2>
+<div class="outline-text-2" id="text-5">
+<ol class="org-ol">
+<li>in the webinterface turn the soapserver auto start on
+<ul class="org-ul">
+<li>navigate to <code>Standalone</code></li>
+<li><code>Autostart</code> should be <code>Enabled</code> then <code>Set</code></li>
+<li><code>Current Program</code> should be <code>soapserver</code></li>
+<li>if any changes then reboot</li>
+</ul></li>
+<li>connect inside python shell/script</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #96CBFE;">import</span> SOAPpy
+
+<span style="color: #c5c8c6; background-color: #1d1f21;">katana</span> = SOAPpy.SOAPProxy(<span style="color: #8AE234;">"http://192.168.168.232:8000/"</span>)
+katana.calibrate()
+katana.moveMotAndWait(<span style="color: #c5c8c6; background-color: #1d1f21;">5</span>, <span style="color: #c5c8c6; background-color: #1d1f21;">20000</span>)
+katana.closeGripper()
+katana.openGripper()
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org7c98d74" class="outline-3">
+<h3 id="org7c98d74"><span class="section-number-3">5.1</span> Problems</h3>
+<div class="outline-text-3" id="text-5-1">
+<ol class="org-ol">
+<li><p>
+Gripper
+</p>
+
+<p>
+It seems like the calibration of the gripper is skipped. After invoking the <code>openGripper()</code>
+method the gripper only opens slightly. To solve this problem the method <code>fakeCalibration(axis, offset)</code>
+can be used.
+</p></li>
+
+<li><p>
+Inlining python into matlab
+</p>
+
+<p>
+The <code>SOAPProxy</code> object is "too" dynamic to be used inside of matlab. If you try to call a method
+on it matlab will complain that the method won't exist. A easy wrapper that gives matlab a hint
+of the methods should help:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #96CBFE;">import</span> SOAPpy
+
+
+<span style="color: #96CBFE;">class</span> <span style="color: #CFCB90;">KatanaSoap</span>:
+    <span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">__init__</span>(<span style="color: #96CBFE;">self</span>, <span style="color: #c5c8c6; background-color: #1d1f21;">ip</span>=<span style="color: #8AE234;">"10.162.242.242"</span>, <span style="color: #c5c8c6; background-color: #1d1f21;">port</span>=<span style="color: #8AE234;">"8000"</span>):
+        <span style="color: #96CBFE;">self</span>.katana = SOAPpy.SOAPProxy(<span style="color: #8AE234;">"http://"</span> + ip + <span style="color: #8AE234;">":"</span> + port)
+
+    <span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">calibrate</span>(<span style="color: #96CBFE;">self</span>, <span style="color: #c5c8c6; background-color: #1d1f21;">axis</span>=<span style="color: #c5c8c6; background-color: #1d1f21;">0</span>, <span style="color: #c5c8c6; background-color: #1d1f21;">force</span>=<span style="color: #96CBFE;">False</span>):
+        <span style="color: #96CBFE;">self</span>.katana.calibrate(axis, force)
+
+    <span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">moveMotAndWait</span>(<span style="color: #96CBFE;">self</span>, axis, pos):
+        <span style="color: #96CBFE;">self</span>.katana.moveMotAndWait(axis, pos)
+
+    <span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">terminate</span>(<span style="color: #96CBFE;">self</span>):
+        <span style="color: #96CBFE;">self</span>.katana.terminate()
+
+    <span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">init</span>(<span style="color: #96CBFE;">self</span>):
+        <span style="color: #96CBFE;">self</span>.katana.init()
+
+    <span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">moveMot</span>(<span style="color: #96CBFE;">self</span>, enc, <span style="color: #c5c8c6; background-color: #1d1f21;">speed</span>=<span style="color: #c5c8c6; background-color: #1d1f21;">0</span>, <span style="color: #c5c8c6; background-color: #1d1f21;">accel</span>=<span style="color: #c5c8c6; background-color: #1d1f21;">0</span>, <span style="color: #c5c8c6; background-color: #1d1f21;">tolerance</span>=<span style="color: #c5c8c6; background-color: #1d1f21;">0</span>, <span style="color: #c5c8c6; background-color: #1d1f21;">rangeCheck</span>=<span style="color: #96CBFE;">True</span>):
+        <span style="color: #96CBFE;">self</span>.katana.moveMot(enc, speed, accel, tolerance, rangeCheck)
+
+    <span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">motorOff</span>(<span style="color: #96CBFE;">self</span>, axis):
+        <span style="color: #96CBFE;">self</span>.katana.motorOff(axis)
+
+    <span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">allMotorsOff</span>(<span style="color: #96CBFE;">self</span>):
+        <span style="color: #96CBFE;">self</span>.katana.allMotorsOff()
+
+    <span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">motorFreeze</span>(<span style="color: #96CBFE;">self</span>):
+        <span style="color: #96CBFE;">self</span>.katana.motorFreeze()
+
+    <span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">freezeAllMotors</span>(<span style="color: #96CBFE;">self</span>):
+        <span style="color: #96CBFE;">self</span>.katana.freezeAllMotors()
+
+    <span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">closeGripper</span>(<span style="color: #96CBFE;">self</span>):
+        <span style="color: #96CBFE;">self</span>.katana.closeGripper()
+
+    <span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">openGripper</span>(<span style="color: #96CBFE;">self</span>):
+        <span style="color: #96CBFE;">self</span>.katana.openGripper()
+
+    <span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">setMaxVelocity</span>(<span style="color: #96CBFE;">self</span>, axis, vel):
+        <span style="color: #96CBFE;">self</span>.katana.setMaxVelocity(axis, vel)
+
+    <span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">setMaxAccel</span>(<span style="color: #96CBFE;">self</span>, axis, accel):
+        <span style="color: #96CBFE;">self</span>.katana.setMaxAccel(axis, accel)
+
+    <span style="color: #96CBFE;">def</span> <span style="color: #FFD2A7;">fakeCalibration</span>(<span style="color: #96CBFE;">self</span>, axis, offset):
+        <span style="color: #96CBFE;">self</span>.katana.fakeCalibration(axis, offset)
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Bernhard Specht</p>
+<p class="date">Created: 2017-05-02 Tue 09:53</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

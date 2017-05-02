@@ -1,0 +1,55 @@
+<!-- HTML FILE GENERATED FROM PLC EDITOR by ININET Solutions GmbH on Thursday, November 08, 2007 [ LICENCE_NR : 9999 **** LICENCE_USERNAME : Neuronics AG - Thomas Popp INHOUSE TESTLIZENZ **** LICENCE_PLCTYPE : ININET **** LICENCE_PLCRELEASE : EXTENDED ] -->
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1"></META>
+	<META NAME="GENERATOR" CONTENT="IniNet SpiderControl TM"></META>
+	<TITLE>Katana_WebInterface</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+<p>
+<APPLET ARCHIVE="IMaster5_10_00.jar" CODE="IMaster5_10_00.class" ALIGN="BOTTOM" WIDTH="1024" HEIGHT="768">
+<PARAM NAME="AppletName"   VALUE="Katana_WebInterface"></PARAM>
+<PARAM NAME="ProjectName"   VALUE="Katana_WebInterface"></PARAM>
+<!--PARAM NAME="DrawTeqsAtInit"   VALUE="true"-->
+<PARAM NAME="Period"   VALUE="100"></PARAM>
+<PARAM NAME="FirstFileIndex"   VALUE="0"></PARAM>
+<PARAM NAME="LastFileIndex"   VALUE="18"></PARAM>
+<PARAM NAME="Main"   VALUE="0"></PARAM>
+<PARAM NAME="OrderPerView"   VALUE="on"></PARAM>
+<PARAM NAME="debug"   VALUE="on"></PARAM>
+<PARAM NAME="SpiderHTMLVersion"   VALUE="7"></PARAM>
+<PARAM NAME="MainTEQName"   VALUE="Start.teq"></PARAM>
+<PARAM NAME="InitCoTEQName"   VALUE="Katana_WebInterface.itq"></PARAM>
+<PARAM NAME="InitPPOASCIIName"   VALUE="Katana_WebInterface.tcr"></PARAM>
+<PARAM NAME="IMASTERHTMLTAGSFILEName"   VALUE=""></PARAM>
+<PARAM NAME="StaticHTMLTagsFileName"   VALUE=""></PARAM>
+<PARAM NAME="MessageBox"   VALUE="MsgBox.teq"></PARAM>
+<PARAM NAME="SOAPIF"   VALUE="off"></PARAM>
+<PARAM NAME="encodeSpecialChar"   VALUE="on"></PARAM>
+<PARAM NAME="RUNTIMEACTIONMODE"   VALUE="CONSUMED ACTION"></PARAM>
+<PARAM NAME="BrowsingMode"   VALUE="DEFAULT"></PARAM>
+<PARAM NAME="MirrorPPOName"   VALUE="mirror"></PARAM>
+<PARAM NAME="LoadingMode"   VALUE="Standard Load"></PARAM>
+<PARAM NAME="TEQ0NAME"   VALUE="MsgBox.teq"></PARAM>
+<PARAM NAME="TEQ1NAME"   VALUE="Steuerung.teq"></PARAM>
+<PARAM NAME="TEQ2NAME"   VALUE="Einstellungen.teq"></PARAM>
+<PARAM NAME="TEQ3NAME"   VALUE="Background.teq"></PARAM>
+<PARAM NAME="TEQ4NAME"   VALUE="Start.teq"></PARAM>
+<PARAM NAME="TEQ5NAME"   VALUE="Zustaende.teq"></PARAM>
+<PARAM NAME="TEQ6NAME"   VALUE="Zustand_1.teq"></PARAM>
+<PARAM NAME="TEQ7NAME"   VALUE="Zustand_2.teq"></PARAM>
+<PARAM NAME="TEQ8NAME"   VALUE="Zustand_3.teq"></PARAM>
+<PARAM NAME="TEQ9NAME"   VALUE="Zustand_4.teq"></PARAM>
+<PARAM NAME="TEQ10NAME"   VALUE="Zustand_5.teq"></PARAM>
+<PARAM NAME="TEQ11NAME"   VALUE="Zustand_6.teq"></PARAM>
+<PARAM NAME="TEQ12NAME"   VALUE="Zustand_S.teq"></PARAM>
+<PARAM NAME="TEQ13NAME"   VALUE="Zustand_Overview.teq"></PARAM>
+<PARAM NAME="TEQ14NAME"   VALUE="Update.teq"></PARAM>
+<PARAM NAME="TEQ15NAME"   VALUE="Standalone.teq"></PARAM>
+<PARAM NAME="TEQ16NAME"   VALUE="Diagnose.teq"></PARAM>
+<PARAM NAME="TEQ17NAME"   VALUE="Diagnose_Logfiles.teq"></PARAM>
+<PARAM NAME="TEQ18NAME"   VALUE="Heartbeat.teq"></PARAM>
+</APPLET>
+</p>
+</BODY>
+</HTML>

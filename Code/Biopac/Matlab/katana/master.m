@@ -25,7 +25,12 @@ katana.fakeCalibration(ax6, min)   % needed to make gripper work
 
 
 %% initialize working position - ports (ethernet, USB, ...) facing door
-katana.moveMotAndWait(ax1, 0.5*max) % correct
-katana.moveMotAndWait(ax2, -max/2) % to check: axis 2 needs negativ values
-katana.moveMotAndWait(ax3, max/3)   
+katana.moveMotAndWait(ax1, 0.5*max) % correct: choose values in range of [0.3, 0.6]
+katana.moveMotAndWait(ax2, -max/2) % correct; axis 2 needs negativ values
+katana.moveMotAndWait(ax3, -0.75*max) % correct; axis 3 needs negativ values   
+katana.moveMotAndWait(ax4, max/3)   % correct
+katana.moveMotAndWait(ax5, max)
+
+%%
+
 

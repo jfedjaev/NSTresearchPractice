@@ -1,0 +1,24 @@
+\begin{thebibliography}{OLH00}
+
+\bibitem[BJ99]{Bloe_99}
+Adam Bloe and Fred Joe.
+\newblock {Towards a unified solution of $x>y$}.
+\newblock {\em Math and other geeky stuff}, 1(1):1--23, 1999.
+
+\bibitem[Elp14]{Elphinstone2014}
+Kevin Elphinstone.
+\newblock {A Small Guide to Writing Your Thesis}, 2014.
+\newblock URL: \url{http://cgi.cse.unsw.edu.au/~kevine/thesisguide.html}.
+
+\bibitem[Jay99]{Jay_87}
+D~Jay.
+\newblock {Applications of $x>y$ with respect to constraints in $y$ and bounded
+  $x$}.
+\newblock {\em Journal of Solutions to Bounded Inputs}, 1(3):66--99, 1999.
+
+\bibitem[OLH00]{ONeill_2000}
+James O'Neill, Stan Laurel, and Oliver Hardy.
+\newblock {On the correctness of $x>y$: Limits in the case of $z>5$}.
+\newblock {\em Math and other geeky stuff}, 5(3):56--87, 2000.
+
+\end{thebibliography}

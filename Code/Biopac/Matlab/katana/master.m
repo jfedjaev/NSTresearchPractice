@@ -31,6 +31,6 @@ katana.moveMotAndWait(ax3, -0.75*max) % correct; axis 3 needs negativ values
 katana.moveMotAndWait(ax4, max/3)   % correct
 katana.moveMotAndWait(ax5, max)
 
-%%
+%% 
 
 

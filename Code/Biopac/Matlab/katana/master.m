@@ -19,9 +19,13 @@ katana = py.KatanaSoap.KatanaSoap();
 
 %% initialize robot arm & calibrate
 katana.calibrate();
-katana.fakeCalibration(int32(6),int32(0))   % needed to make gripper work
+katana.closeGripper();
+katana.fakeCalibration(ax6, min)   % needed to make gripper work
+%katana.fakeCalibration(ax2, 0.5*max)    % make axis 2 work in both directions
 
-%% move arm
-katana.moveMotAndWait(ax1, min+100)
 
+%% initialize working position
+katana.moveMotAndWait(ax1, 0.9*max) % correct
+katana.moveMotAndWait(ax2, 0.3*max) % to check
+katana.moveMotAndWait(ax3, max/2)
 

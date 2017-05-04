@@ -4,23 +4,28 @@
 
 clear, clc, close all
 
-max = int32(30500); % need to explicitly specify int32 data type for python interface
+%% need to explicitly specify int32 data type for python interface
 min = int32(0);
+max = int32(30500); 
 ax1 = int32(1);
 ax2 = int32(2);
 ax3 = int32(3);
 ax4 = int32(4);
 ax5 = int32(5);
-ax6 = 
+ax6 = int32(6); % axis 6 is the gripper
 
 %% initialize SOAP object 
 katana = py.KatanaSoap.KatanaSoap();
 
 %% initialize robot arm & calibrate
 katana.calibrate();
-katana.fakeCalibration(int32(6),int32(0))   % needed to make gripper work
+katana.moveMotAndWait(ax6, min)
+katana.fakeCalibration(ax6, min)   % needed to make gripper work
+%katana.fakeCalibration(ax2, 0.5*max)    % make axis 2 work in both directions
 
-%% move arm
-katana.moveMotAndWait(int32(1), max)
 
+%% initialize working position
+katana.moveMotAndWait(ax1, 0.5*max) % correct
+katana.moveMotAndWait(ax2, -max/2) % to check: axis 2 needs negativ values
+katana.moveMotAndWait(ax3, max/2)   
 

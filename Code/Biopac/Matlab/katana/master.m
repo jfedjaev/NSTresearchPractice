@@ -19,13 +19,13 @@ katana = py.KatanaSoap.KatanaSoap();
 
 %% initialize robot arm & calibrate
 katana.calibrate();
-katana.closeGripper();
+katana.moveMotAndWait(ax6, min)
 katana.fakeCalibration(ax6, min)   % needed to make gripper work
 %katana.fakeCalibration(ax2, 0.5*max)    % make axis 2 work in both directions
 
 
-%% initialize working position
-katana.moveMotAndWait(ax1, 0.9*max) % correct
-katana.moveMotAndWait(ax2, 0.3*max) % to check
-katana.moveMotAndWait(ax3, max/2)
+%% initialize working position - ports (ethernet, USB, ...) facing door
+katana.moveMotAndWait(ax1, 0.5*max) % correct
+katana.moveMotAndWait(ax2, -max/2) % to check: axis 2 needs negativ values
+katana.moveMotAndWait(ax3, max/3)   
 

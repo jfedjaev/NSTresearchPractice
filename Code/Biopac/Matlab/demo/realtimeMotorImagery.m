@@ -6,9 +6,9 @@
 %       robotON : turn on/off robot control
 
 function [retval] = realtimeMotorImagery(numTrials, robotOn)
-%% get SVM model file / 
-filename = uigetfile;
-load(filename);
+%% get SVM model file
+filename = uigetfile;   
+load(filename); % 'SVMModel' is the name of the variable 
 
 %%  Parameters for cue experiment
 nCh = 3;
@@ -19,33 +19,6 @@ T_CUE    = 2;
 T_PERIOD = 8;
 DURATION = numTrials * T_PERIOD;
 
-%% initialize figure
-% addpath('disp_cue'); 
-% FigHandle = figure;
-% set(FigHandle, 'OuterPosition', [1680, 0, 1680, 1050]);
-    
-%% data set that will be recorded
-recording.X = [];        % data matrix with #samples x #channels
-recording.trial = [];    % trial onset with #trials x 1; trials being the sample number
-recording.numTrials = numTrials;    % number of trials recorded 
-recording.y = [];        % trial classes with numerical identifier {1,2,3}
-recording.fs = 200;             % sampling rate
-recording.classes = cell(1,2);  % class descriptions, e.g. {left, right, rest}
-recording.gender = '';          % gender of subject, {'male', 'female'}
-recording.age = 0;              % age of subject
-recording.id = '';              % subject initials 
-recording.impedance = [];       % channel impedances in matrix form and kOhm
-todaysdate = datetime('today');
-recording.date = datestr(todaysdate);   % todays date and time
-
-%% query age, gender, id
-recording.gender = input('Enter the gender of the subject (male/female): ', 's');
-recording.age = input('Enter the age of the suject: ');
-recording.id = input('Enter an ID for the subject/session: ', 's');
-recording.impedance = input('Enter the channel impedances as a vector (in kOhm): ');
-
-%% set labels
-recording = getClassLabels(recording, nCh);
 
 %% initialize & set path and load library // WINDOWS ONLY for now
 mptype = 103;   % 103 for MP36 device (see mpdev.h)
@@ -91,12 +64,6 @@ catch
     retval = 'ERROR';
     rethrow(lasterror);
 end
-%% save recording to .mat 
-fprintf(1,'Saving recorded data to .mat file...\n');
-filename = [recording.id,'_', recording.date, '.mat'];
-%%
-save(filename,'recording')
-
 
 
 %% unload library

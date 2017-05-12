@@ -3,7 +3,7 @@
 %  Last modified:   04/05/17
 function katana = initKatana
 
-clear, clc, close all
+%clear, clc, close all
 
 %% need to explicitly specify int32 data type for python interface
 min = int32(0);

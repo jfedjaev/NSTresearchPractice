@@ -7,8 +7,9 @@
 
 function [retval] = realtimeMotorImagery(numTrials, robotOn)
 %% get SVM model file
-filename = uigetfile;   
-load(filename); % 'SVMModel' is the name of the variable 
+filename = uigetfile;
+load(filename); % 'SVMModel' is the name of the variable
+addpath('disp_cue');
 
 %% init robot and get object
 addpath('katana')
@@ -131,15 +132,64 @@ if ~strcmp(retval,'MPSUCCESS')
 end
 
 %% ------------------------------------------------------------------
+% Outer while loop for number of trials
 
-%% Download and Plot samples in realtime
-fprintf(1,'Download and Plot samples for %f seconds in Real-Time\n', DURATION);
-numRead = 0;
-numValuesToRead = 200*nCh; %collect 1 second worth of data points per iteration
-remaining = DURATION*200*nCh; % collect samples with 200 Hz per Channel for #duration
-tbuff(1:numValuesToRead) = double(0); %initialize the correct amount of data
-bval = 0;
-offset = 1;
+for i_trial=1:numTrials
+    %% Download and Plot samples in realtime
+    numRead = 0;
+    numValuesToRead = 200*nCh; %collect 1 second worth of data points per iteration
+    remaining = T_PERIOD*200*nCh; % collect samples with 200 Hz per Channel for #duration
+    tbuff(1:numValuesToRead) = double(0); %initialize the correct amount of data
+    bval = 0;
+    offset = 1;
+    
+    % loop until there is still some data to acquire
+    tic
+    
+    %launch timers
+    launchTimers;
+    
+    while(remaining > 0)
+        if numValuesToRead > remaining
+            numValuesToRead = remaining;
+        end
+        [retval, tbuff, numRead]  = calllib(libname, 'receiveMPData',tbuff, numValuesToRead, numRead);
+        if ~strcmp(retval,'MPSUCCESS')
+            fprintf(1,'Failed to receive MP data.\n');
+            calllib(libname, 'disconnectMPDev');
+            return
+        else
+            buff(offset:offset+double(numRead(1))-1) = tbuff(1:double(numRead(1)));
+            % Process
+            len = length(buff);
+            ch1data = buff(1:nCh:len);
+            ch2data = buff(2:nCh:len);
+            if nCh == 3
+                ch3data = buff(3:nCh:len);
+            end
+            X(1:len) = (1:len);
+            drawnow % for cue display
+        end
+        offset = offset + double(numValuesToRead);
+        remaining = remaining-double(numValuesToRead);
+    end
+    t_dur = toc;
+    fprintf(1, 'Acquired data for %f seconds.\n', t_dur);
+    
+    % save data
+    if nCh == 2
+        ch1 = ch1data;
+        ch2 = ch2data;
+        X = [ch1', ch2'];   % merge data in Matrix X for return value
+    end
+    if nCh == 3
+        ch1 = ch1data;
+        ch2 = ch2data;
+        ch3 = ch3data;
+        X = [ch1', ch2', ch3'];   % merge data in Matrix X for return value
+    end
+end % end for-loop over numTrials
+
 
 
 

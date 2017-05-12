@@ -1,6 +1,7 @@
 %% This is a script for the Zurich Katana Robot 
 %  Author:  Juri Fedjaev
 %  Last modified:   04/05/17
+function katana = initKatana
 
 clear, clc, close all
 

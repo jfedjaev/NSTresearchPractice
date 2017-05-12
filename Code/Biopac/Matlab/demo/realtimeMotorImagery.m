@@ -10,6 +10,20 @@ function [retval] = realtimeMotorImagery(numTrials, robotOn)
 filename = uigetfile;   
 load(filename); % 'SVMModel' is the name of the variable 
 
+%% init robot and get object
+addpath('katana')
+katana = initKatana;
+% need to explicitly specify int32 data type for python interface
+min = int32(0);
+max = int32(30500); 
+ax1 = int32(1);
+ax2 = int32(2);
+ax3 = int32(3);
+ax4 = int32(4);
+ax5 = int32(5);
+ax6 = int32(6); % axis 6 is the gripper
+
+
 %%  Parameters for cue experiment
 nCh = 3;
 cueOn = 1;
@@ -18,6 +32,8 @@ T_CUE_ON = 3;
 T_CUE    = 2;
 T_PERIOD = 8;
 DURATION = numTrials * T_PERIOD;
+
+
 
 
 %% initialize & set path and load library // WINDOWS ONLY for now

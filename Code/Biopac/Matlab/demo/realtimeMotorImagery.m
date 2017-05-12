@@ -134,7 +134,7 @@ end
 %% ------------------------------------------------------------------
 % Outer while loop for number of trials
 
-for i_trial=1:numTrials
+for i_trial=1:numTrials   
     %% Download and Plot samples in realtime
     numRead = 0;
     numValuesToRead = 200*nCh; %collect 1 second worth of data points per iteration
@@ -143,12 +143,11 @@ for i_trial=1:numTrials
     bval = 0;
     offset = 1;
     
+    % launch timers
+    CLASS = randi([0 1], 1,1); % generate random class, values 1 (right) or 0 (left cue)
+    launchTimers(CLASS, DURATION, T_PERIOD, T_BLANK, T_CUE_ON, T_CUE);
     % loop until there is still some data to acquire
     tic
-    
-    %launch timers
-    launchTimers;
-    
     while(remaining > 0)
         if numValuesToRead > remaining
             numValuesToRead = remaining;
@@ -188,10 +187,14 @@ for i_trial=1:numTrials
         ch3 = ch3data;
         X = [ch1', ch2', ch3'];   % merge data in Matrix X for return value
     end
+    delete(timerfind)
+    
+    % pre-processing and apply SVM
+%     classif_res = classifyWithSVM( ...
+
+    
+    
 end % end for-loop over numTrials
-
-
-
 
 
 %% stop acquisition && unload library

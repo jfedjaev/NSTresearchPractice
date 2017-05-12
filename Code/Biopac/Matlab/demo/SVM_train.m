@@ -3,7 +3,7 @@ close all
 clear
 clc
 
-addpath('data'); % set path to data
+addpath('../data'); % set path to data
 
 filename = uigetfile;
 
@@ -153,7 +153,7 @@ SVMModel = fitcsvm(redFeatures',cleanLabels, ...
 CVSVMModel = crossval(SVMModel);
 classLoss = kfoldLoss(CVSVMModel);
 
-filename = ['SVM_',recording.id,'_',classLoss,'_', recording.date, '.mat'];
+filename = ['SVM_',recording.id,'_',num2str(classLoss),'_', recording.date, '.mat'];
 save(filename, 'SVMModel');
 
 % for i=1:120

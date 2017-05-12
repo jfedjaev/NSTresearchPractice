@@ -153,6 +153,9 @@ SVMModel = fitcsvm(redFeatures',cleanLabels, ...
 CVSVMModel = crossval(SVMModel);
 classLoss = kfoldLoss(CVSVMModel);
 
+filename = ['SVM_',recording.id,'_',classLoss,'_', recording.date, '.mat'];
+save(filename, 'SVMModel');
+
 % for i=1:120
 %     min1(i)         = min(D3C4(:,i));
 %     mean1(i)        = mean(D3C4(:,i));

@@ -48,7 +48,7 @@ libfunctions(libname, '-full');
 %% start Acquisition Daemon 
 try
     fprintf(1,'Acquisition Daemon Demo...\n');
-    [retval, recording.X] = startAcqBinary(dothdir,libname,mptype, mpmethod, sn, DURATION, T_BLANK, T_CUE_ON, T_CUE, T_PERIOD, nCh, cueOn);
+    [retval, recording.X] = realTimeAcq(dothdir,libname,mptype, mpmethod, sn, DURATION, T_BLANK, T_CUE_ON, T_CUE, T_PERIOD, nCh, cueOn);
 
     if ~strcmp(retval,'MPSUCCESS')
         delete(timerfind);

@@ -8,7 +8,7 @@ T_CUE    = 2;
 
 %% Chop the data into pieces:
 pos     = 1;
-dataset = data.X;
+dataset = X;
 
 %% detrend data
 detrended_dataset = detrendData(data.X, pos);

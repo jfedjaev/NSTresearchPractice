@@ -191,6 +191,7 @@ for i_trial=1:numTrials
     delete(timerfind)
     
     % pre-processing and apply SVM
+%     size(X)
     class_res = classifyWithSVM(X, SVMModel, pca_coeff);
     if class_res == 1
         fprintf(1,'RIGHT HAND MOTOR IMAGERY DETECTED!\n');
@@ -201,6 +202,7 @@ for i_trial=1:numTrials
         fprintf(1,'MOVING ROBOT ARM TO THE LEFT!\n');
         katanaLeft(katana);
     end
+    class_res = 0;
     katanaCenter(katana); % restore initial robot arm position
     close all
     

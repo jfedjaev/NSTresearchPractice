@@ -142,40 +142,17 @@ redFeatures = pca_coeff' * features;
 figure
 gscatter(redFeatures(1,:), redFeatures(2,:), cleanLabels,'rb', '.');
 
-%% Classify the samples:
+%% Classify the feature sets:
 SVMModel = fitcsvm(redFeatures',cleanLabels, ...
     'Standardize',true,             ...
     'KernelFunction','RBF',         ...(from the
     'KernelScale','auto',           ...
     'OptimizeHyperparameters', 'all');
 
-%%
+%% get class loss and save SVM Model & PCA coefficients
 CVSVMModel = crossval(SVMModel);
 classLoss = kfoldLoss(CVSVMModel);
 
 filename = ['SVM_',recording.id,'_',num2str(classLoss),'_', recording.date, '.mat'];
 save(filename, 'SVMModel', 'pca_coeff');
 
-% for i=1:120
-%     min1(i)         = min(D3C4(:,i));
-%     mean1(i)        = mean(D3C4(:,i));
-%     max1(i)         = max(D3C4(:,i));
-%     stdr1(i)        = std(D3C4(:s,i));
-%     madian1(i)      = median(D3C4(:,i));
-%     bandpower4(i)   = bandpower(D3C4(:,i),250, [18,22]);
-%
-% end
-%
-% Vector2=[transpose(min1) transpose(max1) transpose(mean1) transpose(stdr1) transpose(madian1)  transpose(bandpower1) transpose(bandpower2)]
-%
-% % Calculation The Coificients Vectors
-%
-% cD3 = detcoef(C,L,3);                   %NOISY
-% cD4 = detcoef(C,L,4);                   %NOISY
-%
-% D31 = wrcoef('d',C,L,waveletFunction,3); %NOISY
-% D41 = wrcoef('d',C,L,waveletFunction,4); %NOISY
-%
-%
-% power1=(sum(D31.^2))/length(D31);
-% power2=(sum(D41.^2))/length(D41);

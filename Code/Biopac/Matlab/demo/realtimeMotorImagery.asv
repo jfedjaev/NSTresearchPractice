@@ -142,7 +142,6 @@ for i_trial=1:numTrials
     tbuff(1:numValuesToRead) = double(0); %initialize the correct amount of data
     bval = 0;
     offset = 1;
-    X = 0;
     
     % launch timers
     CLASS = randi([0 1], 1,1); % generate random class, values 1 (right) or 0 (left cue)
@@ -194,15 +193,11 @@ for i_trial=1:numTrials
     class_res = classifyWithSVM(X, SVMModel, pca_coeff);
     if class_res == 1
         fprintf(1,'RIGHT HAND MOTOR IMAGERY DETECTED!\n');
-        fprintf(1,'MOVING ROBOT ARM TO THE RIGHT!\n');
-        katanaRight(katana);
+        katana.
     else
         fprintf(1,'LEFT HAND MOTOR IMAGERY DETECTED!\n');
-        fprintf(1,'MOVING ROBOT ARM TO THE LEFT!\n');
-        katanaLeft(katana);
     end
-    katanaCenter(katana); % restore initial robot arm position
-    close all
+    
     
 end % end for-loop over numTrials
 
@@ -221,7 +216,6 @@ fprintf(1,'Disconnecting...\n')
 retval = calllib(libname, 'disconnectMPDev');
 
 unloadlibrary(libname);
-close all
 
 
 end

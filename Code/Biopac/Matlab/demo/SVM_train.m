@@ -136,8 +136,8 @@ for trial = 1:size(cleanFreq,3)
 end
 
 %% Dimensionality Reduction:
-[coeff,~,~] = pca(features', 'NumComponents', 12);
-redFeatures = coeff' * features;
+[pca_coeff,~,~] = pca(features', 'NumComponents', 12);
+redFeatures = pca_coeff' * features;
 
 figure
 gscatter(redFeatures(1,:), redFeatures(2,:), cleanLabels,'rb', '.');
@@ -154,7 +154,7 @@ CVSVMModel = crossval(SVMModel);
 classLoss = kfoldLoss(CVSVMModel);
 
 filename = ['SVM_',recording.id,'_',num2str(classLoss),'_', recording.date, '.mat'];
-save(filename, 'SVMModel');
+save(filename, 'SVMModel', 'pca_coeff');
 
 % for i=1:120
 %     min1(i)         = min(D3C4(:,i));

@@ -1,9 +1,11 @@
-function classifyWithSVM(X, T_CUE_ON, T_CUE, pos
+function classifyWithSVM(X, SVMModel, T_CUE_ON, T_CUE, pos)
 
 %% init
 % values for cue duration 
 T_CUE_ON = 3;  
 T_CUE    = 2;
+pos = 1;
+
 
 
 %% Chop the data into pieces:
@@ -11,7 +13,7 @@ pos     = 1;
 dataset = X;
 
 %% detrend data
-detrended_dataset = detrendData(data.X, pos);
+detrended_dataset = detrendData(dataset, pos);
 filtered_dataset = filterData(detrended_dataset, pos);
 
 dataset = filtered_dataset;
@@ -20,8 +22,8 @@ dataset = filtered_dataset;
 pos = shiftLabels(pos, T_CUE_ON);
 
 %%
-nTrials = data.numTrials;
-Fs = data.fs;        % Sampling Frequency.
+nTrials = 1;
+Fs = 200;        % Sampling Frequency.
 nPre    = 1*Fs;
 nPost   = (T_CUE+1)*Fs-1;
 n       = nPre + nPost + 1;
@@ -30,15 +32,6 @@ nChannels = 3;
 
 timeSeries          = zeros(3, n, nTrials);
 frequencyDomain     = zeros(3, n/2+1, nTrials);
-label               = data.y;
-
-class1_idx          = find(label == 1);
-class2_idx          = find(label == 2);
-
-%% artifact occurences have not been noted
-%samplesWArtifacts   = find(data{1,1}.artifacts);
-clean_class1_idx    = class1_idx;
-clean_class2_idx    = class2_idx;
 
 %%
 for i=1:nTrials
@@ -47,22 +40,10 @@ for i=1:nTrials
     frequencyDomain(:,:,i) = P2(:,1:n/2+1);
     frequencyDomain(:,2:end-1,i) = 2*frequencyDomain(:,2:end-1,i);
     frequencyDomain(:,:,i) = frequencyDomain(:,:,i).^2;
-    label = data.y;
 end
 
 nClassSamples = 9;
 f = Fs * (0:(n/2))/n;
-%% plot freq domain
-figure
-for i=1:1:nClassSamples
-    subplot(2,nClassSamples,i)
-    plot(f,frequencyDomain(:,:,clean_class1_idx(i))');
-end
-
-for i=1:1:nClassSamples
-    subplot(2,nClassSamples,nClassSamples+i)
-    plot(f, frequencyDomain(:,:,clean_class2_idx(i))');
-end
 
 %% Extract Alpha Channel:
 lowerAlpha = 7;
@@ -73,22 +54,6 @@ upperBeta = 30; % was : upperBeta = 26
 
 alpha   = intersect(find(f >= lowerAlpha), find(f <= upperAlpha));
 beta    = intersect(find(f >= lowerBeta), find(f <= upperBeta));
-
-%%
-figure
-for i=1:1:nClassSamples
-    subplot(2,nClassSamples,i)
-    hold on
-    plot(f(alpha),frequencyDomain(:,alpha,clean_class1_idx(i))');
-    plot(f(beta),frequencyDomain(:,beta,clean_class1_idx(i))');
-end
-
-for i=1:1:nClassSamples
-    subplot(2,nClassSamples,nClassSamples+i)
-    hold on
-    plot(f(alpha),frequencyDomain(:,alpha,clean_class2_idx(i))');
-    plot(f(beta),frequencyDomain(:,beta,clean_class2_idx(i))');
-end
 
 
 %% Extract the features:

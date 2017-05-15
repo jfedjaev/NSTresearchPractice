@@ -25,7 +25,7 @@ for i=1:length(onsets)
             counter = counter+1;
         case 2
             ylab(i) = 2;
-            counter = counter=1
+            counter = 1;
 %         case 3
 %             ylab(i) = 3;
 %             counter = 1;

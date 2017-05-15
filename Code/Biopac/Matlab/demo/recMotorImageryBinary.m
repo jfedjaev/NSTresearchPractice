@@ -40,7 +40,7 @@ recording.id = input('Enter an ID for the subject/session: ', 's');
 recording.impedance = input('Enter the channel impedances as a vector (in kOhm): ');
 
 %% set labels
-recording = getClassLabels(recording, nCh);
+recording = getClassLabels(recording);
 
 %% initialize & set path and load library // WINDOWS ONLY for now
 mptype = 103;   % 103 for MP36 device (see mpdev.h)

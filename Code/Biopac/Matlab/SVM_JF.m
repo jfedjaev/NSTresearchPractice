@@ -39,7 +39,10 @@ pos = shiftLabels(pos, T_CUE_ON);
 nTrials = data.numTrials;
 Fs = data.fs;        % Sampling Frequency.
 nPre    = 1*Fs;
-nPost   = (T_CUE+1)*Fs-1;
+
+nPost   = (T_CUE)*Fs-1;   % Juri
+% nPost   = (T_CUE+1)*Fs-1; % Alex
+
 n       = nPre + nPost + 1;
 nChannels = 3;
 

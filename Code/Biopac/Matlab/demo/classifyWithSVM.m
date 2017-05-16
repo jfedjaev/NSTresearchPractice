@@ -17,7 +17,15 @@ dataset = X;
 detrended_dataset = detrendData(dataset, pos);
 filtered_dataset = filterData(detrended_dataset, pos);
 
-dataset = filtered_dataset;
+%% normalize and scale data
+X_data_mean = mean(filtered_dataset);
+X_data_std = std(filtered_dataset);
+X_data_norm = bsxfun(@rdivide, filtered_dataset, X_data_std);
+
+
+%% DEBUG copy dataset 
+dataset = X_data_norm;
+% dataset = filtered_dataset;
 
 %% move labels to cue location
 pos = shiftLabels(pos, T_CUE_ON);

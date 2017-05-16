@@ -30,7 +30,7 @@ X_data_norm = bsxfun(@rdivide, filtered_dataset, X_data_std);
 
 
 %% DEBUG copy dataset 
-dataset = X_data_norm;
+dataset = X_;
 
 %% move labels to cue location
 pos = shiftLabels(pos, T_CUE_ON);
@@ -41,7 +41,7 @@ Fs = data.fs;        % Sampling Frequency.
 % nPre    = 1*Fs;
 nPre    = 1*Fs;
 
-nPost   = (T_CUE-1)*Fs-1; % JURI
+% nPost   = (T_CUE-1)*Fs-1; % JURI
 % nPost   = (T_CUE+1)*Fs-1; % ALEX
 
 n       = nPre + nPost + 1;

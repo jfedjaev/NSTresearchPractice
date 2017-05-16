@@ -19,10 +19,11 @@ ax6 = int32(6); % axis 6 is the gripper
 %% execute left-movement
 katana.openGripper;
 katana.moveMotAndWait(ax1, 0.4*max);
-% katana.moveMotAndWait(ax3, -0.8*max);
+katana.moveMotAndWait(ax3, -0.8*max);
 % katana.moveMotAndWait(ax4, 0.6*max);
 % katana.moveMotAndWait(ax2, -0.3*max);
 % katana.closeGripper;
+katana.moveMotAndWait(ax6, min);
 %% 
 retval = 1;
 

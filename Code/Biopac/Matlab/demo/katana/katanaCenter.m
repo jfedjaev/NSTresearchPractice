@@ -17,7 +17,7 @@ ax5 = int32(5);
 ax6 = int32(6); % axis 6 is the gripper
 
 %% execute center-movement
-katana.closeGripper;
+katana.openGripper;
 katana.moveMotAndWait(ax2, -max/2); % correct; axis 2 needs negativ values
 katana.moveMotAndWait(ax3, -0.75*max); % correct; axis 3 needs negativ values   
 katana.moveMotAndWait(ax4, max/3);   % correct

@@ -202,8 +202,10 @@ for i_trial=1:numTrials
         fprintf(1,'MOVING ROBOT ARM TO THE LEFT!\n');
         katanaLeft(katana);
     end
+    pause(5)
     class_res = 0;
     katanaCenter(katana); % restore initial robot arm position
+    pause(3)
     close all
     
 end % end for-loop over numTrials

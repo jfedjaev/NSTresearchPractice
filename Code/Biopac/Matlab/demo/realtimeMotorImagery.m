@@ -8,7 +8,7 @@
 function [retval] = realtimeMotorImagery(numTrials, robotOn)
 %% get SVM model file & PCA coefficients
 filename = uigetfile;
-load(filename); % 'SVMModel' is the name of the variable
+load(filename);         % 'SVMModel' is the name of the variable
 addpath('disp_cue');
 
 %% init robot and get object
@@ -101,40 +101,19 @@ if mptype ~= 101
     end
 end
 
-[retval, aCH] = calllib(libname, 'setAcqChannels',aCH);
 
+[retval, aCH] = calllib(libname, 'setAcqChannels',aCH);
 if ~strcmp(retval,'MPSUCCESS')
     fprintf(1,'Failed to Set Acq Channels.\n');
     calllib(libname, 'disconnectMPDev');
     return
 end
-
 fprintf(1,'Channels Set\n');
-
-% start to acquire
-fprintf(1,'Start Acquisition Daemon\n');
-retval = calllib(libname, 'startMPAcqDaemon');
-
-if ~strcmp(retval,'MPSUCCESS')
-    fprintf(1,'Failed to Start Acquisition Daemon.\n');
-    calllib(libname, 'disconnectMPDev');
-    return
-end
-
-fprintf(1,'Start Acquisition for %f seconds. \n', DURATION);
-
-retval = calllib(libname, 'startAcquisition');
-
-if ~strcmp(retval,'MPSUCCESS')
-    fprintf(1,'Failed to Start Acquisition.\n');
-    calllib(libname, 'disconnectMPDev');
-    return
-end
 
 %% ------------------------------------------------------------------
 % Outer while loop for number of trials
 
-for i_trial=1:numTrials   
+for i_trial=1:numTrials
     %% Download and Plot samples in realtime
     numRead = 0;
     numValuesToRead = 200*nCh; %collect 1 second worth of data points per iteration
@@ -143,6 +122,24 @@ for i_trial=1:numTrials
     bval = 0;
     offset = 1;
     X = 0;
+    class_res = 0;
+    
+    % start to acquire
+    fprintf(1,'Start Acquisition Daemon\n');
+    retval = calllib(libname, 'startMPAcqDaemon');
+    if ~strcmp(retval,'MPSUCCESS')
+        fprintf(1,'Failed to Start Acquisition Daemon.\n');
+        calllib(libname, 'disconnectMPDev');
+        return
+    end
+    
+    fprintf(1,'Start Acquisition for %f seconds. \n', T_PERIOD);
+    retval = calllib(libname, 'startAcquisition');
+    if ~strcmp(retval,'MPSUCCESS')
+        fprintf(1,'Failed to Start Acquisition.\n');
+        calllib(libname, 'disconnectMPDev');
+        return
+    end
     
     % launch timers
     CLASS = randi([0 1], 1,1); % generate random class, values 1 (right) or 0 (left cue)
@@ -172,7 +169,7 @@ for i_trial=1:numTrials
         end
         offset = offset + double(numValuesToRead);
         remaining = remaining-double(numValuesToRead);
-    end
+    end %while-loop
     t_dur = toc;
     fprintf(1, 'Acquired data for %f seconds.\n', t_dur);
     
@@ -191,7 +188,7 @@ for i_trial=1:numTrials
     delete(timerfind)
     
     % pre-processing and apply SVM
-%     size(X)
+    %     size(X)
     class_res = classifyWithSVM(X, SVMModel, pca_coeff);
     if class_res == 1
         fprintf(1,'RIGHT HAND MOTOR IMAGERY DETECTED!\n');
@@ -202,11 +199,17 @@ for i_trial=1:numTrials
         fprintf(1,'MOVING ROBOT ARM TO THE LEFT!\n');
         katanaLeft(katana);
     end
-    pause(5)
-    class_res = 0;
+    %     pause(5)
     katanaCenter(katana); % restore initial robot arm position
-    pause(3)
+    %     pause(3)
     close all
+    retval = calllib(libname, 'stopAcquisition');
+    if ~strcmp(retval,'MPSUCCESS')
+        fprintf(1,'Failed to Stop\n');
+        calllib(libname, 'disconnectMPDev');
+        return
+    end
+    pause(2)
     
 end % end for-loop over numTrials
 

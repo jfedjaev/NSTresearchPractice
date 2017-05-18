@@ -1,0 +1,124 @@
+\ProvidesPackage{beamerouterthemeTUMias}
+\RequirePackage{ifthen}
+\RequirePackage{tikz}
+\RequirePackage{graphicx}
+
+
+%% Headline and Title
+\newboolean{tumias@onlytum}
+\setboolean{tumias@onlytum}{false}
+\newcommand{\tumias@TUMLogo}{logo-tum}
+\newcommand{\tumias@GroupLogo}{logo-ias}
+\newcommand{\tumias@GroupText}{Intelligente Autonome Systeme}
+\newcommand{\tumias@InstituteText}{Institut f\"ur Informatik}
+
+% only for modifying pictures
+\newcommand{\tumias@slideStyle}{}
+\newlength{\tumias@GroupLogoShift}
+\setlength{\tumias@GroupLogoShift}{-2pt}
+
+\setbeamersize{text margin left=0.5cm,text margin right=0.5cm}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamerfont{title}{series=\bfseries}
+
+\newcommand{\tumias@thinline}{%
+  \usebeamercolor{palette quarternary}
+  \tikz{\shade[left color=bg,right color=bg,middle color=fg]
+    (0,0) rectangle (\paperwidth,0.01cm);}}
+
+\newcommand{\tumias@createheadline}{
+  \usebeamercolor{normal text}%
+  \vspace*{0.1cm}
+  \hspace*{\Gm@lmargin}%
+  \ifthenelse{\boolean{tumias@onlytum}}%
+    {\tiny Technische Universit{\"a}t M{\"u}nchen}%
+    {\raisebox{\tumias@GroupLogoShift}{\includegraphics[height=5.5mm]{\tumias@GroupLogo\tumias@slideStyle}}
+     \hspace*{0.05cm}
+     \parbox[b]{4cm}{\tiny \tumias@InstituteText\\\tumias@GroupText}}
+  \hfill
+  \ifthenelse{\boolean{tumias@onlytum}}{}%
+    {\parbox[b]{4.5cm}{\raggedleft\tiny Technische Universit{\"a}t M{\"u}nchen}}
+  \includegraphics[height=5.5mm]{\tumias@TUMLogo\tumias@slideStyle}
+  \hspace*{\Gm@lmargin}
+
+  \nointerlineskip\vspace*{0.08cm}
+  \tumias@thinline
+
+}
+
+\define@key{tumiashead}{english}[true]{%
+  \renewcommand{\tumias@GroupText}{Intelligent Autonomous Systems}
+  \renewcommand{\tumias@InstituteText}{Department of Informatics}}
+
+\define@key{tuminf9head}{english}[true]{%
+  \renewcommand{\tumias@GroupText}{Chair for Image Understanding and\\Knowledge-based Systems}
+  \renewcommand{\tumias@InstituteText}{Department of Informatics}}
+
+% Headlines
+\defbeamertemplate{headline}{ias}[1][]{%
+  \setkeys{tumiashead}{#1}
+  \tumias@createheadline
+}
+
+\defbeamertemplate{headline}{inf9}[1][]{%
+  \renewcommand{\tumias@GroupText}{Lehrstuhl f\"ur Bildverstehen und\\wissensbasierte Systeme}
+  \renewcommand{\tumias@GroupLogo}{logo-inf9}
+  \setlength{\tumias@GroupLogoShift}{0pt}
+  \setkeys{tuminf9head}{#1}
+  \tumias@createheadline
+}
+
+\defbeamertemplate{headline}{tum}{
+  \setboolean{tumias@onlytum}{true}
+  \tumias@createheadline
+}
+
+% choose standard headline
+\setbeamertemplate{headline}[ias][english]
+
+% Frametitle
+\setbeamertemplate{frametitle}{%
+  \insertframetitle
+
+  \ifthenelse{\equal{\insertframesubtitle}{}}{}{%
+    \usebeamerfont{framesubtitle}
+    \usebeamercolor{framesubtitle}
+    \insertframesubtitle}
+}
+
+%% Footline
+\newlength{\navigationhorizontalcorrection}
+\setlength{\navigationhorizontalcorrection}{0.02\textwidth}
+\newlength{\navigationwidth}
+\setlength{\navigationwidth}{\textwidth}
+\addtolength{\navigationwidth}{2\navigationhorizontalcorrection}
+
+\setbeamertemplate{footline}{
+  {\hspace*{\Gm@lmargin}\hspace*{-\navigationhorizontalcorrection}\tiny\insertnavigation{\navigationwidth}}
+
+  \vspace*{-0.05cm}
+  \tumias@thinline
+
+  \vspace*{0.1cm}
+  \hspace*{\Gm@lmargin}
+  \begin{minipage}[t]{0.45\textwidth}
+    \insertshortauthor
+    \insertshortdate
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.45\textwidth}
+    \raggedleft
+    \insertshorttitle
+  \end{minipage}
+  \hspace*{\Gm@lmargin}
+
+  \vspace*{0.1cm}
+}
+
+
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamertemplate{mini frame in current subsection}{}
+\setbeamertemplate{mini frame in other subsection}{}
+\setbeamertemplate{mini frame}{}
+\setbeamersize{mini frame size=0cm}

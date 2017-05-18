@@ -1,0 +1,35 @@
+\ProvidesPackage{beamerthemeTUMias}
+
+\RequirePackage{type1ec}
+\RequirePackage[T1]{fontenc}
+\renewcommand{\sfdefault}{tumnh}
+
+\setbeamerfont{framesubtitle}{size=\large}
+
+\colorlet{highlight}{blue!60!black}
+\newcommand<>{\highlight}[1]{{\color#2{highlight}#1}}
+
+\usecolortheme{snow}
+
+\mode<beamer>{
+  \useinnertheme{rectangles}
+  \useoutertheme{TUMias}
+
+  \setbeamercovered{transparent}
+}
+
+
+\mode<handout>{
+  \setbeamertemplate{footline}
+  {
+    \insertsection
+    \hfill
+    \insertpagenumber
+  }
+}
+
+\def\maketitle{\ifbeamer@inframe\titlepage\else\frame[plain]{\titlepage}\fi}
+
+
+
+

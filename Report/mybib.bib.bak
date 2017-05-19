@@ -12,15 +12,3 @@
   Publisher                = {Nature Publishing Group}
 }
 
-@Article{yong2015eeg,
-  Title                    = {EEG classification of different imaginary movements within the same limb},
-  Author                   = {Yong, Xinyi and Menon, Carlo},
-  Journal                  = {PloS one},
-  Year                     = {2015},
-  Number                   = {4},
-  Pages                    = {e0121896},
-  Volume                   = {10},
-
-  Publisher                = {Public Library of Science}
-}
-

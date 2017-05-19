@@ -3,6 +3,7 @@
 \usepackage{graphicx, color} %Deleted [dvips] in front of {graphicx, color} for usage also with PDFLaTex
 \usepackage[latin1]{inputenc}
 \usepackage{verbatim}
+\usepackage{tcolorbox}
 
 % based on the LSR Student Template, last change: 2014-06-05
 
@@ -122,139 +123,23 @@ In your final hardback copy, replace this page with the signed exercise sheet.
 %_____________________________________________________32
 
 
-\chapter{Working with this Template}
-
-Make sure your thesis is well structured, that each major section does what it is supposed to do, and that the whole thing hangs together. The basic structure is often as given  this template (but other structures are possible). In particular, don't think you need to have exactly as many major sections or chapters as the list implies; sometimes it makes sense to merge things, sometimes it makes sense to move things (e.g., the literature review is in many papers deferred until after the results), sometimes it makes sense to split a logical part into several individual sections. Just use some common sense.
-
-Hand in your thesis at minimum \textbf{one week} before the deadline for correction. You will receive feedback for the final version and very likely have to do minor or major revisions of your writing. Plan your writing schedule to allow for these adjustments, which can have quite some impact on your grade!
-
-\section{Style and Expressions}
-
-Before handing in your thesis, even for an intermediate review, please perform a spellcheck and correct grammar mistakes. The report is not meant to be a narrative text. Please stick to neutral and technical style and avoid subjective or biased expressions or adjectives/adverbs such as \emph{obviously, always, very, especially well, actually, so-called etc}. Scientific writing is about precision and you should underpin your statements factually, not soften them with unnecessary qualifiers.
-
-\subsection{Subsection}
-
-Use chapters, sections and subsections to structure your document
-
-\subsubsection{Subsubsection}
-
-Subsubsections can be used to further structure information within a subsection. They don't show up in your list of contents.
-
-\paragraph{Paragraphs} are sometimes more useful than subsubsections to structure text without breaking the flow.
-
-\section{Compiling}
-Linux:
-do the following in a Shell:\\
-\begin{verbatim}
-latex myfile
-dvips myfile
-ps2pdf -sPAPERSIZE=a4 myfile.ps
-\end{verbatim}
-Make sure to use the A4 option, when you print the pdf!
-
-\section{Equations}
-Equations are written like that $x^2$. Or like that:
-\begin{equation}
-x^2
-\label{EQ:gleichung1}
-\end{equation}
-You can use (\ref{EQ:gleichung1}) to reference an equation in the
-text. Equations without reference number:
-\[
-x^2
-\]
-
-Please type all numbers in mathematics mode.
-Mathematical equations which are not part of the text should be centred.
-A parameter or variable must not be used at the beginning of a sentence.
-Type physical units as normal text, e.g. s, not $s$!
-Formulas must not jut out over the text margin, so take care to stay within the margins and eventually break the equation into several lines.
-Explain the variables you use. For each newly introduced variable, at least a short description of it should follow the equation in the style of \emph{\ldots with $x$ being the position of the cart and $u$ the control input.}
-In columns, align equations with the arithmetic operator \verb|(=,<, ...)|.
-Mathematical units must be consistently labeled with only one variable. Do not
-use a variable for more than one mathematical unit.
-
-\section{Figures}
-
-For pictures, it is convenient, if they are .eps.
-\begin{figure}[htb]
-\centering
-%\includegraphics[width=0.9\textwidth]{abbildung.eps}
-\caption[Abbreviated Description]{Long Description: The subtitles of tables and illustrations should be self-explanatory.}
-\label{FIG:abb1}
-\end{figure}
-
-Every illustration must be described and referenced in the text, cf. Fig. \ref{FIG:abb1}.
-There is no such thing as a decorative figure!
-If the figure is not mentioned in the text and therefore lacks an explanatory function, leave it.
-Lines in plots need to be clearly distinguishable, also in black-and-white print.
-The subtitles and axis labels must be clearly legible (i.e. big enough) and include a scaling.
-If the illustration is copied from another person's work, you need to mention the
-source with \verb|\cite{}|.
-
-\section{Citations}
-
-For bibliography, edit {\tt mybib.bib} and list all
-references in a special style, e.g. for a book:
-\begin{verbatim}
-@book{literaturstelle1,
- author    = {S. Sastry},
- title     = {Nonlinear Systems - Analysis, Stability, and Control},
- publisher = {Springer},
- year      = 1999
-}
-\end{verbatim}
-
-Cite references in the text by \cite{literaturstelle1}.
-
-In order to have your references shown in your PDF, compile by:
-
-\begin{verbatim}
-latex myfile
-bibtex myfile
-latex myfile
-latex  myfile
-dvips myfile
-ps2pdf -sPAPERSIZE=a4 myfile.ps
-\end{verbatim}
-
-Whether to use numeric or alphabetic references isn't all that important (unless prescribed by a conference or journal), but alphabetic tends to be more readable. Independent of citation style, the following rules should be followed:
-
-\begin{itemize}
-\item Use the \LaTeX~cite package. It doesn't give you additional commands, but it fixes a few quirks in \LaTeX. Among others it automatically sorts multiple citations, and it correctly spaces the angular brackets (if you use the \verb|\cite| command without leading white space).
-
-\item Citing several papers at one point should be done with a single \verb|\cite| command. For example, use \verb|gives good results\cite{Bloe_99, Jay_87}|, resulting in gives good results \cite{Bloe_99, Jay_87}.
-
-Do not use \verb|gives good results\cite{Bloe_99}\cite{Jay_87}| which produces the ugly gives good results \cite{Bloe_99}\cite{Jay_87}. Also, note that there is no space between the \verb|\cite| command and the preceding word, \LaTeX~(with the cite package) does the spacing correctly.
-
-
-\item Avoid citations of the kind: \cite{Bloe_99} thinks that $x>y$ is valid, but \cite{ONeill_2000} argues that this is invalid in case of $z\geq5$. This works a bit better if using alphanumeric citation labels. Better, though, use the author's names: Bloe and Joe [1] think that $x>y$ is valid, but O'Neill et al. \cite{ONeill_2000} argues that this is invalid in case of $z\geq5$.
-
-
-\item BibTeX is a great tool, but you need to know how to use it. A regular trap is to forget that \TeX~knows more about typesetting than you do. So, for example, it changes the case of words in the title. If your title contains acronyms and proper names (most do), they tend to get down-cased. Any such words which should not have their case changed should be put into braces, e.g., \verb|{The {Mungi} {OS} and its Use in Merry-Go-Round Seat Allocation}|.
-
-
-\item In citations don't abuse the category technical report. People tend to cite just about anything that hasn't been published in a journal or conferences as a TR. This is outright wrong. The concept of a TR is actually fairly well defined: A TR is published in some sort. This is generally as part of a formal TR series of some institution, in hardcopy or on the web or both. (They aren't always called "technical report", other common names are "research report", "technical memorandum", $<$institution$>$ "report" etc.) The publication (i.e. availability outside) is essential, otherwise it's at best an internal report.
-A TR has a number (absolutely!), an institution (publisher), a date (month and year at least) and a publisher's address (besides all the other stuff bibentries have).
-If your document doesn't have these features, it's not a TR. It's probably better categorized as a working paper. Even then it has a date and an institution address.
-
-\item Citing web pages is often unavoidable (but also often a sign of laziness). When citing web pages be aware that they may only be short-lived. Consider whether the reference will be of any use to the reader at all if the link is broken. Or whether your whole document only has a use-by date a few months past writing.
-
-\end{itemize}
-
-Any cited document, whatever it may be, has a few \textbf{mandatory} features:
-\begin{itemize}
-	\item Date. Absolutely.
-	\item Author/organization/creator/person responsible for contents.
-	\item Whatever information the reader needs to find that document. In most BibTeX entry types these are clearly identified as mandatory fields. Mandatory means that they aren't optional. Don't pretend they are. For a working paper these might be the contact details of the author.
-\end{itemize}
-
-
-
-
 
 %_________Einleitung__________________________________
 \chapter{Introduction}
+\begin{itemize}
+	\item Introduce the idea of the BCI
+	\item applications of BCI for robotic control
+	\subitem $\rightarrow$ importance (why robotic arm control), technical difficulties \& limitations, challenges ...
+\end{itemize}
+
+\begin{tcolorbox}
+\textbf{Problem description:}\\
+Brain machine interface (BMI) is used to control a system through which people with motor
+disabilities could achieve a better quality of life by improving their interaction ability with the
+surrounding environment. Using BMI, patients suffering from severe motor disabilities can also
+control robot arm to carry out their activity of daily living by just generating control commands using
+their own EEG signals.
+\end{tcolorbox}
 
 Your first chapter in the document.
 Introduce the problem (gently!). Try to give the reader an appreciation of the difficulty, and an idea of how you will go about it. It's like the overture of an opera: it plays on all the relevant themes.
@@ -262,29 +147,39 @@ Introduce the problem (gently!). Try to give the reader an appreciation of the d
 Make sure you clearly state the vision/aims of your work, what problem you are trying to solve, and why it is important. While the introduction is the part that is read first (ignoring title and abstract) it is usually best written last (when you actually know what you have really achieved). Remember, it's the first thing that is being read, and will have a major influence on the how the reader approaches your work. If you bore them now, you've most likely lost them already. If you make outrageous claims pretend to solve the world's problems, etc, you're likely fighting an uphill battle later on. Also, make sure you pick up any threads spun in the introduction later on, to ensure that the reader thinks they get what they have been promised. Don't create an expectation that you'll deliver more than you actually do. Remember, the reader may be your marker (of a thesis) or referee (of a paper), and you don't want to annoy them.
 
 \section{Problem Statement}
+\label{sec:problem}
+Excerpt from the description of the practical project: 
+\begin{tcolorbox}
+The main objective of this project is to implement the algorithm described in \cite{meng2016noninvasive,yong2015eeg} to discriminate and
+decode four motor imagery movements (left hand, right hand, both hand imaginary movement and
+rest) from EEG signals. Afterwards, the developed algorithm has to be used to control a robot arm in a
+real-time scenario.
 
-You can either state the problem you are trying to solve in the general introduction, providing the transition from the overall picture to your specific approach, or state it in a separate section. Even if you don't use the separate section, writing down in a few sentences why the problem you are trying to solve is actually hard and hasn't been solved before can give you a better idea of how to approach the topic. This can be also merged with the related work part.
-
-\section{Related Work}
-
-From Kevin Elphinstone's \emph{A Small Guide to Writing Your Thesis}\cite{Elphinstone2014}:
-
-"The related work section (sometimes called literature review) is just that, a review of work related to the problem you are attempting to solve. It should identify and evaluate past approaches to the problem. It should also identify similar solutions to yours that have been applied to other problems not necessarily directly related to the one your solving. Reviewing the successes or limitations of your proposed solution in other contexts provides important understanding that should result in avoiding past mistakes, taking advantage of previous successes, and most importantly, potentially improving your solution or the technique in general when applied in your context and others.
-
-In addition to the obvious purpose indicated, the related work section also can serve to:
-
+\textbf{Tasks:}\\
+This project requires the student to:
 \begin{itemize}
-	\item justify that the problem exists by example and argument
-	\item motivate interest in your work by demonstrating relevance and importance
-	\item identify the important issues
-	\item provide background to your solution
+	\item Implement an existing algorithm to classify four motor imaginary movements from EEG
+	recorded signals.
+	\item Test and validate the developed algorithm in a real-time scenario when the user imagines one
+	of the four actions, this imagination would be decoded with a BMI and the robotic arm
+	executes the desired movement.
 \end{itemize}
 
-Any remaining doubts over the existence, justification, motivation, or relevance of your thesis topic or problem at the end of the introduction should be gone by the end of related work section.
 
-Note that a literature review is just that, a review. It is not a list of papers and a description of their contents! A literature review should critique, categorize, evaluate, and summarize work related to your thesis. Related work is also not a brain dump of everything you know in the field. You are not writing a textbook; only include information directly related to your topic, problem, or solution."
+\textbf{Optional task:}
+\begin{itemize}
+	\item Extend the work by using the implemented algorithm to classify reach and grasp imaginary
+	movements
+\end{itemize}
+\end{tcolorbox}
 
-Note: Do the literature review at an early stage of your project to build on the knowledge of others, not reinvent the wheel over and over again! There is nothing more frustrating after weeks or months of hard work to find that your great solution has been published 5 years ago and is considered old news or that there is a method known that produces superior results.
+\section{Related Work}
+This section will review existing approaches and possible solutions to the problem stated in section~\ref{sec:problem}.
+\begin{itemize}
+	\item Discuss related projects from other research groups (e.g. TU Graz virtual reality navigation using MI, ...)
+	\item past achievements in the area of MI for BCI
+	\item provide background information (e.g. motor imagery, motor cortex location and importance for project, local field potentials, ...)
+\end{itemize}
 
 %____________________________________________________
 
@@ -294,10 +189,24 @@ Note: Do the literature review at an early stage of your project to build on the
 \chapter{Main Part}
 
 \section{Design of your solution}
+In this section the design of the proposed solution will be , i.e. the overall architecture on an abstract level. 
+
+\begin{itemize}
+	\item OpenVibe
+	\item BCILAB
+	\item ... 
+	\item my Design
+\end{itemize}
 
 Having explained the problem, and what others have done in similar situations, now explain your approach. Again, give a general overview of your design first, and then go into detail. The important part here is the concept of your work, not the actual implementation! Make sure that the document (particularly a thesis) is self-contained: It should be possible for a reader familiar with the general area to understand your design. Again, be forthright about the limitations of your design. Also, make sure you justify any shortcuts/limitations convincingly.
 
 \section{Implementation}
+In this section, the implementation will be explained in greater detail. 
+\begin{itemize}
+	\item Chain of information processing
+	\item Implementation in Matlab
+	\item e
+\end{itemize}
 
 In many (not all cases) there is a clear difference between the general approach (design) and its implementation in your particular circumstances. The design may be more general than what you can do given time and resources. Or you have developed a general design, and are now implementing a prototype on particular hardware. Give all required details. It should be possible to understand all this without referring to the source code.
 
@@ -354,8 +263,9 @@ This chapter is followed by the list of figures and the bibliography. If you are
 %_____Literaturverzeichnis_________________________________
 \cleardoublepage
 \addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{ieeetr}
 \bibliography{mybib}
-\bibliographystyle{alphaurl}
+
 %__________________________________________________________
 
 

@@ -76,7 +76,7 @@ Supervisor: &Dipl.-Ing. Zied Tayed \\
 % add the start and intermediate report dates for DA/BA/MA thesis
 %Start: & xx.xx.201x  \\
 %Intermediate Report: &  xx.xx.201x  \\
-Final Submission: &  24.05.2017 \\
+Final Submission: &  22.05.2017 \\
 \end{tabular}
 %____________________________________________________________
 
@@ -188,7 +188,7 @@ This section will review existing approaches and possible solutions to the probl
 %_____Kapitel 2_________________________________
 \chapter{Main Part}
 
-\section{Design of your solution}
+\section{Solution Design and Implementation}
 In this section the design of the proposed solution will be , i.e. the overall architecture on an abstract level. 
 
 \begin{itemize}
@@ -198,9 +198,12 @@ In this section the design of the proposed solution will be , i.e. the overall a
 	\item my Design
 \end{itemize}
 
-Having explained the problem, and what others have done in similar situations, now explain your approach. Again, give a general overview of your design first, and then go into detail. The important part here is the concept of your work, not the actual implementation! Make sure that the document (particularly a thesis) is self-contained: It should be possible for a reader familiar with the general area to understand your design. Again, be forthright about the limitations of your design. Also, make sure you justify any shortcuts/limitations convincingly.
+Experiment design:
+\begin{itemize}
+	\item cue-based experiment
+	\item acquiring samples 
+\end{itemize}
 
-\section{Implementation}
 In this section, the implementation will be explained in greater detail. 
 \begin{itemize}
 	\item Chain of information processing
@@ -208,23 +211,25 @@ In this section, the implementation will be explained in greater detail.
 	\item e
 \end{itemize}
 
-In many (not all cases) there is a clear difference between the general approach (design) and its implementation in your particular circumstances. The design may be more general than what you can do given time and resources. Or you have developed a general design, and are now implementing a prototype on particular hardware. Give all required details. It should be possible to understand all this without referring to the source code.
-
-This will, in general, include extracts of actual algorithms and hardware components used. Don't list pages of C code, an electronic copy of the source will accompany the submission and should be available to the marker, so there's no point in killing extra trees to put it into the report. Source code, if included at all, goes into the appendix and not the main document.
-
-Make sure you describe your implementation in enough detail. Someone who has nothing else but your thesis report to go by should be able to repeat your work, and arrive at essentially the same implementation. Reproducibility is an important component of scientific work. Also, clearly state the limitations of your implementation, and justify them.
 
 \section{Experimental Results}
 
-A thesis almost always has an experimental part, typically some comparison to other approaches. Benchmarking takes time, for running the experiments, but also for thinking them up in the first place, and for analysing the results. Plan accordingly to spend enough time here!
+\begin{itemize}
+	\item reached accuracies of SVM
+	\item how to ensure that recording is successful  
+	\item ...
+\end{itemize}
 
-Think about what makes sense to measure, what you want to learn from your measurements. Think about what is really the relevant contribution of your thesis, and how you can prove that you have achieved your goals. Think about what you can measure in order to get a good insight into the performance of various aspects of your design, how you can distinguish between systematic and accidental effects, how you can convince yourself that your results are right. If you get surprising results, don't just say "surprise, surprise, performance isn't as good as hoped". Find out why. Surprises without explanation indicate either that you are clueless about what's going on, or that you have made a mistake. Unconvincing results, therefore, tend to imply unconvincing marks.
-
-\paragraph{Statistics:} Measurements always have statistical (sampling) errors. Owing to the deterministic nature of simulations these are sometimes very small, as disturbing factors can be designed. However, the reader should be given an indication of how statistically significant the results are. This is done by providing at least a standard deviation in addition to averages. Whenever the results of several runs are averaged, a standard deviation can (and must) be supplied. After all, you average to reduce statistical errors.
-
-The reproducibility argument applies here just as much as for the implementation. Give enough detail on what you measure, and how you measure it, so that someone who has your implementation (but not your test code) or has re-done your implementation independently, should be able to repeat your measurements and arrive at essentially the same results. In some cases, results seem outright wrong in a thesis. In those cases, not enough detail is provided to allow the supervisor/reader to pinpoint the likely source of the error. Often the cause is systematic errors resulting from an incorrect measurement technique. If it seems wrong, and the text doesn't convince the reader that it is not wrong, the reader will assume that it is wrong.
 
 \section{Discussion}
+\begin{itemize}
+	\item how to improve classification accuracy
+	\subitem improve feature extraction, e.g. use ERD / ERS on $\alpha$- / $\beta$-bands 
+	\item use different classifier 
+	\subitem ANN or SNN would be interesting to see. See paper xy for examples
+	\subitem Convolutional NN or recurrent deep NN could significantly improve classification accuracy and therefore enable the system for a multiclass (more than two for instance) classification 
+\end{itemize}
+
 
 Discuss and explain your results. Show how they support your thesis (or, if they don't, give a convincing explanation). It is important to separate objective facts clearly from their discussion (which is bound to contain subjective opinion). If the reader doesn't understand your results, reconsider if you have managed to extract the core information and explain it in a straightforward way.
 

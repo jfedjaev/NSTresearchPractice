@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.2)  19 MAY 2017 19:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.2)  19 MAY 2017 22:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -620,59 +620,60 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 Chapter 2.
 [7
 
-] [8] [9] [10
-
-]
+] [8]
 Chapter 3.
-[11] [12
+[9
+
+] [10
 
 ] (./final_report.lof)
 \tf@lof=\write9
 \openout9 = `final_report.lof'.
 
- [13
+ [11
+
+] [12
+
+] (./final_report.bbl) [13
 
 ] [14
 
-] (./final_report.bbl) [15
-
-] [16
+] [15
 
 ]
-[17
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 288.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 288.
 
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 283.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
- (./final_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 283.
+(./final_report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 288.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 288.
 Package rerunfilecheck Info: File `final_report.out' has not changed.
-(rerunfilecheck)             Checksum: A156EB88157BF8BC05AE5F837B3A77A0;608.
+(rerunfilecheck)             Checksum: ED019663B4E75C53FE63CA74CF93CB59;558.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 14852 strings out of 494901
- 278942 string characters out of 6178618
+ 14847 strings out of 494901
+ 278894 string characters out of 6178618
  343933 words of memory out of 5000000
- 17867 multiletter control sequences out of 15000+600000
+ 17866 multiletter control sequences out of 15000+600000
  10601 words of font info for 33 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 54i,11n,73p,957b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,12n,73p,957b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/h
-elvetic/uhvr8a.pfb>
-Output written on final_report.pdf (21 pages, 91621 bytes).
+t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helveti
+c/uhvr8a.pfb>
+Output written on final_report.pdf (19 pages, 95246 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 182 PDF objects out of 1000 (max. 8388607)
+ 152 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2,11 +2,9 @@
 \contentsline {section}{\numberline {1.1}Problem Statement}{6}{section.1.1}
 \contentsline {section}{\numberline {1.2}Related Work}{6}{section.1.2}
 \contentsline {chapter}{\numberline {2}Main Part}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Design of your solution}{7}{section.2.1}
-\contentsline {section}{\numberline {2.2}Implementation}{7}{section.2.2}
-\contentsline {section}{\numberline {2.3}Experimental Results}{8}{section.2.3}
-\contentsline {paragraph}{Statistics:}{8}{section*.2}
-\contentsline {section}{\numberline {2.4}Discussion}{9}{section.2.4}
-\contentsline {chapter}{\numberline {3}Conclusion}{11}{chapter.3}
-\contentsline {chapter}{List of Figures}{13}{chapter.3}
-\contentsline {chapter}{Bibliography}{15}{chapter*.3}
+\contentsline {section}{\numberline {2.1}Solution Design and Implementation}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Experimental Results}{7}{section.2.2}
+\contentsline {section}{\numberline {2.3}Discussion}{8}{section.2.3}
+\contentsline {chapter}{\numberline {3}Conclusion}{9}{chapter.3}
+\contentsline {chapter}{List of Figures}{11}{chapter.3}
+\contentsline {chapter}{Bibliography}{13}{chapter*.2}

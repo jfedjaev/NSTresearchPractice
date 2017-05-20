@@ -2,4 +2,6 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Information flow for a BCI system controlling a robotic arm.}}{6}{figure.1.1}
 \contentsline {figure}{\numberline {1.2}{\ignorespaces International standard 10-20 electrode placement system.}}{7}{figure.1.2}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Left: Example for the work flow in OpenVibe using algorithmic building block. Right: The Emotiv EPOC+ headset for signal acquisition.}}{10}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Error encountered when trying to connect the Emotiv EPOC+ with OpenVibe Acquisition Server.}}{11}{figure.2.2}
 \addvspace {10\p@ }

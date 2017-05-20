@@ -170,22 +170,31 @@ The basic principle on which this BCI project for controlling a robot arm is bas
 \end{itemize}
 
 \section{First approach: OpenVibe and Emotiv EPOC+}
-As previously mentioned, using an existing software framework accelerates development enormously. Therefore, the first approach was to use OpenVibe to implement the BCI system. 
+As previously mentioned, using an existing software framework accelerates development enormously. Therefore, the first approach was to use OpenVibe to implement the BCI system. This was possible because the EEG system for signal acquisition that was available in the beginning of the project was the Emotiv EPOC+. The EPOC+ is a wireless, 14 channel-device with a sampling rate of $128$ Hz (see fig.~\ref*{fig:openvibe_blocks} on the right-hand side). Its electrodes cover many of the electrode positions as proposed by the 10-20 system (see above), thus also the area near the sensorimotor cortex at C3 / C4 locations. Furthermore, Emotiv offers driver support for its use with OpenVibe.\\
+OpenVibe's programming paradigm is based on building blocks representing individual signal processing algorithms which can be easily connected to each other. Using Python and/or C++, it is also possible to build new blocks with user specific algorithms (see fig.~\ref{fig:openvibe_blocks} on the left-hand side for an illustration).
+\begin{figure}[tbph!]
+\centering
+\includegraphics[width=0.6\linewidth]{gfx/openvibe_blocks}
+\includegraphics[width=0.39\linewidth]{gfx/emotiv_epoc}
+\caption{Left: Example for the work flow in OpenVibe using algorithmic building block. Right: The Emotiv EPOC+ headset for signal acquisition.}
+\label{fig:openvibe_blocks}
+\end{figure}
+The interface to the OpenVibe is the so-called \textit{OpenVibe Acquisition Server}. For accessing the raw signals of the EPOC+, a premium software development kit (SDK) is needed. However, there are issues trying to connect the EPOC+ with the OpenVibe aquisition server. In fact, the connection succeeds but stops working when starting the acquisition (see fig.~\ref{fig:epoc_error}).
+ 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./gfx/epoc_errorcode}
+	\caption{Error encountered when trying to connect the Emotiv EPOC+ with OpenVibe Acquisition Server.}
+	\label{fig:epoc_error}
+\end{figure}
 
+Two similar headsets with the official premium SDK were tested without success. Emokit reverse-engineering drivers written in Python (found on the Internet) were able to access some of the data. However, the electrode and quality indicators were disturbed by a strong jitter in the data. An EMOTIV EPOC+ headset with an older version number was working without any problems, but was unfortunately available only briefly for testing purposes and not for the BCI project. Therefore, it is assumed that there were some changes done on firmware level by the company. In the end, the approach using an Emotiv EPOC+ in connection with OpenVibe was abandoned due to the previously described problems.
 
 
 
 
 \section{Experimental Design}
 In this section the design of the proposed solution will be described, i.e. the overall architecture on an abstract level. 
-
-\begin{itemize}
-	\item OpenVibe
-	\item BCILAB
-	\item ... 
-	\item my Design
-	\subitem time-constraint is present, because experimental design is a cue-based approach
-\end{itemize}
 
 Experiment design:
 \begin{itemize}

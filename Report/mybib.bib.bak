@@ -23,6 +23,18 @@
   Publisher                = {Elsevier}
 }
 
+@Article{lotze1999activation,
+  Title                    = {Activation of cortical and cerebellar motor areas during executed and imagined hand movements: an fMRI study},
+  Author                   = {Lotze, Martin and Montoya, Pedro and Erb, Michael and H{\"u}lsmann, Ernst and Flor, Herta and Klose, Uwe and Birbaumer, Niels and Grodd, Wolfgang},
+  Journal                  = {Journal of cognitive neuroscience},
+  Year                     = {1999},
+  Number                   = {5},
+  Pages                    = {491--501},
+  Volume                   = {11},
+
+  Publisher                = {MIT Press}
+}
+
 @Article{meng2016noninvasive,
   Title                    = {Noninvasive Electroencephalogram Based Control of a Robotic Arm for Reach and Grasp Tasks},
   Author                   = {Meng, Jianjun and Zhang, Shuying and Bekyo, Angeliki and Olsoe, Jaron and Baxter, Bryan and He, Bin},

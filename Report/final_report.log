@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.2)  20 MAY 2017 18:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.2)  20 MAY 2017 18:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -626,12 +626,12 @@ File: ./gfx/BCI_control_system.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./gfx/BCI_control_system.pdf used on input line 134.
 (pdftex.def)             Requested size: 341.43436pt x 175.71448pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--140
+Underfull \hbox (badness 10000) in paragraph at lines 138--141
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--140
+Underfull \hbox (badness 10000) in paragraph at lines 138--141
 
  []
 
@@ -639,44 +639,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 138--140
 Underfull \vbox (badness 1122) has occurred while \output is active []
 
  [5]
-[6 <./gfx/BCI_control_system.pdf>]
+<./gfx/10-20.jpg, id=101, 551.1792pt x 480.8364pt>
+File: ./gfx/10-20.jpg Graphic file (type jpg)
+ <use ./gfx/10-20.jpg>
+Package pdftex.def Info: ./gfx/10-20.jpg used on input line 144.
+(pdftex.def)             Requested size: 213.39566pt x 186.16077pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6 <./gfx/BCI_control_system.pdf>] [7 <./gfx/10-20.jpg>] [8
+
+]
 Chapter 2.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 163.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 163.
- [7
-
-] [8]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 171.
+ [9] [10]
 Chapter 3.
-[9
+[11
 
-] [10
+] [12
 
 ] (./final_report.lof)
 \tf@lof=\write9
 \openout9 = `final_report.lof'.
 
- [11
-
-] [12
-
-] (./final_report.bbl) [13
+ [13
 
 ] [14
 
-] [15
+] (./final_report.bbl) [15
+
+] [16
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 257.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 257.
+[17
 
-(./final_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 257.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 257.
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 265.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 265.
+ (./final_report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 265.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 265.
 Package rerunfilecheck Info: File `final_report.out' has not changed.
 (rerunfilecheck)             Checksum: 14418B144FC2D099EEB7F9EA92FCE524;446.
 
@@ -685,13 +694,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 14831 strings out of 494901
- 278498 string characters out of 6178618
- 343143 words of memory out of 5000000
- 17845 multiletter control sequences out of 15000+600000
+ 14843 strings out of 494901
+ 278673 string characters out of 6178618
+ 344263 words of memory out of 5000000
+ 17851 multiletter control sequences out of 15000+600000
  10601 words of font info for 33 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 54i,11n,73p,815b,389s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,11n,73p,884b,389s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dis
@@ -700,10 +709,10 @@ s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helveti
 c/uhvr8a.pfb>
-Output written on final_report.pdf (19 pages, 160773 bytes).
+Output written on final_report.pdf (21 pages, 246245 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
- 157 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
- 82 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 208 PDF objects out of 1000 (max. 8388607)
+ 171 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 87 words of extra memory for PDF output out of 10000 (max. 10000000)
 

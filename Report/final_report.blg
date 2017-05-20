@@ -5,45 +5,45 @@ The style file: ieeetr.bst
 Database file #1: mybib.bib
 Warning--empty journal in sivakamianalysis
 Warning--empty year in sivakamianalysis
-You've used 6 entries,
+You've used 7 entries,
             1876 wiz_defined-function locations,
-            515 strings with 4557 characters,
-and the built_in function-call counts, 1514 in all, are:
-= -- 141
-> -- 70
+            522 strings with 4759 characters,
+and the built_in function-call counts, 1859 in all, are:
+= -- 179
+> -- 81
 < -- 0
-+ -- 26
-- -- 20
-* -- 107
-:= -- 224
-add.period$ -- 5
-call.type$ -- 6
-change.case$ -- 6
++ -- 30
+- -- 23
+* -- 133
+:= -- 270
+add.period$ -- 6
+call.type$ -- 7
+change.case$ -- 7
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 79
-empty$ -- 136
-format.name$ -- 20
-if$ -- 362
+cite$ -- 9
+duplicate$ -- 96
+empty$ -- 166
+format.name$ -- 23
+if$ -- 447
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 5
-newline$ -- 21
-num.names$ -- 6
-pop$ -- 21
+int.to.str$ -- 7
+missing$ -- 6
+newline$ -- 24
+num.names$ -- 7
+pop$ -- 22
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 59
+skip$ -- 73
 stack$ -- 0
-substring$ -- 72
-swap$ -- 34
+substring$ -- 104
+swap$ -- 43
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 13
-width$ -- 7
-write$ -- 57
+while$ -- 17
+width$ -- 8
+write$ -- 68
 (There were 2 warnings)

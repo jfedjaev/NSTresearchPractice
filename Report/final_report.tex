@@ -136,7 +136,15 @@ In general, the information flow in a BCI follows the following path: signal acq
 	\label{fig:bci_control_system}
 \end{figure}
 For the project of this research practice, the main objective is to implement algorithms similar to those described by Meng and Yong \cite{meng2016noninvasive,yong2015eeg} to discriminate and decode four motor imagery movements (left hand, right hand, both hand imaginary movement and
-rest) from EEG signals. Afterwards, the classification has to be used to control a robot arm in a real-time scenario. Motor imagery (MI) is defined as the mental rehearsal or imagination of a physical movement without actually performing it physically \cite{decety1996neurophysiological}. On a neurophysiological level, similar brain regions are activated during motor execution and motor imagery, however, the performance is blocked at a corticospinal level. Studies based on fMRI showed similar activation patterns during motor imagery and actual movement execution \cite{lotze1999activation}. For operating a BCI, motor imagery has proven its capability as an efficient mental strategy. \\ \\
+rest) from EEG signals. Afterwards, the classification has to be used to control a robot arm in a real-time scenario. Motor imagery (MI) is defined as the mental rehearsal or imagination of a physical movement without actually performing it physically \cite{decety1996neurophysiological}. On a neurophysiological level, similar brain regions are activated during motor execution and motor imagery, however, the performance is blocked at a corticospinal level. Studies based on fMRI showed similar activation patterns during motor imagery and actual movement execution \cite{lotze1999activation}. For operating a BCI, motor imagery has proven its capability as an efficient mental strategy. \\\\
+Concerning the positioning of the EEG electrodes on the scalp, an internationally recognized method called the 10-20 EEG system is used (see fig.~\ref{fig:10-20-system} for illustration). It was developed to ensure reproducibility by standardizing the electrode positions so that one subject's studies could be compared to each other. The system is based on the relationship between the location of an electrode and the underlying area of cerebral cortex. The "10" and "20" refer to the fact that the actual distances between adjacent electrodes are either 10\% or 20\% of the total front-back or right-left distance of the skull \cite{homan1987cerebral}. Previous studies show that electrode positions C3, Cz and C4 are suitable for recording characteristic motor imagery signals, as they are directly covering part of the sensorimotor area. \\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./gfx/10-20.jpg}
+	\caption{International standard 10-20 electrode placement system.}
+	\label{fig:10-20-system}
+\end{figure}
 
 
 

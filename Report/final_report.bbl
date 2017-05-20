@@ -1,5 +1,12 @@
 \begin{thebibliography}{1}
 
+\bibitem{birbaumer2006brain}
+N.~Birbaumer, ``Brain--computer-interface research: coming of age,'' 2006.
+
+\bibitem{sivakamianalysis}
+A.~Sivakami and S.~S. Devi, ``Analysis of eeg for motor imagery based
+  classification of hand activities,''
+
 \bibitem{meng2016noninvasive}
 J.~Meng, S.~Zhang, A.~Bekyo, J.~Olsoe, B.~Baxter, and B.~He, ``Noninvasive
   electroencephalogram based control of a robotic arm for reach and grasp
@@ -8,5 +15,15 @@ J.~Meng, S.~Zhang, A.~Bekyo, J.~Olsoe, B.~Baxter, and B.~He, ``Noninvasive
 \bibitem{yong2015eeg}
 X.~Yong and C.~Menon, ``Eeg classification of different imaginary movements
   within the same limb,'' {\em PloS one}, vol.~10, no.~4, p.~e0121896, 2015.
+
+\bibitem{decety1996neurophysiological}
+J.~Decety, ``The neurophysiological basis of motor imagery,'' {\em Behavioural
+  brain research}, vol.~77, no.~1, pp.~45--52, 1996.
+
+\bibitem{lotze1999activation}
+M.~Lotze, P.~Montoya, M.~Erb, E.~H{\"u}lsmann, H.~Flor, U.~Klose, N.~Birbaumer,
+  and W.~Grodd, ``Activation of cortical and cerebellar motor areas during
+  executed and imagined hand movements: an fmri study,'' {\em Journal of
+  cognitive neuroscience}, vol.~11, no.~5, pp.~491--501, 1999.
 
 \end{thebibliography}

@@ -2,6 +2,27 @@
 % Encoding: UTF-8
 
 
+@Misc{birbaumer2006brain,
+  Title                    = {Brain--computer-interface research: coming of age},
+
+  Author                   = {Birbaumer, Niels},
+  Year                     = {2006},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{decety1996neurophysiological,
+  Title                    = {The neurophysiological basis of motor imagery},
+  Author                   = {Decety, Jean},
+  Journal                  = {Behavioural brain research},
+  Year                     = {1996},
+  Number                   = {1},
+  Pages                    = {45--52},
+  Volume                   = {77},
+
+  Publisher                = {Elsevier}
+}
+
 @Article{meng2016noninvasive,
   Title                    = {Noninvasive Electroencephalogram Based Control of a Robotic Arm for Reach and Grasp Tasks},
   Author                   = {Meng, Jianjun and Zhang, Shuying and Bekyo, Angeliki and Olsoe, Jaron and Baxter, Bryan and He, Bin},
@@ -10,5 +31,22 @@
   Volume                   = {6},
 
   Publisher                = {Nature Publishing Group}
+}
+
+@Article{sivakamianalysis,
+  Title                    = {ANALYSIS OF EEG FOR MOTOR IMAGERY BASED CLASSIFICATION OF HAND ACTIVITIES},
+  Author                   = {Sivakami, A and Devi, S Shenbaga}
+}
+
+@Article{yong2015eeg,
+  Title                    = {EEG classification of different imaginary movements within the same limb},
+  Author                   = {Yong, Xinyi and Menon, Carlo},
+  Journal                  = {PloS one},
+  Year                     = {2015},
+  Number                   = {4},
+  Pages                    = {e0121896},
+  Volume                   = {10},
+
+  Publisher                = {Public Library of Science}
 }
 

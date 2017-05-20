@@ -123,66 +123,27 @@ In your final hardback copy, replace this page with the signed exercise sheet.
 %_____________________________________________________32
 
 
-
 %_________Einleitung__________________________________
 \chapter{Introduction}
-\begin{itemize}
-	\item Introduce the idea of the BCI
-	\item applications of BCI for robotic control
-	\subitem $\rightarrow$ importance (why robotic arm control), technical difficulties \& limitations, challenges ...
-\end{itemize}
+People with severe neuromuscular disorders, such as late-stage amyotrophic sclerosis (ALS) and those paralyzed from higher level spinal cord injury are unable to actuate any of their muscles. Communication with the outside world is therefore problematic for the suffering people. Cognitive and sensory body functions, however, are often only minimally affected. Therefore, an electroencephalogram (EEG)-based communication which does not require any neuromuscular control is considered to be particularly helpful to enhance the disabled's quality of life by increasing their independence \cite{birbaumer2006brain}.\\\\
+Besides EEG, there are other techniques for monitoring brain activity, such as functional magnetic resonance imaging (fMRI), magnetoencephalography (MEG), positron emission tomography (PET) or single photon emission computer computer tomography (SPECT). The advantages of those methods are a better accuracy and better spatial resolution compared to EEG. However, due to their large size, heavy weight and high price, they are not as suitable for BCI applications as EEG. Furthermore, EEG offers a better temporal resolution, portability and relatively low cost. Recently, low-cost consumer devices came on the market (e.g. EMOTIV EPOC+), which will further push the advancements in the area of EEG-based BCI \cite{sivakamianalysis}. \\\\
+In general, the information flow in a BCI follows the following path: signal acquisition, signal (pre)-processing, feature selection and extraction, classification (detection of distinct signal pattern), application interface (e.g. to a robot arm), and feedback (see figure~\ref{fig:bci_control_system}). 
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./gfx/BCI_control_system.pdf}
+	\caption{Information flow for a BCI system controlling a robotic arm.}
+	\label{fig:bci_control_system}
+\end{figure}
+For the project of this research practice, the main objective is to implement algorithms similar to those described by Meng and Yong \cite{meng2016noninvasive,yong2015eeg} to discriminate and decode four motor imagery movements (left hand, right hand, both hand imaginary movement and
+rest) from EEG signals. Afterwards, the classification has to be used to control a robot arm in a real-time scenario. Motor imagery (MI) is defined as the mental rehearsal or imagination of a physical movement without actually performing it physically \cite{decety1996neurophysiological}. On a neurophysiological level, similar brain regions are activated during motor execution and motor imagery, however, the performance is blocked at a corticospinal level. Studies based on fMRI showed similar activation patterns during motor imagery and actual movement execution \cite{lotze1999activation}. For operating a BCI, motor imagery has proven its capability as an efficient mental strategy. \\ \\
 
 
 
-
-\begin{tcolorbox}
-\textbf{Problem description:}\\
-Brain machine interface (BMI) is used to control a system through which people with motor
-disabilities could achieve a better quality of life by improving their interaction ability with the
-surrounding environment. Using BMI, patients suffering from severe motor disabilities can also
-control robot arm to carry out their activity of daily living by just generating control commands using
-their own EEG signals.
-\end{tcolorbox}
-
-Your first chapter in the document.
-Introduce the problem (gently!). Try to give the reader an appreciation of the difficulty, and an idea of how you will go about it. It's like the overture of an opera: it plays on all the relevant themes.
-
-Make sure you clearly state the vision/aims of your work, what problem you are trying to solve, and why it is important. While the introduction is the part that is read first (ignoring title and abstract) it is usually best written last (when you actually know what you have really achieved). Remember, it's the first thing that is being read, and will have a major influence on the how the reader approaches your work. If you bore them now, you've most likely lost them already. If you make outrageous claims pretend to solve the world's problems, etc, you're likely fighting an uphill battle later on. Also, make sure you pick up any threads spun in the introduction later on, to ensure that the reader thinks they get what they have been promised. Don't create an expectation that you'll deliver more than you actually do. Remember, the reader may be your marker (of a thesis) or referee (of a paper), and you don't want to annoy them.
-
-\section{Problem Statement}
-\label{sec:problem}
-Excerpt from the description of the practical project: 
-\begin{tcolorbox}
-The main objective of this project is to implement the algorithm described in \cite{meng2016noninvasive,yong2015eeg} to discriminate and
-decode four motor imagery movements (left hand, right hand, both hand imaginary movement and
-rest) from EEG signals. Afterwards, the developed algorithm has to be used to control a robot arm in a
-real-time scenario.
-
-\textbf{Tasks:}\\
-This project requires the student to:
-\begin{itemize}
-	\item Implement an existing algorithm to classify four motor imaginary movements from EEG
-	recorded signals.
-	\item Test and validate the developed algorithm in a real-time scenario when the user imagines one
-	of the four actions, this imagination would be decoded with a BMI and the robotic arm
-	executes the desired movement.
-\end{itemize}
+In the following, first the design and implementation of the BCI project will be discussed. Following that, the accuracies that have been reached will be presented and drawbacks of the approach and possible improvements will be discussed.
 
 
-\textbf{Optional task:}
-\begin{itemize}
-	\item Extend the work by using the implemented algorithm to classify reach and grasp imaginary
-	movements
-\end{itemize}
-\end{tcolorbox}
 
-\section{Related Work}
-This section will review existing approaches and possible solutions to the problem stated in section~\ref{sec:problem}.
-\begin{itemize}
-	\item Discuss related projects from other research groups (e.g. TU Graz virtual reality navigation using MI, ...)
-	\item past achievements in the area of MI for BCI
-	\item provide background information (e.g. motor imagery, motor cortex location and importance for project, local field potentials, ...)
-\end{itemize}
 
 %____________________________________________________
 
@@ -191,12 +152,7 @@ This section will review existing approaches and possible solutions to the probl
 %_____Kapitel 2_________________________________
 \chapter{Solution Design and Implementation}
 Figure below depicts the essential information flow for a BCI system. 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.9\linewidth]{./gfx/BCI_control_system.pdf}
-	\caption{Information flow for a BCI system controlling a robotic arm}
-	\label{fig:bci_control_system}
-\end{figure}
+
 
 
 

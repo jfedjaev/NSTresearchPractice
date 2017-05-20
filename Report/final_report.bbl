@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{birbaumer2006brain}
 N.~Birbaumer, ``Brain--computer-interface research: coming of age,'' 2006.
@@ -30,5 +30,23 @@ M.~Lotze, P.~Montoya, M.~Erb, E.~H{\"u}lsmann, H.~Flor, U.~Klose, N.~Birbaumer,
 R.~W. Homan, J.~Herman, and P.~Purdy, ``Cerebral location of international
   10--20 system electrode placement,'' {\em Electroencephalography and clinical
   neurophysiology}, vol.~66, no.~4, pp.~376--382, 1987.
+
+\bibitem{kothe2013bcilab}
+C.~A. Kothe and S.~Makeig, ``Bcilab: a platform for brain--computer interface
+  development,'' {\em Journal of neural engineering}, vol.~10, no.~5,
+  p.~056014, 2013.
+
+\bibitem{journals/presence/RenardLGCMDBL10}
+Y.~Renard, F.~Lotte, G.~Gibert, M.~Congedo, E.~Maby, V.~Delannoy, O.~Bertrand,
+  and A.~Lécuyer, ``Openvibe: An open-source software platform to design,
+  test, and use brain-computer interfaces in real and virtual environments.,''
+  {\em Presence}, vol.~19, no.~1, pp.~35--53, 2010.
+
+\bibitem{schalk2010practical}
+G.~Schalk and J.~Mellinger, {\em A practical guide to brain--computer
+  interfacing with BCI2000: General-purpose software for brain-computer
+  interface research, data acquisition, stimulus presentation, and brain
+  monitoring}.
+\newblock Springer Science \& Business Media, 2010.
 
 \end{thebibliography}

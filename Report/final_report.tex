@@ -158,8 +158,20 @@ In the following, first the design and implementation of the BCI project will be
 
 
 %_____Kapitel 2_________________________________
-\chapter{Solution Design and Implementation}
-Figure below depicts the essential information flow for a BCI system. 
+\chapter{Experimental Design and Implementation}
+The basic principle on which this BCI project for controlling a robot arm is based on the following idea: First, a training dataset is recorded for subject that wants to execute control commands. Second, that data is used for training a classifier. Subsequently, the trained classifier model is saved and reused for on-line processing the subject's EEG data, enabling real-time robot control. In order to accelerate that procedure and minimize time constraints, there exist several frameworks for BCI applications. To name some of the most commonly used:
+\begin{itemize}
+	\item BCILAB\\
+	$\circ$  "Open-source MATLAB-based toolbox built to address the need for BCI methods development and testing by providing an organized collection of over 100 pre-implemented methods and method variants, an easily extensible framework for the rapid prototyping of new methods, and a highly automated framework for systematic testing and evaluation of new implementations" \cite{kothe2013bcilab}.
+	\item OpenVibe\\
+	$\circ$ "OpenViBE is a software for real-time neurosciences (that is, for real-time processing of brain signals). It can be used to acquire, filter, process, classify and visualize brain signals in real time. OpenViBE is free and open source software. It works on Windows and Linux operating systems" \cite{journals/presence/RenardLGCMDBL10}.
+	\item BCI2000\\
+	$\circ$ "BCI2000 is a software suite for brain-computer interface research. It is commonly used for data acquisition, stimulus presentation, and brain monitoring applications. BCI2000 supports a variety of data acquisition systems, brain signals, and study/feedback paradigms. [...] BCI2000 is available free of charge for research and education purposes" \cite{schalk2010practical}.
+\end{itemize}
+
+\section{First approach: OpenVibe and Emotiv EPOC+}
+As previously mentioned, using an existing software framework accelerates development enormously. Therefore, the first approach was to use OpenVibe to implement the BCI system. 
+
 
 
 

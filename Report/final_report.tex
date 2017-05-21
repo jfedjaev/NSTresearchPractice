@@ -1,4 +1,4 @@
-\documentclass[a4paper,twoside, openright,12pt]{report}
+\documentclass[a4paper,oneside, openright,12pt]{report}
 \usepackage{psfrag,amsbsy,graphics,float}
 \usepackage{graphicx, color} %Deleted [dvips] in front of {graphicx, color} for usage also with PDFLaTex
 \usepackage[latin1]{inputenc}
@@ -80,16 +80,16 @@ Final Submission: &  22.05.2017 \\
 \end{tabular}
 %____________________________________________________________
 
-\newpage	
-\cleardoublepage
+%\newpage	
+%\cleardoublepage
 
 
 
-\phantom{u}
-\phantom{1}\vspace{6cm}
-\begin{center}
-In your final hardback copy, replace this page with the signed exercise sheet.
-\end{center}
+%\phantom{u}
+%\phantom{1}\vspace{6cm}
+%\begin{center}
+%In your final hardback copy, replace this page with the signed exercise sheet.
+%\end{center}
 
 \newpage
 
@@ -257,29 +257,56 @@ The main goal of the BCI project is to translate recorded brain activity into a 
 There are various classification algorithms that may be used to design BCI systems: linear classifiers, such as Linear Discriminant Analysis (LDA), Support Vector Machine (SVM), Artificial Neural Networks (ANN) and non-linear Bayesian classifiers. In general, LDA and ANN are commonly used for BCI tasks. One of the drawbacks of linear classifiers like LDA and SVM are that they may perform poorly for multi-class classification on the non-linear EEG data \cite{sivakamianalysis}. However, considering only two classes shall be discriminated at a first step, a SVM classifier will be used for the BCI system.\\
 The Matlab toolbox for \textit{Statistics and Machine Learning} provides a function \texttt{fitcsvm(\_)} that takes a feature matrix and labels as inputs and trains a support vector machine model. There are various optional parameters that can be set, in this case a radial basis (RBF) kernel option was used to let the software find a scale value for the kernel function. Additionally, the predictors were standardized, which is good practice. The output is a SVM model that in a next was cross-validated using 10-fold cross-validation with the \texttt{crossval(SVMModel)} function. The cross-validated SVM model was then used to compute the misclassification rate with the function \texttt{kfoldLoss(CVSVMModel)}. For later use in an on-line scenario the SVM model is saved.
 
- 
+\subsection{Robot Arm Control}
+The last stage in the control chain is the robot arm. At NST, two Neuronics Katana arms are available. The Neuronics Katana has 6 degrees of freedom (including the gripper) and a payload of 500g, which is more than sufficient for our purposes (see figure~\ref{fig:katana}). Thanks to working student Bernhard Specht, who wrote a Python script for accessing the robot methods via SOAP server, the robot can be easily controlled. 
+\begin{figure}[htpb!]
+	\centering
+	\includegraphics[width=0.3\linewidth]{./gfx/katana.jpg}
+	\caption{6-DoF robot arm Neuronics Katana.}
+	\label{fig:katana}
+\end{figure}
+In order to control the robot arm via Matlab, a simple Python wrapper was built. In short, it may be used via \texttt{py.KatanaSoap.KatanaSoap()} to get a \texttt{katana}-object. With this object, several commands may be executed, such as
+\begin{itemize}
+	\item \texttt{katana.calibrate()}\\
+	$\circ$ Calibrate the arm
+	\item \texttt{katana.moveMotAndWait(axis, val)}\\
+	$\circ$ Move axis "\texttt{axis}" to position \texttt{val}. the \texttt{int32(val)}-function needs to be used in Matlab to ensure the functioning (the method only accepts integers; Matlab uses floats with double precision by default).
+	\item \texttt{katana.closeGripper()} / \texttt{katana.openGripper()}\\
+	$\circ$ Closes or closes the gripper, respectively. 
+\end{itemize}
+Further documentation can be found in the Python script \texttt{KatanaSoap.py} written by Bernhard Specht.\\\\
+For the on-line application of the BCI system, a Matlab function\\ \texttt{realtimeMotorImagery(numTrials, robotOn)} was written. It takes as inputs the number of trials \texttt{numTrials} to be attempted and whether the robot shall be actuated (input \texttt{robotOn}). Due to time constraints that resulted from the failed attempt using the Emotiv device in the first weeks of the research practice, a real-time application could not be realized. Instead, randomized cues (left arrows, right arrows) are displayed, EEG signal epochs extracted and directly classified, resulting in a control signal for the robot. In the following section the results will be presented and discussed.
 
 
 \section{Experimental Results}
+For training data, two-class EEG motor imagery data has been collected from two healthy male subjects in the age of 24 and 25 years. A total of 10 datasets has been recorded. Table~\ref{tab:class-results} summarizes the cross-validated off-line classification accuracies reached with the SVM using BP features. Regarding the experimental design, there are several limitations. For example, the visual cue stimulation could be randomized, as in its current implementation left/right cues are alternating and therefore predictable for the user. Additionally, a pause of random length could be added at the end of each trials in order to avoid the user getting tired or bored during the recording session.
 
+\begin{table}[h!!!]
+	\centering
+	\begin{tabular}{lcc}
+		\textbf{Recording ID}	&\textbf{Number of trials}  &\textbf{Overall Accuracy (\%)} \\ 
+		\hline \hline  TD&  Raw data& 68.7\\ 
+		\hline  AS01&  MAV& 90.7\\ 
+		\hline	AS&  WL& 91.3\\ 
+		\hline	TD&  VAR& 78.7\\ 
+		\hline	TD&  AR& 88.6\\
+		\hline	TD&  MAV$+$WL& 80.0\\
+		\hline  FD&  PS& 76.0\\
+		\hline  FD&  WT&  78.0
+	\end{tabular} 
+	\caption{Summary of cross-validated off-line classification accuracies reached with a SVM using BP features.}
+	\label{tab:class-results}
+\end{table}
+
+It is apparent that there is a high variability in the classification accuracy across the recording sessions. This is due to various reasons that will be discussed in the section following.\\\\
+One of the results certainly is that the Biopac MP36 device is unsuitable for BCI applications, even though it delivers decent results for simple EEG recordings. To summarize the lessons learned while using the MP36:
 \begin{itemize}
-	\item reached accuracies of SVM
-	\item how to ensure that recording is successful  
-	\item ...
-\end{itemize}s
-
-
-\section{Discussion}
-\begin{itemize}
-	\item how to improve classification accuracy
-	\subitem improve feature extraction, e.g. use ERD / ERS on $\alpha$- / $\beta$-bands 
-	\item use different classifier 
-	\subitem ANN or SNN would be interesting to see. See paper xy for examples
-	\subitem Convolutional NN or recurrent deep NN could significantly improve classification accuracy and therefore enable the system for a multiclass (more than two for instance) classification 
+	\item Electrode positioning has a big impact on BCI performance (as mentioned before). However, as Biopac does not include a EEG cap for well-defined electrode positions (electrode need to be placed "individually" on the scalp; see figure~\ref{fig:elec_pos}), it is particularly difficult to reproduce results from session to session.
+	\item Longer hair increases the impedance and therefore lowers the SNR. Additionally it is hardware to fixate the electrodes precisely on the scalp when using conventional elastic bandages.
+	\item The adhesive part of the electrode should be softly abraded with abrasive pads in order to reduce the discomfort for the user of the BCI.
 \end{itemize}
 
-
-Discuss and explain your results. Show how they support your thesis (or, if they don't, give a convincing explanation). It is important to separate objective facts clearly from their discussion (which is bound to contain subjective opinion). If the reader doesn't understand your results, reconsider if you have managed to extract the core information and explain it in a straightforward way.
+Besides the hardware limitations, there are several methods to be considered for an improvement of the classification accuracy. First, different features could be used. For example, event-related desynchronization and event-related synchronization in alpha- and beta-bands, respectively, can be observed during the execution of motor imagery. Due to the non-stationary and transient nature of EEG signals, the discrete wavelet transform (DWT) is widely used for BCI systems. Another promising approach are common spatial patterns (CSP) as features. Dynamic time warping (DTW) could also be considered. Furthermore, deep convolutional neural networks (CNN) or recurrent neural networks (RNN) could significantly improve classification accuracy and therefore enable the system for a multiclass classification of EEG signals. Especially the different features could be evaluated without too much additional effort. However, du to time constraints this was not possible and could be done in future work.
 
 %_______________________________________________
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.2)  21 MAY 2017 20:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.2)  21 MAY 2017 21:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -370,6 +370,14 @@ Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
 \f@ncyO@olf=\skip50
 \f@ncyO@orf=\skip51
 )
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 23.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 25.
+
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
@@ -559,11 +567,9 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 Non-PDF special ignored!
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-[2
-
-] [3]pdfTeX warning (ext4): destination with the same identifier (name{page.1})
- has been already used, duplicate ignored
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]pdfTeX warning (ext4): dest
+ination with the same identifier (name{page.1}) has been already used, duplicat
+e ignored
 <to be read again> 
                    \relax 
 l.102 \begin{abstract}
@@ -589,23 +595,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.122 \tableofcontents
-                       [2] (./final_report.toc)
+                       [1] (./final_report.toc)
 \tf@toc=\write8
 \openout8 = `final_report.toc'.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.127 \chapter
-              {Introduction} [3
 
-] [4
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 127.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 127.
+
+[2
 
 ]
 Chapter 1.
@@ -619,7 +627,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--131
 
  []
 
-<./gfx/BCI_control_system.pdf, id=109, 583.17876pt x 300.12125pt>
+<./gfx/BCI_control_system.pdf, id=97, 583.17876pt x 300.12125pt>
 File: ./gfx/BCI_control_system.pdf Graphic file (type pdf)
 
 <use ./gfx/BCI_control_system.pdf>
@@ -636,10 +644,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 138--141
  []
 
 
-Underfull \vbox (badness 1122) has occurred while \output is active []
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 141.
 
- [5]
-<./gfx/10-20.jpg, id=126, 551.1792pt x 480.8364pt>
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 141.
+
+[3
+
+] <./gfx/10-20.jpg, id=114, 551.1792pt x 480.8364pt>
 File: ./gfx/10-20.jpg Graphic file (type jpg)
  <use ./gfx/10-20.jpg>
 Package pdftex.def Info: ./gfx/10-20.jpg used on input line 144.
@@ -648,9 +662,7 @@ Package pdftex.def Info: ./gfx/10-20.jpg used on input line 144.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6 <./gfx/BCI_control_system.pdf>] [7 <./gfx/10-20.jpg>] [8
-
-]
+[4 <./gfx/BCI_control_system.pdf>] [5 <./gfx/10-20.jpg>]
 Chapter 2.
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 164.
 
@@ -664,21 +676,31 @@ Overfull \hbox (14.22641pt too wide) in paragraph at lines 172--172
 []\OT1/cmr/bx/n/17.28 First ap-proach: Open-Vibe and Emo-tiv EPOC+ 
  []
 
-<gfx/openvibe_blocks.png, id=153, 497.34193pt x 377.06087pt>
+<gfx/openvibe_blocks.png, id=138, 497.34193pt x 377.06087pt>
 File: gfx/openvibe_blocks.png Graphic file (type png)
 
 <use gfx/openvibe_blocks.png>
 Package pdftex.def Info: gfx/openvibe_blocks.png used on input line 177.
 (pdftex.def)             Requested size: 256.0774pt x 194.15112pt.
 
-<gfx/emotiv_epoc.png, id=154, 602.25pt x 382.42876pt>
+<gfx/emotiv_epoc.png, id=139, 602.25pt x 382.42876pt>
 File: gfx/emotiv_epoc.png Graphic file (type png)
 
 <use gfx/emotiv_epoc.png>
 Package pdftex.def Info: gfx/emotiv_epoc.png used on input line 178.
 (pdftex.def)             Requested size: 166.44835pt x 105.69632pt.
- [9]
-<./gfx/epoc_errorcode.PNG, id=166, 483.30562pt x 73.77562pt>
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 183.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 183.
+
+[6
+
+] <./gfx/epoc_errorcode.PNG, id=150, 483.30562pt x 73.77562pt>
 File: ./gfx/epoc_errorcode.PNG Graphic file (type png)
 
 <use ./gfx/epoc_errorcode.PNG>
@@ -688,75 +710,75 @@ Package pdftex.def Info: ./gfx/epoc_errorcode.PNG used on input line 186.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10 <./gfx/openvibe_blocks.png> <./gfx/emotiv_epoc.png>]
-<./gfx/mp36.jpg, id=177, 828.09375pt x 557.83406pt>
+[7 <./gfx/openvibe_blocks.png> <./gfx/emotiv_epoc.png>]
+<./gfx/mp36.jpg, id=160, 828.09375pt x 557.83406pt>
 File: ./gfx/mp36.jpg Graphic file (type jpg)
  <use ./gfx/mp36.jpg>
 Package pdftex.def Info: ./gfx/mp36.jpg used on input line 199.
 (pdftex.def)             Requested size: 136.57634pt x 91.99608pt.
 
-<./gfx/biopac_cable.jpg, id=178, 828.09375pt x 551.81157pt>
+<./gfx/biopac_cable.jpg, id=161, 828.09375pt x 551.81157pt>
 File: ./gfx/biopac_cable.jpg Graphic file (type jpg)
 
 <use ./gfx/biopac_cable.jpg>
 Package pdftex.def Info: ./gfx/biopac_cable.jpg used on input line 200.
 (pdftex.def)             Requested size: 136.57634pt x 91.00287pt.
 
-<./gfx/biopac_electrodes.jpg, id=179, 96.36pt x 64.3203pt>
+<./gfx/biopac_electrodes.jpg, id=162, 96.36pt x 64.3203pt>
 File: ./gfx/biopac_electrodes.jpg Graphic file (type jpg)
 
 <use ./gfx/biopac_electrodes.jpg>
 Package pdftex.def Info: ./gfx/biopac_electrodes.jpg used on input line 201.
 (pdftex.def)             Requested size: 136.57634pt x 91.16467pt.
- [11 <./gfx/epoc_errorcode.PNG> <./gfx/mp36.jpg> <./gfx/biopac_cable.jpg> <./gf
-x/biopac_electrodes.jpg>]
-<./gfx/bhapi.png, id=187, 250.9375pt x 309.155pt>
+ [8 <./gfx/epoc_errorcode.PNG> <./gfx/mp36.jpg> <./gfx/biopac_cable.jpg> <./gfx
+/biopac_electrodes.jpg>]
+<./gfx/bhapi.png, id=171, 250.9375pt x 309.155pt>
 File: ./gfx/bhapi.png Graphic file (type png)
  <use ./gfx/bhapi.png>
 Package pdftex.def Info: ./gfx/bhapi.png used on input line 210.
 (pdftex.def)             Requested size: 128.0387pt x 157.75186pt.
 
-<./gfx/exp_design.png, id=190, 624.08156pt x 280.04625pt>
+<./gfx/exp_design.png, id=174, 624.08156pt x 280.04625pt>
 File: ./gfx/exp_design.png Graphic file (type png)
 
 <use ./gfx/exp_design.png>
 Package pdftex.def Info: ./gfx/exp_design.png used on input line 220.
 (pdftex.def)             Requested size: 426.79134pt x 191.51857pt.
- [12 <./gfx/bhapi.png>]
-<./gfx/alex_side.jpg, id=203, 1842.885pt x 2257.43375pt>
+ [9 <./gfx/bhapi.png>]
+<./gfx/alex_side.jpg, id=187, 1842.885pt x 2257.43375pt>
 File: ./gfx/alex_side.jpg Graphic file (type jpg)
 
 <use ./gfx/alex_side.jpg>
 Package pdftex.def Info: ./gfx/alex_side.jpg used on input line 233.
 (pdftex.def)             Requested size: 136.57634pt x 167.26793pt.
 
-<./gfx/alex_top.jpg, id=204, 1839.87375pt x 1839.87375pt>
+<./gfx/alex_top.jpg, id=188, 1839.87375pt x 1839.87375pt>
 File: ./gfx/alex_top.jpg Graphic file (type jpg)
 
 <use ./gfx/alex_top.jpg>
 Package pdftex.def Info: ./gfx/alex_top.jpg used on input line 234.
 (pdftex.def)             Requested size: 136.57634pt x 136.5528pt.
 
-<./gfx/alex_back.jpg, id=205, 1842.885pt x 1842.885pt>
+<./gfx/alex_back.jpg, id=189, 1842.885pt x 1842.885pt>
 File: ./gfx/alex_back.jpg Graphic file (type jpg)
 
 <use ./gfx/alex_back.jpg>
 Package pdftex.def Info: ./gfx/alex_back.jpg used on input line 235.
 (pdftex.def)             Requested size: 136.57634pt x 136.55132pt.
- [13 <./gfx/exp_design.png>]
-<./gfx/raw.png, id=218, 477.28313pt x 490.08093pt>
+ [10 <./gfx/exp_design.png>]
+<./gfx/raw.png, id=203, 477.28313pt x 490.08093pt>
 File: ./gfx/raw.png Graphic file (type png)
  <use ./gfx/raw.png>
 Package pdftex.def Info: ./gfx/raw.png used on input line 246.
 (pdftex.def)             Requested size: 209.1301pt x 214.73143pt.
 
-<./gfx/filtered.png, id=219, 477.28313pt x 490.08093pt>
+<./gfx/filtered.png, id=204, 477.28313pt x 490.08093pt>
 File: ./gfx/filtered.png Graphic file (type png)
 
 <use ./gfx/filtered.png>
 Package pdftex.def Info: ./gfx/filtered.png used on input line 247.
 (pdftex.def)             Requested size: 209.1301pt x 214.73143pt.
- [14 <./gfx/alex_side.jpg> <./gfx/alex_top.jpg> <./gfx/alex_back.jpg>] [15 <./g
+ [11 <./gfx/alex_side.jpg> <./gfx/alex_top.jpg> <./gfx/alex_back.jpg>] [12 <./g
 fx/raw.png (PNG copy)> <./gfx/filtered.png (PNG copy)>]
 Overfull \hbox (17.64145pt too wide) in paragraph at lines 256--259
 \OT1/cmr/m/n/12 The Mat-lab tool-box for \OT1/cmr/m/it/12 Statis-tics and Ma-ch
@@ -764,47 +786,95 @@ ine Learn-ing \OT1/cmr/m/n/12 pro-vides a func-tion \OT1/cmtt/m/n/12 fitcsvm([]
 )
  []
 
-[16] [17] [18
+<./gfx/katana.jpg, id=223, 150.5625pt x 198.14024pt>
+File: ./gfx/katana.jpg Graphic file (type jpg)
+ <use ./gfx/katana.jpg>
+Package pdftex.def Info: ./gfx/katana.jpg used on input line 264.
+(pdftex.def)             Requested size: 128.0387pt x 168.5137pt.
 
-]
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 277--279
+
+ []
+
+[14 <./gfx/katana.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 301--303
+
+ []
+
+[15] [16]
 Chapter 3.
-[19] [20
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 337.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 337.
+
+[17
 
 ] (./final_report.lof)
 \tf@lof=\write9
 \openout9 = `final_report.lof'.
 
- [21
 
-] [22
 
-] (./final_report.bbl [23
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 344.
 
-]) [24]
-[25
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 344.
+
+[18
+
+
+] (./final_report.bbl
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 59.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 59.
+
+[19
+
+
+]) [20]
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 363.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 363.
+
+[21
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 336.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 336.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 363.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 363.
  (./final_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 336.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 336.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 363.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 363.
 Package rerunfilecheck Info: File `final_report.out' has not changed.
-(rerunfilecheck)             Checksum: 7E3A771E6CB7B46F88C7291E967EDBE0;832.
+(rerunfilecheck)             Checksum: 6109CCF626958173013592A04707B838;846.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 14971 strings out of 494901
- 280962 string characters out of 6178618
- 346920 words of memory out of 5000000
- 17927 multiletter control sequences out of 15000+600000
+ 14977 strings out of 494901
+ 281101 string characters out of 6178618
+ 347076 words of memory out of 5000000
+ 17934 multiletter control sequences out of 15000+600000
  11077 words of font info for 35 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 54i,12n,73p,1376b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,11n,73p,1376b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dis
@@ -814,10 +884,10 @@ s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
 c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
 8a.pfb>
-Output written on final_report.pdf (29 pages, 2311441 bytes).
+Output written on final_report.pdf (24 pages, 2334596 bytes).
 PDF statistics:
- 350 PDF objects out of 1000 (max. 8388607)
- 286 compressed objects within 3 object streams
- 68 named destinations out of 1000 (max. 500000)
- 192 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 336 PDF objects out of 1000 (max. 8388607)
+ 276 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 197 words of extra memory for PDF output out of 10000 (max. 10000000)
 

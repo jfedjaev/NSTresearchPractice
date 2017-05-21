@@ -1,12 +1,13 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Information flow for a BCI system controlling a robotic arm.}}{6}{figure.1.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces International standard 10-20 electrode placement system.}}{7}{figure.1.2}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Information flow for a BCI system controlling a robotic arm.}}{4}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces International standard 10-20 electrode placement system.}}{5}{figure.1.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Left: Example for the work flow in OpenVibe using algorithmic building block. Right: The Emotiv EPOC+ headset for signal acquisition.}}{10}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Error encountered when trying to connect the Emotiv EPOC+ with OpenVibe Acquisition Server.}}{11}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Left: Biopac MP36 data acquisition unit. Middle: Biopac electrode connection cable with separate reference and ground per channel. Right: Disposable Biopac electrodes. }}{11}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Illustration of the Biopac hardware API as an interface to external programming languages or software (here: LabView). }}{12}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Timing of the movement imagery task. Visual cue stimulus in form of left/right arrows between 3 and 5 seconds instructs the participant o imagine the desired movement (of left/right arm, respectively).}}{13}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Left: Electrodes on subjects scalp as seen from the left-hand side with ground electrode on the mastoid part of the temporal bone. Middle: View from the top showing C3, Cz and C4 electrode positions (l.t.r.) using bipolar derivation. Right: Subject's view and position for the recording session.}}{14}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Left: First 1000 samples (5 seconds) of the raw signals from channels 1, 2 and 3. Right: Removed baseline drift, bandpass filtered and normalized signals from channels 1, 2 and 3.}}{15}{figure.2.7}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Left: Example for the work flow in OpenVibe using algorithmic building block. Right: The Emotiv EPOC+ headset for signal acquisition.}}{7}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Error encountered when trying to connect the Emotiv EPOC+ with OpenVibe Acquisition Server.}}{8}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Left: Biopac MP36 data acquisition unit. Middle: Biopac electrode connection cable with separate reference and ground per channel. Right: Disposable Biopac electrodes. }}{8}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Illustration of the Biopac hardware API as an interface to external programming languages or software (here: LabView). }}{9}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Timing of the movement imagery task. Visual cue stimulus in form of left/right arrows between 3 and 5 seconds instructs the participant o imagine the desired movement (of left/right arm, respectively).}}{10}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Left: Electrodes on subjects scalp as seen from the left-hand side with ground electrode on the mastoid part of the temporal bone. Middle: View from the top showing C3, Cz and C4 electrode positions (l.t.r.) using bipolar derivation. Right: Subject's view and position for the recording session.}}{11}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Left: First 1000 samples (5 seconds) of the raw signals from channels 1, 2 and 3. Right: Removed baseline drift, bandpass filtered and normalized signals from channels 1, 2 and 3.}}{12}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces 6-DoF robot arm Neuronics Katana.}}{14}{figure.2.8}
 \addvspace {10\p@ }

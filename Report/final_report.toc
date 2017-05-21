@@ -1,16 +1,16 @@
-\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}
-\contentsline {chapter}{\numberline {2}Experimental Design and Implementation}{9}{chapter.2}
-\contentsline {section}{\numberline {2.1}First approach: OpenVibe and Emotiv EPOC+}{10}{section.2.1}
-\contentsline {section}{\numberline {2.2}Second Approach - Biopac MP36}{11}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Data Acquisition}{12}{subsection.2.2.1}
-\contentsline {paragraph}{Launching data acquisition:}{12}{section*.2}
-\contentsline {paragraph}{Cue display:}{13}{section*.3}
-\contentsline {paragraph}{Data Format:}{13}{section*.4}
-\contentsline {subsection}{\numberline {2.2.2}Signal pre-processing}{14}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Feature extraction}{15}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Classification}{16}{subsection.2.2.4}
-\contentsline {section}{\numberline {2.3}Experimental Results}{16}{section.2.3}
-\contentsline {section}{\numberline {2.4}Discussion}{16}{section.2.4}
-\contentsline {chapter}{\numberline {3}Conclusion}{19}{chapter.3}
-\contentsline {chapter}{List of Figures}{21}{chapter.3}
-\contentsline {chapter}{Bibliography}{23}{chapter*.6}
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}
+\contentsline {chapter}{\numberline {2}Experimental Design and Implementation}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}First approach: OpenVibe and Emotiv EPOC+}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Second Approach - Biopac MP36}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Data Acquisition}{9}{subsection.2.2.1}
+\contentsline {paragraph}{Launching data acquisition:}{9}{section*.2}
+\contentsline {paragraph}{Cue display:}{10}{section*.3}
+\contentsline {paragraph}{Data Format:}{10}{section*.4}
+\contentsline {subsection}{\numberline {2.2.2}Signal pre-processing}{11}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Feature extraction}{12}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Classification}{13}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Robot Arm Control}{13}{subsection.2.2.5}
+\contentsline {section}{\numberline {2.3}Experimental Results}{14}{section.2.3}
+\contentsline {chapter}{\numberline {3}Conclusion}{17}{chapter.3}
+\contentsline {chapter}{List of Figures}{18}{chapter.3}
+\contentsline {chapter}{Bibliography}{19}{chapter*.6}

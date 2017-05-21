@@ -57,4 +57,14 @@ S.~Ge, R.~Wang, and D.~Yu, ``Classification of four-class motor imagery
   employing single-channel electroencephalography,'' {\em PloS one}, vol.~9,
   no.~6, p.~e98019, 2014.
 
+\bibitem{leeb2007brain}
+R.~Leeb, F.~Lee, C.~Keinrath, R.~Scherer, H.~Bischof, and G.~Pfurtscheller,
+  ``Brain--computer communication: motivation, aim, and impact of exploring a
+  virtual apartment,'' {\em IEEE Transactions on Neural Systems and
+  Rehabilitation Engineering}, vol.~15, no.~4, pp.~473--482, 2007.
+
+\bibitem{tayeb2017spinnaker}
+Z.~Tayeb, E.~Ercelik, and J.~Conradt, ``Decoding of motor imagery movements
+  from eeg signals using spinnaker neuromorphic hardware,'' {\em arXiv}, 2017.
+
 \end{thebibliography}

@@ -100,7 +100,8 @@ Final Submission: &  22.05.2017 \\
 \pagenumbering{arabic}
 \phantom{u}
 \begin{abstract}
-  A short (1--3 paragraphs) summary of the work. Should state the problem, major assumptions, basic idea of solution, results. Avoid non--standard terms and acronyms. The abstract must be able to be read completely on its own, detached from any other work (e.g., in collections of paper abstracts). Don't use references in an abstract.
+  People with severe neuromuscular disorders, such as late-stage amyotrophic sclerosis (ALS) and those paralyzed from higher level spinal cord injury are unable to actuate any of their muscles. Communication with the outside world is therefore problematic for the suffering people. Cognitive and sensory body functions, however, are often only minimally affected. Therefore, an electroencephalogram-based communication which does not require any neuromuscular control is considered to be particularly helpful to enhance the disabled's quality of life by increasing their independence.\\
+  A simple 3-channel brain-computer-interface (BCI) using motor imagery was developed for controlling a robot arm. Two classes representing left and right arm movements have been trained during recording sessions consisting of 40 and 50 trials. The participants were two healthy male students in the age of 24 and 25 years. Three bipolar electrode pairs were placed at C3, Cz and C4 locations for the recording of the EEG signals using a Biopac MP36 acquisition unit. A Matlab software was developed to interface with the Biopac hardware API, to generate visual cues for the BCI users and to record, process and classify the signals. Off-line classification accuracies of 77\% were reached. On-line classification, however, was unsuccessful due to hardware limitations, especially the electrode design of the signal acquisition device.
 \end{abstract}
 %____________________________________________________________
 
@@ -310,8 +311,7 @@ One of the results certainly is that the Biopac MP36 device is unsuitable for BC
 	\item Longer hair increases the impedance and therefore lowers the SNR. Additionally, it is harder to fixate the electrodes precisely on the scalp when using conventional elastic bandages.
 	\item The adhesive part of the electrode should be softly abraded with abrasive pads in order to reduce the discomfort for the user of the BCI.
 \end{itemize}
-
-Besides the hardware limitations, there are several methods to be considered for an improvement of the classification accuracy. First, different features could be used. For example, event-related desynchronization and event-related synchronization in alpha- and beta-bands, respectively, can be observed during the execution of motor imagery. Due to the non-stationary and transient nature of EEG signals, the discrete wavelet transform (DWT) is widely used for BCI systems. Another promising approach are common spatial patterns (CSP) as features. Dynamic time warping (DTW) could also be considered. Furthermore, deep convolutional neural networks (CNN) or recurrent neural networks (RNN) could significantly improve classification accuracy and therefore enable the system for a multiclass classification of EEG signals. Especially the different features could be evaluated without too much additional effort. However, due to time constraints this was not possible and could be done in future work.
+Despite the difficulties, there are two recorded datasets that deliver satisfying results, namely those with recording IDs \texttt{AS02-12} and \texttt{JF04-10} with 77\% and 74\% classification accuracy, respectively. 
 
 %_______________________________________________
 
@@ -319,20 +319,8 @@ Besides the hardware limitations, there are several methods to be considered for
 
 %_____Zusammenfassung, Ausblick_________________________________
 \chapter{Conclusion}
-
-Don't leave it at the discussion: discuss what you/the reader can learn from the results. Draw some real conclusions. Separate discussion/interpretation of the results clearly from the conclusions you draw from them. (So-called "conclusion creep" tends to upset reviewers. It means surrendering your scientific objectivity.) Identify all shortcomings/limitations of your work, and discuss how they could be fixed ("future work"). It is not a sign of weakness of your work, if you clearly analyse and state the limitations. Informed readers will notice them anyway and draw their own conclusions, if not addressed properly.
-
-\vspace{\baselineskip}
-Recap: don't stick to this structure at all cost. Also, remember that the thesis must be:
-
-\begin{itemize}
-	\item honest, stating clearly all limitations;
-	\item self--contained, don't write just for the locals, don't assume that the reader has read the same literature as you, don't let the reader work out the details for themselves.
-\end{itemize}
-
-
-
-This chapter is followed by the list of figures and the bibliography. If you are using acronyms, listing them (with the expanded full name) before the bibliography is also a good idea. The acronyms package helps with consistency and an automatic listing.
+A simple 3-channel BCI using motor imagery was developed for controlling a robot arm. Two classes representing left and right arm movements have been trained during recording sessions consisting of 40 and 50 trials. The participants were two healthy male students in the age of 24 and 25 years. Three bipolar electrode pairs were placed at C3, Cz and C4 locations for the recording of the EEG signals using a Biopac MP36 acquisition unit. A Matlab software was developed to interface with the Biopac hardware API, to generate visual cues for the BCI users and to record, process and classify the signals. Off-line classification accuracies of 77\% were reached, even though in general the classification accuracy was far lower around 60\% due to hardware, especially electrode design. \\
+Besides the hardware limitations, there are several methods to be considered for an improvement of the classification accuracy. First, different features could be used. For example, event-related desynchronization and event-related synchronization in alpha- and beta-bands, respectively, can be observed during the execution of motor imagery. Due to the non-stationary and transient nature of EEG signals, the discrete wavelet transform (DWT) is widely used for BCI systems. Another promising approach are common spatial patterns (CSP) as features. Dynamic time warping (DTW) could also be considered. Furthermore, deep convolutional neural networks (CNN) or recurrent neural networks (RNN) could significantly improve classification accuracy and therefore enable the system for a multiclass classification of EEG signals. Especially the different features could be evaluated without too much additional effort. However, due to time constraints this was not possible and could be done in future work.
 
 
 %_______________________________________________________________

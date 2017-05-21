@@ -11,6 +11,6 @@
 \contentsline {subsection}{\numberline {2.2.4}Classification}{13}{subsection.2.2.4}
 \contentsline {subsection}{\numberline {2.2.5}Robot Arm Control}{13}{subsection.2.2.5}
 \contentsline {section}{\numberline {2.3}Experimental Results}{14}{section.2.3}
-\contentsline {chapter}{\numberline {3}Conclusion}{17}{chapter.3}
-\contentsline {chapter}{List of Figures}{18}{chapter.3}
-\contentsline {chapter}{Bibliography}{19}{chapter*.6}
+\contentsline {chapter}{\numberline {3}Conclusion}{16}{chapter.3}
+\contentsline {chapter}{List of Figures}{17}{chapter.3}
+\contentsline {chapter}{Bibliography}{18}{chapter*.6}

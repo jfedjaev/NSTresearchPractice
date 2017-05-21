@@ -5,8 +5,8 @@
 \contentsline {subsection}{\numberline {2.2.1}Data Acquisition}{12}{subsection.2.2.1}
 \contentsline {paragraph}{Launching data acquisition:}{12}{section*.2}
 \contentsline {paragraph}{Cue display:}{13}{section*.3}
-\contentsline {section}{\numberline {2.3}Experimental Results}{13}{section.2.3}
+\contentsline {section}{\numberline {2.3}Experimental Results}{14}{section.2.3}
 \contentsline {section}{\numberline {2.4}Discussion}{14}{section.2.4}
-\contentsline {chapter}{\numberline {3}Conclusion}{15}{chapter.3}
-\contentsline {chapter}{List of Figures}{17}{chapter.3}
-\contentsline {chapter}{Bibliography}{19}{chapter*.5}
+\contentsline {chapter}{\numberline {3}Conclusion}{17}{chapter.3}
+\contentsline {chapter}{List of Figures}{19}{chapter.3}
+\contentsline {chapter}{Bibliography}{21}{chapter*.5}

@@ -225,12 +225,18 @@ For the training sessions, a Matlab function \texttt{recordMotorImageryData(numT
 
 \paragraph{Cue display:} For cue display, another Matlab function \texttt{launchCueExp(DURATION, T\_BLANK, T\_CUE\_ON, T\_CUE, T\_PERIOD)} has been written. By modifying its input parameters, individual visual cue timings may be re-used for future experiments at NST. The inputs are the total experiment duration in seconds \texttt{DURATION}, the fixation cross onset \texttt{T\_BLANK}, the cue onset time \texttt{T\_CUE\_ON}, the duration of cue display \texttt{T\_CUE}, and the period length for one trial \texttt{T\_PERIOD}. For illustration of the parameters see figure~\ref{fig:exp_design}.
 
+\paragraph{Data Format:}
+
 \subsubsection*{Electrode positioning}
-
-
-
-
-
+The electrode positioning on the scalp is a crucial part of BCI design. As mentioned before, electrode positions on C3, Cz and C4 are desired for motor imagery classification tasks. Therefore, each of the bipolar electrode pairs are positioned accordingly on those positions (see figure~\ref{fig:elec_pos} in the middle for illustration). The ground electrodes may be positioned on the mastoid parts of the temporal bone, right behind the ears (see figure~\ref{fig:elec_pos} on the left for illustration). As the electrodes used with the Biopac device are dry electrodes that are more suitable for EMG recordings, great caution must be exercised while placing them. Participants with thick hair may be a problem due to low signal-to-noise ratio (SNR) and high impedance. The subject's hair should be gently moved to the sides, so that the electrodes touch the scalp. After placement, the the electrodes should be pressed onto the scalp with minor force for roughly one minute each. Then, bandages were wrapped around the subjects head to fixate the electrodes. The impedance for the electrodes should ideally be lower than $10$ k$\Omega$, which can be checked using the "\textit{Impedance Check}" port on the Biopac device. A value under $50$ k$\Omega$, however, was accepted during recordings, as it was hard to achieve a lower values.\\ 
+\begin{figure}[htbp!]
+	\includegraphics[width=0.32\linewidth]{./gfx/alex_side}
+	\includegraphics[width=0.32\linewidth]{./gfx/alex_top}
+	\includegraphics[width=0.32\linewidth]{./gfx/alex_back}
+	\caption{Left: Electrodes on subjects scalp as seen from the left-hand side with ground electrode on the mastoid part of the temporal bone. Middle: View from the top showing C3, Cz and C4 electrode positions (l.t.r.) using bipolar derivation. Right: Subject's view and position for the recording session.}
+	\label{fig:elec_pos}
+\end{figure}
+As a side note, the recording setup with the Biopac device is very uncomfortable for the participant and was unsustainable for longer periods of time ($> 15$ min). After the recording, the removal of the electrodes is tedious and painful because the adhesive that sticks strongly onto the hair. 
 
 \section{Experimental Results}
 

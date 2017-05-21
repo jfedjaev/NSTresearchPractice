@@ -1,4 +1,4 @@
-%% Plot graphics for report
+%% Plot graphics for repor
 raw = recording.X;
 pos     = recording.trial;
 

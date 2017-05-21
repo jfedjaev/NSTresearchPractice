@@ -239,14 +239,13 @@ The electrode positioning on the scalp is a crucial part of BCI design. As menti
 As a side note, the recording setup with the Biopac device is very uncomfortable for the participant and was unsustainable for longer periods of time ($> 15$ min). After the recording, the removal of the electrodes is tedious and painful because the adhesive that sticks strongly onto the hair. 
 
 \subsection{Signal pre-processing}
-As the data is ...
-
-
+Raw EEG signal is very noisy due to various factors, such as low SNR, artifacts from muscle movements (eye movements, cardiac signals, muscles beneath the scalp etc.). Therefore, the signal first needs to be prepared for further analysis. In many of the recording, a baseline drift is noticeable across most of the channels due to varying signal quality (pressure from bandage not constant, electrodes slightly moving on the scalp, impedance not constantly the same for individual electrodes), see figure~\ref{fig:signals} on the top left corner for an example. Therefore, a function \texttt{detrendData(input, pos)} has been written. This function takes as input a data matrix \texttt{input} with a column for each channel and the samples along its rows. The input \texttt{pos} tells the function where the onsets of the trials were, so that trial-wise mean subtraction can be applied. \\
+Furthermore, the interesting frequency bands for motor imagery decoding are mostly in alpha- (8-13 Hz) and beta-bands (16-25 Hz) \cite{ge2014classification}. Bandpass filtering from 2 to 50 Hz is therefore applied (as distinct frequency subbands will be extracted in the feature extraction step, no further bandpass filtering is employed at this point). The filter used is a 8th order Butterworth filter from the Matlab toolboxes. Additionally, the EEG data is normalized and scaled. See figure~\ref{fig:signals} for the raw signals (left-hand side) and the corresponding filtered, detrended and normalized signals (on the right-hand side). 
 \begin{figure}[htbp!]
 	\centering
 	\includegraphics[width=0.49\linewidth]{./gfx/raw}
 	\includegraphics[width=0.49\linewidth]{./gfx/filtered}
-	\caption{Left: Raw signals from channels 1, 2 and 3. Right: Removed baseline drift, bandpass filtered and normalized signals from channels 1, 2 and 3.}
+	\caption{Left: First 1000 samples (5 seconds) of the raw signals from channels 1, 2 and 3. Right: Removed baseline drift, bandpass filtered and normalized signals from channels 1, 2 and 3.}
 	\label{fig:signals}
 \end{figure}
 

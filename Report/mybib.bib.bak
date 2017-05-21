@@ -2,6 +2,16 @@
 % Encoding: UTF-8
 
 
+@Electronic{biopac_general,
+  Title                    = {Biopac product site},
+  Author                   = {Biopac  Systems, Inc.},
+  Url                      = {https://www.biopac.com/product-category/education/systems-education/},
+  Year                     = {2017},
+
+  Owner                    = {jfedjaev},
+  Timestamp                = {2017.05.21}
+}
+
 @Misc{birbaumer2006brain,
   Title                    = {Brain--computer-interface research: coming of age},
 
@@ -87,6 +97,13 @@
   Keywords                 = {dblp},
   Timestamp                = {2010-07-21T15:47:09.000+0200},
   Url                      = {http://dblp.uni-trier.de/db/journals/presence/presence19.html#RenardLGCMDBL10}
+}
+
+@Book{schalk2010practical,
+  Title                    = {A practical guide to brain--computer interfacing with BCI2000: General-purpose software for brain-computer interface research, data acquisition, stimulus presentation, and brain monitoring},
+  Author                   = {Schalk, Gerwin and Mellinger, J{\"u}rgen},
+  Publisher                = {Springer Science \& Business Media},
+  Year                     = {2010}
 }
 
 @Article{sivakamianalysis,

@@ -1,9 +1,11 @@
 \contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}
 \contentsline {chapter}{\numberline {2}Experimental Design and Implementation}{9}{chapter.2}
 \contentsline {section}{\numberline {2.1}First approach: OpenVibe and Emotiv EPOC+}{10}{section.2.1}
-\contentsline {section}{\numberline {2.2}Experimental Design}{11}{section.2.2}
-\contentsline {section}{\numberline {2.3}Experimental Results}{11}{section.2.3}
-\contentsline {section}{\numberline {2.4}Discussion}{11}{section.2.4}
-\contentsline {chapter}{\numberline {3}Conclusion}{13}{chapter.3}
-\contentsline {chapter}{List of Figures}{15}{chapter.3}
-\contentsline {chapter}{Bibliography}{17}{chapter*.2}
+\contentsline {section}{\numberline {2.2}Second Approach - Biopac MP36}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Experimental Design}{12}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Data Acquisition}{12}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Experimental Results}{12}{section.2.3}
+\contentsline {section}{\numberline {2.4}Discussion}{12}{section.2.4}
+\contentsline {chapter}{\numberline {3}Conclusion}{15}{chapter.3}
+\contentsline {chapter}{List of Figures}{17}{chapter.3}
+\contentsline {chapter}{Bibliography}{19}{chapter*.2}

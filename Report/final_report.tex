@@ -179,7 +179,7 @@ OpenVibe's programming paradigm is based on building blocks representing individ
 \caption{Left: Example for the work flow in OpenVibe using algorithmic building block. Right: The Emotiv EPOC+ headset for signal acquisition.}
 \label{fig:openvibe_blocks}
 \end{figure}
-The interface to the OpenVibe is the so-called \textit{OpenVibe Acquisition Server}. For accessing the raw signals of the EPOC+, a premium software development kit (SDK) is needed. However, there are issues trying to connect the EPOC+ with the OpenVibe aquisition server. In fact, the connection succeeds but stops working when starting the acquisition (see fig.~\ref{fig:epoc_error}).
+The interface to OpenVibe is the so-called \textit{OpenVibe Acquisition Server}. For accessing the raw signals of the EPOC+, a premium software development kit (SDK) is needed. However, there are issues trying to connect the EPOC+ with the OpenVibe aquisition server. In fact, the connection succeeds but stops working when starting the acquisition (see fig.~\ref{fig:epoc_error}).
  
 \begin{figure}[h]
 	\centering
@@ -188,26 +188,33 @@ The interface to the OpenVibe is the so-called \textit{OpenVibe Acquisition Serv
 	\label{fig:epoc_error}
 \end{figure}
 
-Two similar headsets with the official premium SDK were tested without success. Emokit reverse-engineering drivers written in Python (found on the Internet) were able to access some of the data. However, the electrode and quality indicators were disturbed by a strong jitter in the data. An EMOTIV EPOC+ headset with an older version number was working without any problems, but was unfortunately available only briefly for testing purposes and not for the BCI project. Therefore, it is assumed that there were some changes done on firmware level by the company. In the end, the approach using an Emotiv EPOC+ in connection with OpenVibe was abandoned due to the previously described problems. The alternative to that will be explained in the following section.
+Two similar headsets with the official premium SDK were tested without success. Emokit reverse-engineering drivers written in Python (found on GitHub) were able to access some of the data. However, the electrode and quality indicators were disturbed by a strong jitter in the data. An Emotiv EPOC+ headset with an older version number was working without any problems, but was unfortunately available only briefly for testing purposes and not for the BCI project. Therefore, it is assumed that there were some changes done on firmware level by the manufacturer. In the end, the approach using an Emotiv EPOC+ in connection with OpenVibe was abandoned due to the previously described problems. The alternative solution will be explained in the following section.
 
+\section{Second Approach - Biopac MP36}
+Following the difficulties using the Emotiv headset, alternative hardware for EEG signal acquisition was needed. Fortunately, NST has two Biopac MP36 systems available. The Biopac MP36 is a biosignal acquisition device specifically developed for undergraduate students studying physiology. It is distributed as a complete solution called \textit{Biopac Student Lab} (BSL). The BSL system integrates hardware, software and curriculum materials including over sixty experiments that students use to study the cardiovascular system, muscles, pulmonary function, autonomic nervous system, and the brain \cite{biopac_general}.\\
+The MP36 has four analog input channels, each with separate ground and reference electrodes. It has an A/D sampling resolution of 24-Bit and a maximum sampling rate of $100$ kHz per channel, see figure~\ref*{fig:biopac}.
 
+\begin{figure}[htbp!]
+	\centering
+	\includegraphics[width=0.32\linewidth]{./gfx/mp36}
+	\includegraphics[width=0.32\linewidth]{./gfx/biopac_cable}
+	\includegraphics[width=0.32\linewidth]{./gfx/biopac_electrodes}
+	\caption{Left: Biopac MP36 data acquisition unit. Middle: Biopac electrode connection cable with separate reference and ground per channel. Right: Disposable Biopac electrodes. }
+	\label{fig:biopac}
+\end{figure} 
 
+As the Biopac system is supposed to be used with the proprietary Biopac Student Lab software, there is no BCI software available that supports the MP36 acquisition device natively. However, Biopac provides a hardware API (BHAPI) for developers. The BHAPI enables the user to acquire raw data, set sampling rate, triggers, get the status of the MP36 device as well as some other features. The implementation of these functions is compiled into a Windows 32-Bit DLL (dynamic link library) called \texttt{mpdev.dll} (see fig.~\ref*{fig:bhapi}). The interface is documented in C/C++, but any programming language that is able to utilize Windows 32-bit DLLs should be able to access the BIOPAC Hardware API. Due to personal preferences Matlab is used.
 
-\section{Experimental Design}
-In this section the design of the proposed solution will be described, i.e. the overall architecture on an abstract level. 
+\begin{figure}[htpb!]
+	\centering
+	\includegraphics[width=0.3\linewidth]{./gfx/bhapi.png}
+	\caption{Illustration of the Biopac hardware API as an interface to external programming languages or software (here: LabView). }
+	\label{fig:bhapi}
+\end{figure}
 
-Experiment design:
-\begin{itemize}
-	\item cue-based experiment
-	\item acquiring samples 
-\end{itemize}
+\subsection{Experimental Design}
 
-In this section, the implementation will be explained in greater detail. 
-\begin{itemize}
-	\item Chain of information processing
-	\item Implementation in Matlab
-	\item e
-\end{itemize}
+\subsection{Data Acquisition}
 
 
 \section{Experimental Results}

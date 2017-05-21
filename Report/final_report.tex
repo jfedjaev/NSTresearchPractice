@@ -215,20 +215,17 @@ As the Biopac system is supposed to be used with the proprietary Biopac Student 
 \subsection{Data Acquisition}
 In order to train the classifier model, training data is necessary. Therefore, a cue-based experimental paradigm was used. The participants of the data recording sessions were shown visual cues in form of left or right arrows at distinct points in time for the onset of left or right arm motor imagery of movements (see figure~\ref{fig:exp_design}), representing the two classes. One recording sessions consisted of 40 or 50 trials, 20 or 25 trials, respectively, for each side (left, right). One trial has a total duration of 8 seconds, with cue onset on second 3 for a duration of 2 seconds. During cue display, the participant is supposed to maintain the motor imagery accordingly (see figure~\ref{fig:exp_design} for illustration).\\
 For the training sessions, a Matlab function \texttt{recordMotorImageryData(numTrials, nCh, cueOn)} has been written. It takes as input arguments the desired number of trials (\texttt{numTrials}), the number of channels used for recording (\texttt{nCh}), and whether a cue shall be displayed or not (\texttt{cueOn}). If a cue is not desired, the function will plot a graph of the EEG. 
-
-\paragraph{Note:} In order to start the MP36 acquisition device, an interface to Matlab was written, namely the function \texttt{startAcquisition(dothdir, libname,mptype, mpmethod, sn, duration)}. It takes as inputs the path to the C/C++ header file \texttt{mpdev.h} (\texttt{dothdir}), the name of the Biopac API DLL file (\texttt{libname}), the type of Biopac device (\texttt{mptype}, has value '\texttt{103}' for MP36), the connection method \texttt{mpmethod} (has value '\texttt{10} for USB connection), the serial number of the Biopac device \texttt{sn} (can be put to '\texttt{auto}', if only a single Biopac device is connected to the computer), and finally the duration of data acquisition in seconds \texttt{duration}. 
-
-
-
-
-
-\begin{figure}
+\begin{figure}[htbp!]
 	\centering
 	\includegraphics[width=1\linewidth]{./gfx/exp_design}
 	\caption{Timing of the movement imagery task. Visual cue stimulus in form of left/right arrows between 3 and 5 seconds instructs the participant o imagine the desired movement (of left/right arm, respectively).}
 	\label{fig:exp_design}
 \end{figure}
+\paragraph{Launching data acquisition:} In order to start the MP36 acquisition device, an interface to Matlab was written, namely the function \texttt{startAcquisition(dothdir, libname,mptype, mpmethod, sn, duration)}. It takes as inputs the path to the C/C++ header file \texttt{mpdev.h} (\texttt{dothdir}), the name of the Biopac API DLL file (\texttt{libname}), the type of Biopac device (\texttt{mptype}, has value '\texttt{103}' for MP36), the connection method \texttt{mpmethod} (has value '\texttt{10} for USB connection), the serial number of the Biopac device \texttt{sn} (can be put to '\texttt{auto}', if only a single Biopac device is connected to the computer), and finally the duration of data acquisition in seconds \texttt{duration}. 
 
+\paragraph{Cue display:} For cue display, another Matlab function \texttt{launchCueExp(DURATION, T\_BLANK, T\_CUE\_ON, T\_CUE, T\_PERIOD)} has been written. By modifying its input parameters, individual visual cue timings may be re-used for future experiments at NST. The inputs are the total experiment duration in seconds \texttt{DURATION}, the fixation cross onset \texttt{T\_BLANK}, the cue onset time \texttt{T\_CUE\_ON}, the duration of cue display \texttt{T\_CUE}, and the period length for one trial \texttt{T\_PERIOD}. For illustration of the parameters see figure~\ref{fig:exp_design}.
+
+\subsubsection*{Electrode positioning}
 
 
 

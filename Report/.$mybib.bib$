@@ -1,0 +1,158 @@
+% This file was created with JabRef 2.10.
+% Encoding: UTF-8
+
+
+@Electronic{biopac_general,
+  Title                    = {Biopac product site},
+  Author                   = {Biopac Systems, Inc.},
+  Url                      = {https://www.biopac.com/product-category/education/systems-education/},
+  Year                     = {2017},
+
+  Owner                    = {jfedjaev},
+  Timestamp                = {2017.05.21}
+}
+
+@Misc{birbaumer2006brain,
+  Title                    = {Brain--computer-interface research: coming of age},
+
+  Author                   = {Birbaumer, Niels},
+  Year                     = {2006},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{decety1996neurophysiological,
+  Title                    = {The neurophysiological basis of motor imagery},
+  Author                   = {Decety, Jean},
+  Journal                  = {Behavioural brain research},
+  Year                     = {1996},
+  Number                   = {1},
+  Pages                    = {45--52},
+  Volume                   = {77},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{ge2014classification,
+  Title                    = {Classification of four-class motor imagery employing single-channel electroencephalography},
+  Author                   = {Ge, Sheng and Wang, Ruimin and Yu, Dongchuan},
+  Journal                  = {PloS one},
+  Year                     = {2014},
+  Number                   = {6},
+  Pages                    = {e98019},
+  Volume                   = {9},
+
+  Publisher                = {Public Library of Science}
+}
+
+@Article{homan1987cerebral,
+  Title                    = {Cerebral location of international 10--20 system electrode placement},
+  Author                   = {Homan, Richard W and Herman, John and Purdy, Phillip},
+  Journal                  = {Electroencephalography and clinical neurophysiology},
+  Year                     = {1987},
+  Number                   = {4},
+  Pages                    = {376--382},
+  Volume                   = {66},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{kothe2013bcilab,
+  Title                    = {BCILAB: a platform for brain--computer interface development},
+  Author                   = {Kothe, Christian Andreas and Makeig, Scott},
+  Journal                  = {Journal of neural engineering},
+  Year                     = {2013},
+  Number                   = {5},
+  Pages                    = {056014},
+  Volume                   = {10},
+
+  Publisher                = {IOP Publishing}
+}
+
+@Article{leeb2007brain,
+  Title                    = {Brain--computer communication: motivation, aim, and impact of exploring a virtual apartment},
+  Author                   = {Leeb, Robert and Lee, Felix and Keinrath, Claudia and Scherer, Reinhold and Bischof, Horst and Pfurtscheller, Gert},
+  Journal                  = {IEEE Transactions on Neural Systems and Rehabilitation Engineering},
+  Year                     = {2007},
+  Number                   = {4},
+  Pages                    = {473--482},
+  Volume                   = {15},
+
+  Publisher                = {IEEE}
+}
+
+@Article{lotze1999activation,
+  Title                    = {Activation of cortical and cerebellar motor areas during executed and imagined hand movements: an fMRI study},
+  Author                   = {Lotze, Martin and Montoya, Pedro and Erb, Michael and H{\"u}lsmann, Ernst and Flor, Herta and Klose, Uwe and Birbaumer, Niels and Grodd, Wolfgang},
+  Journal                  = {Journal of cognitive neuroscience},
+  Year                     = {1999},
+  Number                   = {5},
+  Pages                    = {491--501},
+  Volume                   = {11},
+
+  Publisher                = {MIT Press}
+}
+
+@Article{meng2016noninvasive,
+  Title                    = {Noninvasive Electroencephalogram Based Control of a Robotic Arm for Reach and Grasp Tasks},
+  Author                   = {Meng, Jianjun and Zhang, Shuying and Bekyo, Angeliki and Olsoe, Jaron and Baxter, Bryan and He, Bin},
+  Journal                  = {Scientific Reports},
+  Year                     = {2016},
+  Volume                   = {6},
+
+  Publisher                = {Nature Publishing Group}
+}
+
+@Article{journals/presence/RenardLGCMDBL10,
+  Title                    = {OpenViBE: An Open-Source Software Platform to Design, Test, and Use Brain-Computer Interfaces in Real and Virtual Environments.},
+  Author                   = {Renard, Yann and Lotte, Fabien and Gibert, Guillaume and Congedo, Marco and Maby, Emmanuel and Delannoy, Vincent and Bertrand, Olivier and Lécuyer, Anatole},
+  Journal                  = {Presence},
+  Year                     = {2010},
+  Number                   = {1},
+  Pages                    = {35-53},
+  Volume                   = {19},
+
+  Added-at                 = {2010-07-21T15:47:08.000+0200},
+  Biburl                   = {http://www.bibsonomy.org/bibtex/2f5691d0eb7b4fa27721465ad8a8b279d/dblp},
+  Date                     = {2010-07-15},
+  Ee                       = {http://dx.doi.org/10.1162/pres.19.1.35},
+  Interhash                = {4c7ccb4683bf6c3aefff73c6029417a7},
+  Intrahash                = {f5691d0eb7b4fa27721465ad8a8b279d},
+  Keywords                 = {dblp},
+  Timestamp                = {2010-07-21T15:47:09.000+0200},
+  Url                      = {http://dblp.uni-trier.de/db/journals/presence/presence19.html#RenardLGCMDBL10}
+}
+
+@Book{schalk2010practical,
+  Title                    = {A practical guide to brain--computer interfacing with BCI2000: General-purpose software for brain-computer interface research, data acquisition, stimulus presentation, and brain monitoring},
+  Author                   = {Schalk, Gerwin and Mellinger, J{\"u}rgen},
+  Publisher                = {Springer Science \& Business Media},
+  Year                     = {2010}
+}
+
+@Article{sivakamianalysis,
+  Title                    = {ANALYSIS OF EEG FOR MOTOR IMAGERY BASED CLASSIFICATION OF HAND ACTIVITIES},
+  Author                   = {Sivakami, A and Devi, S Shenbaga}
+}
+
+@Article{e,
+  Title                    = {Decoding of Motor Imagery Movements from EEG signals using SpiNNaker Neuromorphic Hardware},
+  Author                   = {Tayeb, Zied and Ercelik, Emec and Conradt, Jorg},
+  Journal                  = {arXiv},
+  Year                     = {2017},
+
+  Publisher                = {Neuroscientific System Theory, Technical University of Munich}
+}
+
+@Article{yong2015eeg,
+  Title                    = {EEG classification of different imaginary movements within the same limb},
+  Author                   = {Yong, Xinyi and Menon, Carlo},
+  Journal                  = {PloS one},
+  Year                     = {2015},
+  Number                   = {4},
+  Pages                    = {e0121896},
+  Volume                   = {10},
+
+  Publisher                = {Public Library of Science}
+}
+

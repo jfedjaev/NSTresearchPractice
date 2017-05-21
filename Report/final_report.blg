@@ -1,51 +1,8 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: final_report.aux
+This is BibTeX, Version 0.99dThe top-level auxiliary file: final_report.aux
 The style file: ieeetr.bst
 Database file #1: mybib.bib
 Warning--entry type for "biopac_general" isn't style-file defined
 --line 5 of file mybib.bib
 Warning--empty journal in sivakamianalysis
 Warning--empty year in sivakamianalysis
-You've used 14 entries,
-            1876 wiz_defined-function locations,
-            564 strings with 6323 characters,
-and the built_in function-call counts, 3653 in all, are:
-= -- 350
-> -- 169
-< -- 0
-+ -- 62
-- -- 48
-* -- 254
-:= -- 528
-add.period$ -- 14
-call.type$ -- 14
-change.case$ -- 13
-chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 192
-empty$ -- 326
-format.name$ -- 48
-if$ -- 891
-int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 13
-newline$ -- 46
-num.names$ -- 14
-pop$ -- 45
-preamble$ -- 1
-purify$ -- 0
-quote$ -- 0
-skip$ -- 143
-stack$ -- 0
-substring$ -- 180
-swap$ -- 87
-text.length$ -- 0
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
-warning$ -- 2
-while$ -- 31
-width$ -- 16
-write$ -- 136
 (There were 3 warnings)

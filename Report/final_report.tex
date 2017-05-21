@@ -258,7 +258,7 @@ There are various classification algorithms that may be used to design BCI syste
 The Matlab toolbox for \textit{Statistics and Machine Learning} provides a function \texttt{fitcsvm(\_)} that takes a feature matrix and labels as inputs and trains a support vector machine model. There are various optional parameters that can be set, in this case a radial basis (RBF) kernel option was used to let the software find a scale value for the kernel function. Additionally, the predictors were standardized, which is good practice. The output is a SVM model that in a next was cross-validated using 10-fold cross-validation with the \texttt{crossval(SVMModel)} function. The cross-validated SVM model was then used to compute the misclassification rate with the function \texttt{kfoldLoss(CVSVMModel)}. For later use in an on-line scenario the SVM model is saved.
 
 \subsection{Robot Arm Control}
-The last stage in the control chain is the robot arm. At NST, two Neuronics Katana arms are available. The Neuronics Katana has 6 degrees of freedom (including the gripper) and a payload of 500g, which is more than sufficient for our purposes (see figure~\ref{fig:katana}). Thanks to working student Bernhard Specht, who wrote a Python script for accessing the robot methods via SOAP server, the robot can be easily controlled. 
+The last stage in the control chain is the robot arm. At NST, two Neuronics Katana arms are available. The Neuronics Katana has 6 degrees of freedom (including the gripper) and a payload of 500g, which is more than sufficient for the purposes of this project (see figure~\ref{fig:katana}). Thanks to working student Bernhard Specht, who wrote a Python script for accessing the robot methods via SOAP server, the robot can be easily controlled. 
 \begin{figure}[htpb!]
 	\centering
 	\includegraphics[width=0.3\linewidth]{./gfx/katana.jpg}
@@ -285,14 +285,19 @@ For training data, two-class EEG motor imagery data has been collected from two 
 	\centering
 	\begin{tabular}{lcc}
 		\textbf{Recording ID}	&\textbf{Number of trials}  &\textbf{Overall Accuracy (\%)} \\ 
-		\hline \hline  TD&  Raw data& 68.7\\ 
-		\hline  AS01&  MAV& 90.7\\ 
-		\hline	AS&  WL& 91.3\\ 
-		\hline	TD&  VAR& 78.7\\ 
-		\hline	TD&  AR& 88.6\\
-		\hline	TD&  MAV$+$WL& 80.0\\
-		\hline  FD&  PS& 76.0\\
-		\hline  FD&  WT&  78.0
+		\hline 
+		\hline  AS01-11&  40& 64\\ 
+		\hline	AS02-11&  40& 67\\ 
+		\hline	JF02-10&  40& x\\ 
+		\hline	JF03-10&  40& x\\
+		\hline	JF04-10&  40& 74\\
+		\hline  JF02-15&  50& 66\\
+		\hline  JF02-16&  50&  60\\
+		\hline  JF01-15&  50& 58\\
+		\hline  JF01-16&  50& 60\\
+		\hline  AS01-16&  50& 46\\
+		\hline  AS02-12&  50& \textbf{77}\\
+		
 	\end{tabular} 
 	\caption{Summary of cross-validated off-line classification accuracies reached with a SVM using BP features.}
 	\label{tab:class-results}
@@ -306,7 +311,7 @@ One of the results certainly is that the Biopac MP36 device is unsuitable for BC
 	\item The adhesive part of the electrode should be softly abraded with abrasive pads in order to reduce the discomfort for the user of the BCI.
 \end{itemize}
 
-Besides the hardware limitations, there are several methods to be considered for an improvement of the classification accuracy. First, different features could be used. For example, event-related desynchronization and event-related synchronization in alpha- and beta-bands, respectively, can be observed during the execution of motor imagery. Due to the non-stationary and transient nature of EEG signals, the discrete wavelet transform (DWT) is widely used for BCI systems. Another promising approach are common spatial patterns (CSP) as features. Dynamic time warping (DTW) could also be considered. Furthermore, deep convolutional neural networks (CNN) or recurrent neural networks (RNN) could significantly improve classification accuracy and therefore enable the system for a multiclass classification of EEG signals. Especially the different features could be evaluated without too much additional effort. However, du to time constraints this was not possible and could be done in future work.
+Besides the hardware limitations, there are several methods to be considered for an improvement of the classification accuracy. First, different features could be used. For example, event-related desynchronization and event-related synchronization in alpha- and beta-bands, respectively, can be observed during the execution of motor imagery. Due to the non-stationary and transient nature of EEG signals, the discrete wavelet transform (DWT) is widely used for BCI systems. Another promising approach are common spatial patterns (CSP) as features. Dynamic time warping (DTW) could also be considered. Furthermore, deep convolutional neural networks (CNN) or recurrent neural networks (RNN) could significantly improve classification accuracy and therefore enable the system for a multiclass classification of EEG signals. Especially the different features could be evaluated without too much additional effort. However, due to time constraints this was not possible and could be done in future work.
 
 %_______________________________________________
 

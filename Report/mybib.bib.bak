@@ -135,11 +135,13 @@
   Author                   = {Sivakami, A and Devi, S Shenbaga}
 }
 
-@Article{tayeb2017,
-  Author                   = {Zied Tayeb and},
+@Article{tayeb2017spinnaker,
+  Title                    = {Decoding of Motor Imagery Movements from EEG signals using SpiNNaker Neuromorphic Hardware},
+  Author                   = {Tayeb, Zied and Ercelik, Emec and Conradt, Jorg},
+  Journal                  = {arXiv},
+  Year                     = {2017},
 
-  Owner                    = {jfedjaev},
-  Timestamp                = {2017.05.21}
+  Publisher                = {Neuroscientific System Theory, Technical University of Munich}
 }
 
 @Article{yong2015eeg,
